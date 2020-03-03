@@ -15,6 +15,20 @@
     "singleQuote": true,
     "tabWidth": 2
   },
+  "postcss": {
+    "plugins": {
+      "postcss-flexbugs-fixes": {},
+      "postcss-preset-env": {
+        "autoprefixer": {},
+        "stage": 3,
+        "features": {
+          "custom-properties": false,
+          "custom-media-queries": true,
+          "nesting-rules": true
+        }
+      }
+    }
+  },
   "browserslist": {
     "production": [
       ">0.2%",
