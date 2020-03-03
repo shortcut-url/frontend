@@ -1,0 +1,269 @@
+/* 
+* vars
+*/
+:root {
+  --base-black: #1f1f1f;
+  --base-gray: #afb7c1;
+  --base-red: #e80000;
+  --base-text: var(--base-black);
+  --base-title: var(--base-black);
+  --base-background: #e0e5ec;
+  --base-border: #abb7c7;
+  --base-accent: #64b5f6;
+  --base-light-accent: #a1d2f9;
+  --base-hover: #8bcafd;
+  --base-focus: 0 0 0 3px var(--base-accent);
+  --base-disabled: #5693c3;
+  --base-gradient: linear-gradient(
+    90deg,
+    var(--base-light-accent),
+    var(--base-accent)
+  );
+
+  /* typography */
+  --base-unit: 0.8rem;
+  --base-code-fs: 1.3rem;
+  --base-h6: 1.4rem;
+  --base-h5: 1.6rem;
+  --base-h4: 1.8rem; /* default font-size */
+  --base-h3: 2.6rem;
+  --base-h2: 3rem;
+  --base-h1: 3.2rem;
+  --base-linemax: 42em; /* max line-length */
+  --base-lh: 1.5; /* base line-height */
+  --base-lh-article: 1.6;
+
+  /* border */
+  --base-border-w: 0.15rem; /* border-width  */
+  --base-border-r: 0.4rem;
+
+  /* navigation */
+  --width-nav: 200px;
+}
+
+@custom-media --mobile (max-width: 940px);
+@custom-media --no-mobile (min-width: 941px);
+
+body {
+  --font: 'Open Sans', sans-serif;
+  --font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+}
+
+/*  fonts ----------------------------- */
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: local('Open Sans Light'), local('OpenSans-Light'),
+    url('/fonts/open-sans-300.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+  src: local('Open Sans Light Italic'), local('OpenSans-LightItalic'),
+    url('/fonts/open-sans-300italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+    url('/fonts/open-sans-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'),
+    url('/fonts/open-sans-400italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
+    url('/fonts/open-sans-600.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+  src: local('Open Sans SemiBold Italic'), local('OpenSans-SemiBoldItalic'),
+    url('/fonts/open-sans-600italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'),
+    url('/fonts/open-sans-700.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'),
+    url('/fonts/open-sans-700italic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: local('Open Sans ExtraBold'), local('OpenSans-ExtraBold'),
+    url('/fonts/open-sans-800.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+  src: local('Open Sans ExtraBold Italic'), local('OpenSans-ExtraBoldItalic'),
+    url('/fonts/open-sans-800italic.woff2') format('woff2');
+}
+
+/*  base reset ------------------------ */
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#__next {
+  height: 100%;
+  width: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+mark {
+  padding: 0 3px;
+  background: var(--base-light-accent);
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+input,
+button,
+textarea,
+select,
+a {
+  font: inherit;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/*
+-----------------------------------------------
+	global styles
+-----------------------------------------------
+*/
+
+/*	typography ----------------------------- */
+body {
+  font: 400 var(--base-h4) / var(--base-lh) var(--font);
+  background-color: var(--base-background);
+  color: var(--base-text);
+}
+
+h6 {
+  font-size: var(--base-h6);
+}
+
+h5 {
+  font-size: var(--base-h5);
+}
+
+h4 {
+  font-size: var(--base-h4);
+}
+
+h3 {
+  font-size: var(--base-h3);
+}
+
+h2 {
+  font-size: var(--base-h2);
+}
+
+h1 {
+  font-size: var(--base-h1);
+}
+
+::selection {
+  color: var(--base-text);
+  background-color: var(--base-light-accent);
+  text-shadow: none;
+}
