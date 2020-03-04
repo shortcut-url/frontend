@@ -9,6 +9,8 @@ module.exports = {
       'components'
     );
 
+    config.resolve.alias['models'] = path.join(__dirname, 'src', 'models');
+
     return config;
   },
   withOffline

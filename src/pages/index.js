@@ -1,9 +1,7 @@
 import React from 'react';
 
-export default () => {
-  return (
-    <>
-      <div>Index</div>
-    </>
-  );
+const HomePage = () => {
+  return <div>Index</div>;
 };
+
+export default HomePage;

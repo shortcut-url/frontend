@@ -18,9 +18,9 @@ app.prepare().then(() => {
       const filePath = join(__dirname, '.next', pathname);
 
       app.serveStatic(req, res, filePath);
-    } else {
-      handle(req, res, parsedUrl);
     }
+
+    handle(req, res, parsedUrl);
   }).listen(3000, () => {
     console.log(`> Ready on http://localhost:${3000}`);
   });
