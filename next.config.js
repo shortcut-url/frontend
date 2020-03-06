@@ -11,7 +11,12 @@ module.exports = {
 
     config.resolve.alias['models'] = path.join(__dirname, 'src', 'models');
 
+    config.resolve.alias['lib'] = path.join(__dirname, 'src', 'lib');
+
     return config;
+  },
+  env: {
+    apiServer: 'http://localhost:8080'
   },
   withOffline
 };

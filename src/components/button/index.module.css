@@ -1,0 +1,24 @@
+.button,
+.button_accent {
+  --distance: 2px;
+  display: inline-block;
+  padding: 10px 20px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.button_accent {
+  font-size: var(--base-h5);
+  background-color: var(--base-accent);
+  color: var(--base-ui-white);
+  border-radius: calc(var(--base-border-r) / 2);
+  &:hover,
+  &:focus {
+    background-color: var(--base-hover);
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+}

@@ -13,6 +13,8 @@ export default function MyApp({ Component, pageProps, user }) {
 MyApp.getInitialProps = async () => {
   let res = await fetch('http://localhost:8080/session');
 
+  if (!res.ok) return {};
+
   let user = await res.json();
 
   return { user };
