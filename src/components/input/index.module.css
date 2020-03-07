@@ -1,0 +1,19 @@
+.input {
+  padding: 10px 20px;
+  width: 100%;
+  color: var(--base-text);
+  font-weight: 600;
+  border: none;
+}
+
+.label,
+.error {
+  display: block;
+  padding: 5px;
+  font-weight: 600;
+}
+
+.error {
+  color: var(--base-red);
+  font-size: var(--base-h5);
+}

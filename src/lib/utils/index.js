@@ -1,0 +1,1 @@
+export { trimEvent } from './trim';
