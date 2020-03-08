@@ -14,13 +14,16 @@
 }
 
 .button_accent {
+  --background-color: var(--base-accent);
   font-size: var(--base-h5);
-  background-color: var(--base-accent);
+  background-color: var(--background-color);
   color: var(--base-ui-white);
   border-radius: calc(var(--base-border-r) / 2);
+  box-shadow: 0px 0px 10px -2px var(--background-color);
+
   &:hover,
   &:focus {
-    background-color: var(--base-hover);
+    --background-color: var(--base-hover);
   }
 
   &:active {
