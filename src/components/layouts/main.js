@@ -5,9 +5,9 @@ import { MainNavigation } from 'components/navigation/main';
 
 export const MainLayout = props => {
   return (
-    <div className={styles.container}>
+    <div className={styles.layout}>
       <MainNavigation />
-      {props.children}
+      <main className={styles['layout_main']}>{props.children}</main>
     </div>
   );
 };

@@ -1,0 +1,48 @@
+.form {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50vh 20px 20px;
+}
+
+.form_buttons {
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+.list-created-links {
+  display: grid;
+  grid-gap: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+
+  @media (--mobile) {
+    padding-top: 0px;
+  }
+}
+
+.created-link {
+  display: grid;
+  grid-gap: 10px;
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  overflow: hidden;
+  color: var(--base-text);
+  border: none;
+  text-align: left;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+}
+
+.created-link_original-url {
+  font-size: var(--base-h6);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
