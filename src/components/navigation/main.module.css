@@ -21,17 +21,20 @@
 .menu_home {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  padding: 5px 0;
   font-weight: 600;
   color: var(--base-text);
   text-transform: uppercase;
+  border-radius: var(--base-border-r);
 
   &:hover,
   &:focus {
-    color: var(--base-accent);
+    & > span {
+      background-color: var(--base-hover);
+    }
   }
 
-  & svg {
+  & > picture {
     margin-right: 5px;
   }
 }
@@ -42,10 +45,17 @@
   padding: 20px 0 0;
   font-size: var(--base-h4);
   font-weight: 600;
+}
 
-  & svg {
-    margin-right: 5px;
-  }
+.heading-account::before {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  content: '';
+  background-color: var(--base-text);
+  background-size: 100%;
+  mask-image: url(/icons/user.svg);
 }
 
 .list {

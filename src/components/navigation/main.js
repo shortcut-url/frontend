@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { useStore } from 'effector-react';
 
 import { $session } from 'models/session';
-import { Icon } from 'components/icon';
 import styles from './main.module.css';
 import buttonsStyles from 'components/button/index.module.css';
 
@@ -33,7 +32,9 @@ export const MainNavigation = () => {
 
   let AuthNavigationMenu = () => (
     <>
-      <ListHeading nameIcon="user">Account</ListHeading>
+      <h2 className={`${styles['menu_heading']} ${styles['heading-account']}`}>
+        Account
+      </h2>
       <ul className={styles.list}>
         <ListLink href="/join">Create an account</ListLink>
         <ListLink href="/login">Login</ListLink>
@@ -45,7 +46,15 @@ export const MainNavigation = () => {
     <nav className={`${styles.menu} flat`}>
       <Link href="/">
         <a className={styles['menu_home']} title="Go to the home page.">
-          <Icon name="globe" size="23" /> Shortcut-link.com
+          <picture>
+            <img
+              src="icons/globe.svg"
+              width="23"
+              height="23"
+              alt="Logo Shortcut-link"
+            />
+          </picture>
+          <span>Shortcut-link.com</span>
         </a>
       </Link>
 
@@ -54,15 +63,6 @@ export const MainNavigation = () => {
     </nav>
   );
 };
-
-function ListHeading({ nameIcon, children }) {
-  return (
-    <h2 className={styles['menu_heading']}>
-      <Icon name={nameIcon} size="23" />
-      {children}
-    </h2>
-  );
-}
 
 function ListLink({ href, children, ...props }) {
   return (
