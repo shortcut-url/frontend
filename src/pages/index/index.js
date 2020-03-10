@@ -84,7 +84,12 @@ let ListCreatedLinks = () => {
       <article key={id}>
         <button
           onClick={copyLinkClipboard}
-          className={`${styles['created-link']} flat concave_hover pressed_active`}
+          className={`
+            ${styles['created-link']}
+            flat
+            concave_hover
+            pressed_active
+          `}
           title="Copy link to clipboard"
           type="button"
         >

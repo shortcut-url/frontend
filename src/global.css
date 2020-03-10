@@ -1,4 +1,4 @@
-/* 
+/*
 * vars
 */
 :root {
@@ -15,14 +15,15 @@
   --base-focus: 0 0 0 3px var(--base-accent);
   --base-disabled: #5693c3;
   --base-ui-black: #bec3c9;
-  --base-ui-white: #ffffff;
+  --base-ui-white: #fff;
   --base-ui-gradient-gray: #caced4;
   --base-ui-gradient-light-gray: #f0f5fd;
-  --base-gradient: linear-gradient(
-    90deg,
-    var(--base-light-accent),
-    var(--base-accent)
-  );
+  --base-gradient:
+    linear-gradient(
+      90deg,
+      var(--base-light-accent),
+      var(--base-accent)
+    );
 
   /* typography */
   --base-unit: 0.8rem;
@@ -50,113 +51,148 @@
 
 body {
   --font: 'Open Sans', sans-serif;
-  --font-system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --font-system:
+    -apple-system,
+    blinkmacsystemfont,
+    'Segoe UI',
+    roboto,
+    oxygen-sans,
+    ubuntu,
+    cantarell,
+    'Helvetica Neue',
+    sans-serif;
+
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  font: 400 var(--base-h4) / var(--base-lh) var(--font);
+  color: var(--base-text);
+  background-color: var(--base-background);
 }
 
 /*  fonts ----------------------------- */
 @font-face {
   font-family: 'Open Sans';
-  font-weight: 300;
   font-style: normal;
+  font-weight: 300;
   font-display: swap;
-  src: local('Open Sans Light'), local('OpenSans-Light'),
+  src:
+    local('Open Sans Light'),
+    local('OpenSans-Light'),
     url('/fonts/open-sans-300.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Open Sans';
-  font-weight: 300;
   font-style: italic;
+  font-weight: 300;
   font-display: swap;
-  src: local('Open Sans Light Italic'), local('OpenSans-LightItalic'),
+  src:
+    local('Open Sans Light Italic'),
+    local('OpenSans-LightItalic'),
     url('/fonts/open-sans-300italic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Open Sans';
-  font-weight: 400;
   font-style: normal;
+  font-weight: 400;
   font-display: swap;
-  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+  src:
+    local('Open Sans Regular'),
+    local('OpenSans-Regular'),
     url('/fonts/open-sans-400.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Open Sans';
-  font-weight: 400;
   font-style: italic;
+  font-weight: 400;
   font-display: swap;
-  src: local('Open Sans Italic'), local('OpenSans-Italic'),
+  src:
+    local('Open Sans Italic'),
+    local('OpenSans-Italic'),
     url('/fonts/open-sans-400italic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Open Sans';
-  font-weight: 600;
   font-style: normal;
+  font-weight: 600;
   font-display: swap;
-  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
+  src:
+    local('Open Sans SemiBold'),
+    local('OpenSans-SemiBold'),
     url('/fonts/open-sans-600.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Open Sans';
-  font-weight: 600;
   font-style: italic;
+  font-weight: 600;
   font-display: swap;
-  src: local('Open Sans SemiBold Italic'), local('OpenSans-SemiBoldItalic'),
+  src:
+    local('Open Sans SemiBold Italic'),
+    local('OpenSans-SemiBoldItalic'),
     url('/fonts/open-sans-600italic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Open Sans';
-  font-weight: 700;
   font-style: normal;
+  font-weight: 700;
   font-display: swap;
-  src: local('Open Sans Bold'), local('OpenSans-Bold'),
+  src:
+    local('Open Sans Bold'),
+    local('OpenSans-Bold'),
     url('/fonts/open-sans-700.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Open Sans';
-  font-weight: 700;
   font-style: italic;
+  font-weight: 700;
   font-display: swap;
-  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'),
+  src:
+    local('Open Sans Bold Italic'),
+    local('OpenSans-BoldItalic'),
     url('/fonts/open-sans-700italic.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Open Sans';
-  font-weight: 800;
   font-style: normal;
+  font-weight: 800;
   font-display: swap;
-  src: local('Open Sans ExtraBold'), local('OpenSans-ExtraBold'),
+  src:
+    local('Open Sans ExtraBold'),
+    local('OpenSans-ExtraBold'),
     url('/fonts/open-sans-800.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'Open Sans';
-  font-weight: 800;
   font-style: italic;
+  font-weight: 800;
   font-display: swap;
-  src: local('Open Sans ExtraBold Italic'), local('OpenSans-ExtraBoldItalic'),
+  src:
+    local('Open Sans ExtraBold Italic'),
+    local('OpenSans-ExtraBoldItalic'),
     url('/fonts/open-sans-800italic.woff2') format('woff2');
 }
 
 /*  base reset ------------------------ */
 
 html {
-  font-size: 62.5%;
   box-sizing: border-box;
+  font-size: 62.5%;
 }
 
 html,
 body,
 #__next {
-  height: 100%;
   width: 100%;
+  height: 100%;
 }
 
 *,
@@ -183,26 +219,28 @@ dd {
   margin: 0;
 }
 
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
+input,
+button,
+textarea,
+select,
+a {
+  font: inherit;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 /* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
 a {
   text-decoration: none;
 }
 
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
 /* Make images easier to work with */
 img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 mark {
@@ -213,20 +251,11 @@ mark {
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   * {
+    transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-input,
-button,
-textarea,
-select,
-a {
-  font: inherit;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 /*
@@ -236,12 +265,6 @@ a {
 */
 
 /*	typography ----------------------------- */
-body {
-  font: 400 var(--base-h4) / var(--base-lh) var(--font);
-  background-color: var(--base-background);
-  color: var(--base-text);
-}
-
 h6 {
   font-size: var(--base-h6);
 }
@@ -268,8 +291,8 @@ h1 {
 
 ::selection {
   color: var(--base-text);
-  background-color: var(--base-light-accent);
   text-shadow: none;
+  background-color: var(--base-light-accent);
 }
 
 /*	ui ------------------------------------- */
@@ -278,54 +301,60 @@ h1 {
 .flat_hover:hover,
 .flat_hover:focus,
 .flat_active:active {
-  border-radius: var(--border-radius, var(--base-border-r));
   background: var(--base-background);
-  box-shadow: var(--distance, 5px) var(--distance, 5px)
-      calc(var(--distance, 5px) * 2) var(--base-ui-black),
+  border-radius: var(--border-radius, var(--base-border-r));
+  box-shadow:
+    var(--distance, 5px) var(--distance, 5px)
+    calc(var(--distance, 5px) * 2) var(--base-ui-black),
     calc(var(--distance, 5px) * -1) calc(var(--distance, 5px) * -1)
-      calc(var(--distance, 5px) * 2) var(--base-ui-white);
+    calc(var(--distance, 5px) * 2) var(--base-ui-white);
 }
 
 .concave,
 .concave_hover:hover,
 .concave_hover:focus,
 .concave_active:active {
+  background:
+    linear-gradient(
+      145deg,
+      var(--base-ui-gradient-gray),
+      var(--base-ui-gradient-light-gray)
+    );
   border-radius: var(--border-radius, var(--base-border-r));
-  background: linear-gradient(
-    145deg,
-    var(--base-ui-gradient-gray),
-    var(--base-ui-gradient-light-gray)
-  );
-  box-shadow: var(--distance, 5px) var(--distance, 5px)
-      calc(var(--distance, 5px) * 2) var(--base-ui-black),
+  box-shadow:
+    var(--distance, 5px) var(--distance, 5px)
+    calc(var(--distance, 5px) * 2) var(--base-ui-black),
     calc(var(--distance, 5px) * -1) calc(var(--distance, 5px) * -1)
-      calc(var(--distance, 5px) * 2) var(--base-ui-white);
+    calc(var(--distance, 5px) * 2) var(--base-ui-white);
 }
 
 .convex,
 .convex_hover:hover,
 .convex_hover:focus,
 .convex_active:active {
+  background:
+    linear-gradient(
+      145deg,
+      var(--base-ui-gradient-light-gray),
+      var(--base-ui-gradient-gray)
+    );
   border-radius: var(--border-radius, var(--base-border-r));
-  background: linear-gradient(
-    145deg,
-    var(--base-ui-gradient-light-gray),
-    var(--base-ui-gradient-gray)
-  );
-  box-shadow: var(--distance, 5px) var(--distance, 5px)
-      calc(var(--distance, 5px) * 2) var(--base-ui-black),
+  box-shadow:
+    var(--distance, 5px) var(--distance, 5px)
+    calc(var(--distance, 5px) * 2) var(--base-ui-black),
     calc(var(--distance, 5px) * -1) calc(var(--distance, 5px) * -1)
-      calc(var(--distance, 5px) * 2) var(--base-ui-white);
+    calc(var(--distance, 5px) * 2) var(--base-ui-white);
 }
 
 .pressed,
 .pressed_hover:hover,
 .pressed_hover:focus,
 .pressed_active:active {
-  border-radius: var(--border-radius, var(--base-border-r));
   background: var(--base-background);
-  box-shadow: inset var(--distance, 5px) var(--distance, 5px)
-      calc(var(--distance, 5px) * 2) var(--base-ui-black),
+  border-radius: var(--border-radius, var(--base-border-r));
+  box-shadow:
+    inset var(--distance, 5px) var(--distance, 5px)
+    calc(var(--distance, 5px) * 2) var(--base-ui-black),
     inset calc(var(--distance, 5px) * -1) calc(var(--distance, 5px) * -1)
-      calc(var(--distance, 5px) * 2) var(--base-ui-white);
+    calc(var(--distance, 5px) * 2) var(--base-ui-white);
 }

@@ -49,7 +49,7 @@ export const MainNavigation = () => {
         </a>
       </Link>
 
-      {user && <AuthNavigationMenu />}
+      {!user && <AuthNavigationMenu />}
       {user && <Profile />}
     </nav>
   );

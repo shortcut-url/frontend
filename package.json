@@ -6,14 +6,15 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "npm run build && npm run start:prod",
-    "start:prod": "set NODE_ENV=production && node server.js"
+    "start:prod": "set NODE_ENV=production && node server.js",
+    "lint": "eslint src/**/*.js && stylelint src/**/*.css",
+    "jest": "react-scripts test",
+    "test": "set CI=true && npm run jest && npm run lint"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "prettier": {
-    "singleQuote": true,
-    "tabWidth": 2
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test"
+    }
   },
   "postcss": {
     "plugins": {
@@ -41,6 +42,78 @@
       "last 1 safari version"
     ]
   },
+  "jest": {
+    "moduleNameMapper": {
+      "^components(.*)$": "<rootDir>/src/components$1",
+      "^models(.*)$": "<rootDir>/src/models$1",
+      "^lib(.*)$": "<rootDir>/src/lib$1"
+    }
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "plugins": [
+      "prefer-let"
+    ],
+    "rules": {
+      "comma-dangle": [
+        "error",
+        "never"
+      ],
+      "object-curly-newline": [
+        "error",
+        {
+          "multiline": true,
+          "consistent": true
+        }
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "no-var": "error",
+      "prefer-const": "off",
+      "max-len": [
+        "error",
+        80
+      ],
+      "template-curly-spacing": [
+        "error",
+        "never"
+      ],
+      "prefer-let/prefer-let": "error",
+      "prefer-arrow-callback": "error",
+      "no-dupe-class-members": "error",
+      "no-this-before-super": "error",
+      "prefer-rest-params": "error",
+      "constructor-super": "error",
+      "object-shorthand": "error",
+      "require-yield": "error",
+      "arrow-spacing": "error",
+      "arrow-parens": [
+        "error",
+        "as-needed"
+      ],
+      "jsx-a11y/anchor-is-valid": [
+        "error",
+        {
+          "components": [
+            "Link"
+          ],
+          "specialLink": [
+            "hrefLeft",
+            "hrefRight"
+          ],
+          "aspects": [
+            "invalidHref",
+            "preferButton"
+          ]
+        }
+      ]
+    }
+  },
+  "stylelint": {
+    "extends": "@logux/stylelint-config"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.1",
@@ -53,5 +126,16 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0"
+  },
+  "devDependencies": {
+    "@logux/stylelint-config": "^0.1.3",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-prefer-let": "^1.0.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
+    "stylelint": "^13.2.1",
+    "stylelint-config-recess-order": "^2.0.3",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^4.0.0"
   }
 }

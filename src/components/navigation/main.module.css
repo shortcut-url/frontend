@@ -1,6 +1,7 @@
 .menu {
   --border-radius: 0;
   --distance: 8px;
+
   position: fixed;
   top: 0;
   bottom: 0;
@@ -22,8 +23,8 @@
   align-items: center;
   margin-bottom: 10px;
   font-weight: 600;
-  text-transform: uppercase;
   color: var(--base-text);
+  text-transform: uppercase;
 
   &:hover,
   &:focus {
@@ -48,8 +49,8 @@
 }
 
 .list {
-  margin: 0;
   padding: 0;
+  margin: 0;
   list-style: none;
 
   & > li {
@@ -60,6 +61,7 @@
 .list_link {
   --distance: 4px;
   --border-radius: calc(var(--base-border-r) / 2);
+
   display: block;
   padding: 8px 10px 8px 28px;
   font-size: var(--base-h5);
@@ -86,6 +88,6 @@
 }
 
 .profile_username {
-  text-align: center;
   font-weight: 600;
+  text-align: center;
 }

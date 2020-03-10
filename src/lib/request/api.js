@@ -1,9 +1,9 @@
 const baseUri = 'http://localhost:8080';
 
-export const requestAPI = async (method, url, options = {}) => {
-  const uri = `${options.baseUri || baseUri}/${url}`;
+export let requestAPI = async (method, url, options = {}) => {
+  let uri = `${options.baseUri || baseUri}/${url}`;
 
-  const headers = new Headers({
+  let headers = new Headers({
     ...createContentType(options),
     ...options.headers
   });
@@ -23,7 +23,7 @@ export const requestAPI = async (method, url, options = {}) => {
       ...resInfo
     };
 
-  const json = await res.text();
+  let json = await res.text();
 
   try {
     return { data: JSON.parse(json), ...resInfo };
@@ -32,13 +32,13 @@ export const requestAPI = async (method, url, options = {}) => {
   }
 };
 
-const createContentType = options => {
-  const header = contentTypeFromOptions(options);
+let createContentType = options => {
+  let header = contentTypeFromOptions(options);
 
   return header ? { 'Content-Type': header } : {};
 };
 
-const contentTypeFromOptions = options => {
+let contentTypeFromOptions = options => {
   if (options && options.headers && options.headers['Content-Type']) {
     return options.headers['Content-Type'];
   }

@@ -1,38 +1,38 @@
 .form {
-  max-width: 500px;
   width: 100%;
-  margin: 0 auto;
+  max-width: 500px;
   padding: 50vh 20px 20px;
+  margin: 0 auto;
 }
 
 .form_buttons {
+  width: 100%;
   margin-top: 20px;
   text-align: center;
-  width: 100%;
 }
 
 .list-created-links {
   display: grid;
   grid-gap: 20px;
   max-width: 500px;
-  margin: 0 auto;
   padding: 20px;
+  margin: 0 auto;
 
   @media (--mobile) {
-    padding-top: 0px;
+    padding-top: 0;
   }
 }
 
 .created-link {
+  position: relative;
   display: grid;
   grid-gap: 10px;
-  position: relative;
   width: 100%;
   padding: 20px;
   overflow: hidden;
   color: var(--base-text);
-  border: none;
   text-align: left;
+  border: none;
 
   &:hover,
   &:focus {
@@ -41,8 +41,8 @@
 }
 
 .created-link_original-url {
-  font-size: var(--base-h6);
-  white-space: nowrap;
   overflow: hidden;
+  font-size: var(--base-h6);
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
