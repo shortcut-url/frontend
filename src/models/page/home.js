@@ -1,8 +1,9 @@
 import { createStore, createEvent, createEffect, combine } from 'effector';
 
+import { urlAPI } from 'api/url';
 import { trimEvent } from 'lib/utils';
 import { urlValidator } from 'lib/validators';
-import { requestAPI, createFetching } from 'lib/request';
+import { createFetching } from 'lib/request';
 
 /*
  * Create new url
@@ -25,7 +26,7 @@ $urlField
   .on(urlFieldChange.map(trimEvent), (_, url) => url)
   .reset(urlFieldClear);
 
-createUrlProcessing.use(() => requestAPI('POST', 'url'));
+createUrlProcessing.use(urlAPI.create);
 
 createUrlProcessing.done.watch(({ result }) => {
   if (!result.ok) return;

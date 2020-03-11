@@ -14,7 +14,7 @@ import {
   formSubmitted,
   $isFormLoading,
   clearListCreatedUrls
-} from 'models/home-page';
+} from 'models/page/home';
 import styles from './index.module.css';
 
 export default () => {

@@ -1,6 +1,6 @@
 import React from 'react';
-import fetch from 'node-fetch';
 
+import { sessionAPI } from 'api/session';
 import { sessionChange } from 'models/session';
 import '../global.css';
 
@@ -11,11 +11,11 @@ export default function MyApp({ Component, pageProps, user }) {
 }
 
 MyApp.getInitialProps = async () => {
-  let res = await fetch('http://localhost:8080/session');
+  let res = await sessionAPI.get();
 
   if (!res.ok) return {};
 
-  let user = await res.json();
+  let user = res.data;
 
   return { user };
 };

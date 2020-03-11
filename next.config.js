@@ -8,10 +8,9 @@ module.exports = {
       'src',
       'components'
     );
-
     config.resolve.alias['models'] = path.join(__dirname, 'src', 'models');
-
     config.resolve.alias['lib'] = path.join(__dirname, 'src', 'lib');
+    config.resolve.alias['api'] = path.join(__dirname, 'src', 'api');
 
     return config;
   },

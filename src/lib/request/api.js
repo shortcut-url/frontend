@@ -1,3 +1,5 @@
+import fetch, { Headers } from 'node-fetch';
+
 const baseUri = 'http://localhost:8080';
 
 export let requestAPI = async (method, url, options = {}) => {
