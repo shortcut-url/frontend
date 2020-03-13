@@ -1,5 +1,5 @@
 import { requestAPI } from 'lib/request';
 
-let get = () => requestAPI('GET', 'session');
+let get = options => requestAPI('GET', 'session', options);
 
 export let sessionAPI = { get };

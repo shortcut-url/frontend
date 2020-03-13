@@ -19,6 +19,8 @@ describe('Main navigation', () => {
     );
   });
 
+  let linkLogIn = (text, el) => el.tagName === 'A' && text === 'Login';
+
   describe('Missing user session', () => {
     it('No profile link', () => {
       let { queryByText } = render(<MainNavigation />);
@@ -31,7 +33,7 @@ describe('Main navigation', () => {
     it('Link to login page', () => {
       let { getByText } = render(<MainNavigation />);
 
-      getByText((text, el) => el.tagName === 'A' && text === 'Login');
+      getByText(linkLogIn);
     });
   });
 
@@ -43,9 +45,7 @@ describe('Main navigation', () => {
 
       let { queryByText } = render(<MainNavigation />);
 
-      expect(
-        queryByText((text, el) => el.tagName === 'A' && text === 'Login')
-      ).toBeNull();
+      expect(queryByText(linkLogIn)).toBeNull();
     });
 
     it('Profile link', () => {

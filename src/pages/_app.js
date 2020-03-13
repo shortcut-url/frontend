@@ -3,6 +3,7 @@ import React from 'react';
 import { sessionAPI } from 'api/session';
 import { sessionChange } from 'models/session';
 import '../global.css';
+import { requestAPI } from 'lib/request';
 
 export default function MyApp({ Component, pageProps, user }) {
   sessionChange(user);
@@ -10,8 +11,12 @@ export default function MyApp({ Component, pageProps, user }) {
   return <Component {...pageProps} />;
 }
 
-MyApp.getInitialProps = async () => {
-  let res = await sessionAPI.get();
+MyApp.getInitialProps = async ({ ctx }) => {
+  let res = await sessionAPI.get({
+    headers: {
+      cookie: ctx.req ? ctx.req.headers.cookie : null
+    }
+  });
 
   if (!res.ok) return {};
 

@@ -36,7 +36,6 @@ export const MainNavigation = () => {
         Account
       </h2>
       <ul className={styles.list}>
-        <ListLink href="/join">Create an account</ListLink>
         <ListLink href="/login">Login</ListLink>
       </ul>
     </>
@@ -48,7 +47,7 @@ export const MainNavigation = () => {
         <a className={styles['menu_home']} title="Go to the home page.">
           <picture>
             <img
-              src="icons/globe.svg"
+              src="/icons/globe.svg"
               width="23"
               height="23"
               alt="Logo Shortcut-link"

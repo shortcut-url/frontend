@@ -1,0 +1,52 @@
+.list-auth-types {
+  display: grid;
+  grid-gap: 20px;
+  justify-content: center;
+  max-width: 400px;
+  height: 100%;
+  padding: 20px;
+  margin: auto;
+  list-style: none;
+}
+
+.hr {
+  width: 30px;
+}
+
+.button {
+  display: grid;
+  grid-template-columns: 23px auto;
+  grid-gap: 10px;
+  align-items: center;
+}
+
+.button::before {
+  width: 23px;
+  height: 23px;
+  content: '';
+  background-repeat: no-repeat;
+
+  @media (--mobile) {
+    width: 21px;
+    height: 21px;
+  }
+}
+
+.button_google::before {
+  background-image: url(/icons/google-logo-light.svg);
+}
+
+.button_twitter::before {
+  background-image: url(/icons/twitter-logo-blue.svg);
+}
+
+.button_email::before {
+  background-image: url(/icons/mail.svg);
+}
+
+.button_create-account {
+  display: block;
+  font-size: var(--base-h6);
+  color: var(--base-text);
+  text-align: center;
+}
