@@ -13,11 +13,11 @@ export function createFetching(effect, initialStatus = 'initial', params = {}) {
     .reset(effect)
     .reset(effect.done)
     .reset(customReset)
-    .on(effect.fail, (_, { error: value }) => value);
+    .on(effect.done, (_, { result }) => (result.ok ? null : result.data));
 
   let status = createStore(initialStatus)
     .on(effect, () => 'loading')
-    .on(effect.done, () => 'done')
+    .on(effect.done, (_, { result }) => (result.ok ? 'done' : 'fail'))
     .on(effect.fail, () => 'fail')
     .on(customReset, () => 'initial');
 
