@@ -1,1 +1,1 @@
-export { ButtonRaised } from './raised';
+export { Button } from './default';

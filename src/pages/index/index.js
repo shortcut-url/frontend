@@ -4,7 +4,7 @@ import { useStore } from 'effector-react';
 
 import { MainLayout } from 'components/layouts';
 import { StandardInput } from 'components/input';
-import { ButtonRaised } from 'components/button';
+import { Button } from 'components/button';
 import {
   $urlField,
   urlFieldChange,
@@ -63,7 +63,7 @@ let Form = () => {
         maxlegth="10000"
       />
       <div className={styles['form_buttons']}>
-        <ButtonRaised disabled={!isSubmitEnabled}>Create</ButtonRaised>
+        <Button disabled={!isSubmitEnabled}>Create</Button>
       </div>
     </form>
   );
