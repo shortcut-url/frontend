@@ -1,4 +1,4 @@
-import fetch, { Headers } from 'node-fetch';
+import nodeFetch, { Headers, Request } from 'node-fetch';
 
 const baseUri = 'http://localhost:8080';
 
@@ -10,11 +10,16 @@ export let requestAPI = async (method, url, options = {}) => {
     ...options.headers
   });
 
-  let res = await fetch(uri, {
+  let { body, ...restOptions } = options;
+
+  let config = new Request(uri, {
     method,
     headers,
-    ...options
+    ...restOptions,
+    body: createBody(options, headers)
   });
+
+  let res = await nodeFetch(config);
 
   let statusCode = res.status;
   let resInfo = { statusCode, ok: res.ok };
@@ -25,12 +30,12 @@ export let requestAPI = async (method, url, options = {}) => {
       ...resInfo
     };
 
-  let json = await res.text();
+  let textResponse = await res.text();
 
   try {
-    return { data: JSON.parse(json), ...resInfo };
+    return { data: JSON.parse(textResponse), ...resInfo };
   } catch (err) {
-    return { data: json, ...resInfo };
+    return { data: textResponse, ...resInfo };
   }
 };
 
@@ -45,9 +50,15 @@ let contentTypeFromOptions = options => {
     return options.headers['Content-Type'];
   }
 
-  if (options && options.body && options.body instanceof FormData) {
-    return 'multipart/form-data';
+  return typeof options.body === 'object' ? 'application/json' : '';
+};
+
+let createBody = (options, headers) => {
+  let contentType = headers.get('content-type');
+
+  if (options.body && contentType && contentType.includes('json')) {
+    return JSON.stringify(options.body);
   }
 
-  return typeof options.body === 'object' ? 'application/json' : '';
+  return undefined;
 };
