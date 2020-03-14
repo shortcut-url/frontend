@@ -1,0 +1,15 @@
+.form {
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+  margin: auto;
+}
+
+.form_group {
+  margin-bottom: 20px;
+}
+
+.form_button {
+  display: block;
+  margin: 0 auto;
+}
