@@ -59,7 +59,7 @@ export let AuthorizationTypes = () => {
       </li>
       <li>
         <hr className={styles.hr} />
-        <Link href="/register">
+        <Link href="/join">
           <a className={styles['button_create-account']}>
             Or, register using mail
           </a>

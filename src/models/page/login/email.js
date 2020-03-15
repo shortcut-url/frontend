@@ -20,7 +20,7 @@ export let $emailField = createStore('');
 $emailField.on(emailFieldChange.map(trimEvent), (_, newEmail) => newEmail);
 
 /*
- * Email
+ * Password
  */
 export let passwordFieldChange = createEvent();
 
@@ -28,7 +28,7 @@ export let $passwordField = createStore('');
 
 $passwordField.on(
   passwordFieldChange.map(trimEvent),
-  (_, newEmail) => newEmail
+  (_, newPassword) => newPassword
 );
 
 /*

@@ -1,6 +1,6 @@
 import React, { useEffect, createRef } from 'react';
 
-import styles from './index.module.css';
+import commonStyles from '../common.module.css';
 
 export const SingleError = props => {
   let containerElement = createRef();
@@ -12,7 +12,7 @@ export const SingleError = props => {
   return (
     <div
       ref={containerElement}
-      className={styles.error}
+      className={commonStyles.error}
       role="alert"
       tabIndex="0"
     >

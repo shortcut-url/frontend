@@ -5,7 +5,7 @@ import { useStore } from 'effector-react';
 import { MainLayout } from 'components/layouts';
 import { StandardInput } from 'components/input';
 import { Button } from 'components/button';
-import { SingleError } from 'components/error';
+import { Error } from 'components/error';
 import {
   $emailField,
   $passwordField,
@@ -40,7 +40,7 @@ export let Form = () => {
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
-      {formError && <SingleError>{formError}</SingleError>}
+      {formError && <Error>{formError}</Error>}
 
       <Email />
       <Password />

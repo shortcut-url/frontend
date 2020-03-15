@@ -1,0 +1,15 @@
+.list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.list:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.list-item::before {
+  margin-right: 5px;
+  content: "-";
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './index.module.css';
-import { singleErrorStyle } from 'components/error';
+import { commonErrorStyle } from 'components/error';
 
 export const StandardInput = ({
   label,
@@ -26,7 +26,7 @@ export const StandardInput = ({
       {error && (
         <label
           htmlFor={id}
-          className={singleErrorStyle.error}
+          className={commonErrorStyle.error}
           title={`Error: ${error}`}
         >
           {error}
