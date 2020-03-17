@@ -7,7 +7,7 @@ import styles from './main.module.css';
 import buttonsStyles from 'components/button/index.module.css';
 
 export const MainNavigation = () => {
-  let user = useStore($session);
+  let currentUser = useStore($session).user;
 
   let Profile = () => (
     <div className={styles.profile}>
@@ -19,7 +19,7 @@ export const MainNavigation = () => {
         height="100"
       />
       <div className={styles['profile_username']} title="Your username">
-        {user.username}
+        {currentUser.username}
       </div>
 
       <Link href="/profile">
@@ -57,8 +57,8 @@ export const MainNavigation = () => {
         </a>
       </Link>
 
-      {!user && <AuthNavigationMenu />}
-      {user && <Profile />}
+      {!currentUser && <AuthNavigationMenu />}
+      {currentUser && <Profile />}
     </nav>
   );
 };

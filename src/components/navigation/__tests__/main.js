@@ -4,7 +4,7 @@ import { act } from 'react-dom/test-utils';
 import { render } from '@testing-library/react';
 
 import { MainNavigation } from '../index';
-import { sessionChange } from 'models/session';
+import { addUserSession } from 'models/session';
 
 jest.mock('next/link', () => {
   return ({ children }) => children;
@@ -40,7 +40,7 @@ describe('Main navigation', () => {
   describe('There is a user session', () => {
     it('No link to login page', () => {
       act(() => {
-        sessionChange({ username: 'Test' });
+        addUserSession({ username: 'Test' });
       });
 
       let { queryByText } = render(<MainNavigation />);
@@ -50,7 +50,7 @@ describe('Main navigation', () => {
 
     it('Profile link', () => {
       act(() => {
-        sessionChange({ username: 'Test' });
+        addUserSession({ username: 'Test' });
       });
 
       let { getByText } = render(<MainNavigation />);

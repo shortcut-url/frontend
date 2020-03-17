@@ -10,7 +10,7 @@ import styles from './index.module.css';
 
 export default () => {
   useEffect(() => {
-    let user = $session.getState();
+    let user = $session.getState().user;
 
     if (user) Router.push('/');
   });
