@@ -6,9 +6,28 @@
 }
 
 .form_buttons {
+  display: inline-grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 20px;
+  justify-content: center;
   width: 100%;
   margin-top: 20px;
   text-align: center;
+}
+
+.link_opening-settings {
+  display: flex;
+  align-items: center;
+}
+
+.link_opening-settings::before {
+  display: block;
+  width: 20px;
+  height: 20px;
+  content: '';
+  background-color: var(--base-text);
+  background-size: 100%;
+  mask-image: url(/icons/settings.svg);
 }
 
 .list-created-links {

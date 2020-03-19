@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import Head from 'next/head';
 import { useStore } from 'effector-react';
 
+import Link from 'next/link';
+
 import { MainLayout } from 'components/layouts';
 import { StandardInput } from 'components/input';
 import { Button } from 'components/button';
@@ -16,6 +18,7 @@ import {
   clearListCreatedUrls
 } from 'models/page/home';
 import styles from './index.module.css';
+import { $session } from 'models/session';
 
 export default () => {
   useEffect(() => {
@@ -27,7 +30,7 @@ export default () => {
   return (
     <>
       <Head>
-        <title>Home / SHORTCUT-LINK</title>
+        <title>Home</title>
       </Head>
       <MainLayout>
         <Form />
@@ -40,7 +43,6 @@ export default () => {
 let Form = () => {
   let urlField = useStore($urlField);
   let urlFieldError = useStore($urlFieldError);
-  let isSubmitEnabled = useStore($isSubmitEnabled);
   let isFormLoading = useStore($isFormLoading);
 
   async function handleSubmit(e) {
@@ -62,9 +64,8 @@ let Form = () => {
         required
         maxlegth="10000"
       />
-      <div className={styles['form_buttons']}>
-        <Button disabled={!isSubmitEnabled}>Create</Button>
-      </div>
+
+      <Buttons />
     </form>
   );
 };
@@ -108,6 +109,28 @@ let ListCreatedLinks = () => {
   return (
     <div role="feed" className={styles['list-created-links']}>
       {listCreatedUrls.map(Item)}
+    </div>
+  );
+};
+
+let Buttons = () => {
+  let isSubmitEnabled = useStore($isSubmitEnabled);
+  let user = useStore($session).user;
+
+  return (
+    <div className={styles['form_buttons']}>
+      <Button disabled={!isSubmitEnabled}>Create</Button>
+      <Link href={user ? '/settings/future-links' : '/login'} passHref>
+        <Button
+          tag="a"
+          className={styles['link_opening-settings']}
+          title={
+            user
+              ? 'Settings for your future links'
+              : 'Settings for links. Please log in'
+          }
+        />
+      </Link>
     </div>
   );
 };

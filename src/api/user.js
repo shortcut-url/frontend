@@ -2,4 +2,7 @@ import { requestAPI } from 'lib/request';
 
 let create = () => requestAPI('POST', 'user');
 
-export let userAPI = { create };
+let changeSettingsFutureLinks = body =>
+  requestAPI('POST', 'user/settings/future-links', { body });
+
+export let userAPI = { create, changeSettingsFutureLinks };
