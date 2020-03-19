@@ -50,7 +50,7 @@ formSubmitted.watch(() => {
   loginProcessing(form);
 });
 
-loginProcessing.use(sessionAPI.create);
+loginProcessing.use(sessionAPI.createSession);
 
 loginProcessing.done.watch(({ result }) => {
   if (!result.ok) return;

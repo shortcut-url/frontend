@@ -1,5 +1,5 @@
 import { requestAPI } from 'lib/request';
 
-let create = () => requestAPI('POST', 'url');
+let createShortUrl = () => requestAPI('POST', 'url');
 
-export let urlAPI = { create };
+export let urlAPI = { createShortUrl };

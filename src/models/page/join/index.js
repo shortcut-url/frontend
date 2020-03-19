@@ -63,7 +63,7 @@ formSubmitted.watch(() => {
   registerProcessing(form);
 });
 
-registerProcessing.use(userAPI.create);
+registerProcessing.use(userAPI.createUserWithEmail);
 
 registerProcessing.done.watch(({ result }) => {
   if (!result.ok) return;

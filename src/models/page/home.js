@@ -26,7 +26,7 @@ $urlField
   .on(urlFieldChange.map(trimEvent), (_, url) => url)
   .reset(urlFieldClear);
 
-createUrlProcessing.use(urlAPI.create);
+createUrlProcessing.use(urlAPI.createShortUrl);
 
 createUrlProcessing.done.watch(({ result }) => {
   if (!result.ok) return;
