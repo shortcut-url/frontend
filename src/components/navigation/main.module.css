@@ -92,9 +92,25 @@
   }
 }
 
+.avatar_container {
+  --border-radius: 50%;
+
+  padding: 10px;
+}
+
 .profile_avatar {
-  filter: grayscale(100%);
   border-radius: 50%;
+}
+
+.profile_no-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  font-size: var(--base-h3);
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .profile_username {

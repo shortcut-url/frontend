@@ -5,41 +5,10 @@ import { useStore } from 'effector-react';
 import { $session } from 'models/session';
 import styles from './main.module.css';
 import buttonsStyles from 'components/button/index.module.css';
+import { ProfileAvatar } from 'components/profile/avatar';
 
 export const MainNavigation = () => {
   let currentUser = useStore($session).user;
-
-  let Profile = () => (
-    <div className={styles.profile}>
-      <img
-        src="/images/no-avatar.jpg"
-        alt="Your avatar"
-        className={styles['profile_avatar']}
-        width="100"
-        height="100"
-      />
-      <div className={styles['profile_username']} title="Your username">
-        {currentUser.username}
-      </div>
-
-      <Link href="/profile">
-        <a className={`${buttonsStyles['button_accent']} profile_button`}>
-          Your profile
-        </a>
-      </Link>
-    </div>
-  );
-
-  let AuthNavigationMenu = () => (
-    <>
-      <h2 className={`${styles['menu_heading']} ${styles['heading-account']}`}>
-        Account
-      </h2>
-      <ul className={styles.list}>
-        <ListLink href="/login">Login</ListLink>
-      </ul>
-    </>
-  );
 
   return (
     <nav className={`${styles.menu} flat`}>
@@ -58,12 +27,12 @@ export const MainNavigation = () => {
       </Link>
 
       {!currentUser && <AuthNavigationMenu />}
-      {currentUser && <Profile />}
+      {currentUser && <LinkToProfileCurrentUser />}
     </nav>
   );
 };
 
-function ListLink({ href, children, ...props }) {
+let ListLink = ({ href, children, ...props }) => {
   return (
     <li>
       <Link href={href}>
@@ -76,4 +45,66 @@ function ListLink({ href, children, ...props }) {
       </Link>
     </li>
   );
-}
+};
+
+let AuthNavigationMenu = () => (
+  <>
+    <h2 className={`${styles['menu_heading']} ${styles['heading-account']}`}>
+      Account
+    </h2>
+    <ul className={styles.list}>
+      <ListLink href="/login">Login</ListLink>
+    </ul>
+  </>
+);
+
+let LinkToProfileCurrentUser = () => {
+  let currentUser = useStore($session).user;
+
+  let Avatar = () => {
+    let avatar = currentUser.avatar;
+
+    /*
+     * If the user does not have an avatar,
+     * output the first character from his username
+     */
+
+    if (avatar) {
+      return (
+        <picture>
+          <source srcSet={avatar.webP} type="image/webp" />
+          <img
+            src={avatar.src}
+            className={styles.profile_avatar}
+            width="100"
+            height="100"
+            alt="Your avatar"
+          />
+        </picture>
+      );
+    }
+
+    return (
+      <div
+        className={`${styles['profile_no-avatar']} pressed`}
+        aria-hidden="true"
+      >
+        {currentUser.username[0]}
+      </div>
+    );
+  };
+
+  return (
+    <div className={styles.profile}>
+      <ProfileAvatar user={currentUser} />
+
+      <div className={styles['profile_username']} title="Your username">
+        {currentUser.username}
+      </div>
+
+      <Link href="/profile">
+        <a className={buttonsStyles.button_accent}>Your profile</a>
+      </Link>
+    </div>
+  );
+};
