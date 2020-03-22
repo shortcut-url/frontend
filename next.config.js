@@ -15,7 +15,7 @@ module.exports = {
     return config;
   },
   env: {
-    apiServer: 'http://localhost:8080'
+    API_SERVER: 'http://localhost:8080'
   },
   withOffline
 };

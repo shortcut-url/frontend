@@ -5,11 +5,11 @@
   padding: 10px;
 }
 
-.profile_avatar {
+.avatar_img {
   border-radius: 50%;
 }
 
-.profile_no-avatar {
+.avatar_no-image {
   display: flex;
   align-items: center;
   justify-content: center;

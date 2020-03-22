@@ -53,13 +53,13 @@ export let $isFormLoading = createUrlFetching.isLoading;
 /*
  * List created Urls
  */
-export let clearListCreatedUrls = createEvent();
+export let clearListCreatedURLs = createEvent();
 
-export let $listCreatedUrls = createStore([]);
+export let $listCreatedURLs = createStore([]);
 
-$listCreatedUrls
+$listCreatedURLs
   .on(addUrlCreated, (urls, newUrl) => [newUrl, ...urls])
-  .reset(clearListCreatedUrls);
+  .reset(clearListCreatedURLs);
 
 export let $isSubmitEnabled = combine(
   $urlFieldError,

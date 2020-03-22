@@ -11,28 +11,28 @@ export const MainNavigation = () => {
   let currentUser = useStore($session).user;
 
   return (
-    <nav className={`${styles.menu} flat`}>
+    <nav className={`${styles.nav} flat`}>
       <Link href="/">
-        <a className={styles['menu_home']} title="Go to the home page.">
+        <a className={styles.nav_home} title="Go to the home page.">
           <picture>
             <img
               src="/icons/globe.svg"
               width="23"
               height="23"
-              alt="Logo Shortcut-link"
+              alt="Logo Shortcut-URL"
             />
           </picture>
-          <span>Shortcut-link.com</span>
+          <span>Shortcut-URL.com</span>
         </a>
       </Link>
 
-      {!currentUser && <AuthNavigationMenu />}
+      {!currentUser && <AuthNavigationList />}
       {currentUser && <LinkToProfileCurrentUser />}
     </nav>
   );
 };
 
-let ListLink = ({ href, children, ...props }) => {
+let LinkItemList = ({ href, children, ...props }) => {
   return (
     <li>
       <Link href={href}>
@@ -47,52 +47,19 @@ let ListLink = ({ href, children, ...props }) => {
   );
 };
 
-let AuthNavigationMenu = () => (
+let AuthNavigationList = () => (
   <>
-    <h2 className={`${styles['menu_heading']} ${styles['heading-account']}`}>
+    <h2 className={`${styles.nav_heading} ${styles['heading_account']}`}>
       Account
     </h2>
     <ul className={styles.list}>
-      <ListLink href="/login">Login</ListLink>
+      <LinkItemList href="/login">Login</LinkItemList>
     </ul>
   </>
 );
 
 let LinkToProfileCurrentUser = () => {
   let currentUser = useStore($session).user;
-
-  let Avatar = () => {
-    let avatar = currentUser.avatar;
-
-    /*
-     * If the user does not have an avatar,
-     * output the first character from his username
-     */
-
-    if (avatar) {
-      return (
-        <picture>
-          <source srcSet={avatar.webP} type="image/webp" />
-          <img
-            src={avatar.src}
-            className={styles.profile_avatar}
-            width="100"
-            height="100"
-            alt="Your avatar"
-          />
-        </picture>
-      );
-    }
-
-    return (
-      <div
-        className={`${styles['profile_no-avatar']} pressed`}
-        aria-hidden="true"
-      >
-        {currentUser.username[0]}
-      </div>
-    );
-  };
 
   return (
     <div className={styles.profile}>

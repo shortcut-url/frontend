@@ -17,7 +17,7 @@ export const ProfileAvatar = ({ user }) => {
           <source srcSet={avatar.webP} type="image/webp" />
           <img
             src={avatar.src}
-            className={styles.profile_avatar}
+            className={styles.avatar_img}
             width="100"
             height="100"
             alt="Your avatar"
@@ -28,7 +28,7 @@ export const ProfileAvatar = ({ user }) => {
 
     return (
       <div
-        className={`${styles['profile_no-avatar']} pressed`}
+        className={`${styles['avatar_no-image']} pressed`}
         aria-hidden="true"
       >
         {user.username[0]}

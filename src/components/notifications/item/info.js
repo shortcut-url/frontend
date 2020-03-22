@@ -1,9 +1,9 @@
 import React, { createRef, useEffect } from 'react';
 import { removeNotification } from 'models/notifications';
 
-import styles from './index.module.css';
+import styles from './info.module.css';
 
-export const NotificationItem = ({ id, content, duration = 4000 }) => {
+export const InfoNotificationItem = ({ id, content, duration = 4000 }) => {
   let notificationElement = createRef();
 
   let removeNotificationHandler = () => removeNotification(id);

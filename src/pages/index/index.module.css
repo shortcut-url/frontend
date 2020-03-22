@@ -15,12 +15,12 @@
   text-align: center;
 }
 
-.link_opening-settings {
+.link-opening-settings {
   display: flex;
   align-items: center;
 }
 
-.link_opening-settings::before {
+.link-opening-settings::before {
   display: block;
   width: 20px;
   height: 20px;
@@ -30,7 +30,7 @@
   mask-image: url(/icons/settings.svg);
 }
 
-.list-created-links {
+.created-urls_list {
   display: grid;
   grid-gap: 20px;
   max-width: 500px;
@@ -40,28 +40,4 @@
   @media (--mobile) {
     padding-top: 0;
   }
-}
-
-.created-link {
-  position: relative;
-  display: grid;
-  grid-gap: 10px;
-  width: 100%;
-  padding: 20px;
-  overflow: hidden;
-  color: var(--base-text);
-  text-align: left;
-  border: none;
-
-  &:hover,
-  &:focus {
-    cursor: pointer;
-  }
-}
-
-.created-link_original-url {
-  overflow: hidden;
-  font-size: var(--base-h6);
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }

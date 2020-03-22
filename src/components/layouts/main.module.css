@@ -2,7 +2,7 @@
   padding-left: 300px;
 }
 
-.layout_main {
+.layout_main-content {
   display: flex;
   flex-direction: column;
   min-height: 100vh;

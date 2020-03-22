@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Head from 'next/head';
-import { useStore } from 'effector-react';
+import { useStore, useList } from 'effector-react';
 
 import Link from 'next/link';
 
@@ -12,18 +12,19 @@ import {
   urlFieldChange,
   $urlFieldError,
   $isSubmitEnabled,
-  $listCreatedUrls,
+  $listCreatedURLs,
   formSubmitted,
   $isFormLoading,
-  clearListCreatedUrls
+  clearListCreatedURLs
 } from 'models/page/home';
 import styles from './index.module.css';
 import { $session } from 'models/session';
+import { CreatedURLCard } from 'components/url';
 
 export default () => {
   useEffect(() => {
     return () => {
-      clearListCreatedUrls();
+      clearListCreatedURLs();
     };
   });
 
@@ -34,7 +35,7 @@ export default () => {
       </Head>
       <MainLayout>
         <Form />
-        <ListCreatedLinks />
+        <ListCreatedURLs />
       </MainLayout>
     </>
   );
@@ -59,75 +60,44 @@ let Form = () => {
         disabled={isFormLoading}
         id="url"
         inputMode="url"
-        label="Enter the url of your link to be shortened"
+        label="Enter your url which you want to reduce"
         placeholder="https://twitter.com"
         required
         maxlegth="10000"
       />
 
-      <Buttons />
+      <FormButtons />
     </form>
   );
 };
 
-let ListCreatedLinks = () => {
-  let listCreatedUrls = useStore($listCreatedUrls);
+let ListCreatedURLs = () => {
+  let listCreatedURLs = useList($listCreatedURLs, CreatedURLCard);
 
-  if (!listCreatedUrls.length) return null;
-
-  function Item({ id, originalUrl }) {
-    let idLinkWithDomain = `${process.env.apiServer}/${id}`;
-
-    let copyLinkClipboard = () =>
-      navigator.clipboard.writeText(idLinkWithDomain);
-
-    return (
-      <article key={id}>
-        <button
-          onClick={copyLinkClipboard}
-          className={`
-            ${styles['created-link']}
-            flat
-            concave_hover
-            pressed_active
-          `}
-          title="Copy link to clipboard"
-          type="button"
-        >
-          <h4>{idLinkWithDomain}</h4>
-          <div
-            className={styles['created-link_original-url']}
-            title={originalUrl}
-          >
-            Original url: {originalUrl}
-          </div>
-        </button>
-      </article>
-    );
-  }
+  if (!listCreatedURLs.length) return null;
 
   return (
-    <div role="feed" className={styles['list-created-links']}>
-      {listCreatedUrls.map(Item)}
+    <div role="feed" className={styles['created-urls_list']}>
+      {listCreatedURLs}
     </div>
   );
 };
 
-let Buttons = () => {
+let FormButtons = () => {
   let isSubmitEnabled = useStore($isSubmitEnabled);
   let user = useStore($session).user;
 
   return (
     <div className={styles['form_buttons']}>
       <Button disabled={!isSubmitEnabled}>Create</Button>
-      <Link href={user ? '/settings/future-links' : '/login'} passHref>
+      <Link href={user ? '/settings/future-urls' : '/login'} passHref>
         <Button
           tag="a"
-          className={styles['link_opening-settings']}
+          className={styles['link-opening-settings']}
           title={
             user
-              ? 'Settings for your future links'
-              : 'Settings for links. Please log in'
+              ? 'Settings for your future URLs'
+              : 'Settings for future URLs. Please log in'
           }
         />
       </Link>

@@ -1,0 +1,23 @@
+.created-url-card {
+  position: relative;
+  display: grid;
+  grid-gap: 10px;
+  width: 100%;
+  padding: 20px;
+  overflow: hidden;
+  color: var(--base-text);
+  text-align: left;
+  border: none;
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+}
+
+.created-url-card_original-url {
+  overflow: hidden;
+  font-size: var(--base-h6);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

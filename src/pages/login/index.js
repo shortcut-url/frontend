@@ -34,7 +34,7 @@ export let AuthorizationTypes = () => {
         <Button
           tag="a"
           className={`${styles.button} ${styles['button_google']}`}
-          href={`${process.env.apiServer}/auth/google`}
+          href={`${process.env.API_SERVER}/auth/google`}
         >
           Log in with Google
         </Button>
@@ -43,7 +43,7 @@ export let AuthorizationTypes = () => {
         <Button
           tag="a"
           className={`${styles.button} ${styles['button_twitter']}`}
-          href={`${process.env.apiServer}/auth/twitter`}
+          href={`${process.env.API_SERVER}/auth/twitter`}
         >
           Log in with Twitter
         </Button>
@@ -60,7 +60,7 @@ export let AuthorizationTypes = () => {
       <li>
         <hr className={styles.hr} />
         <Link href="/join">
-          <a className={styles['button_create-account']}>
+          <a className={styles['link_create-account']}>
             Or, register using mail
           </a>
         </Link>

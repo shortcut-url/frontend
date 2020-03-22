@@ -1,4 +1,4 @@
-.menu {
+.nav {
   --border-radius: 0;
   --distance: 8px;
 
@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: column;
   width: 250px;
-  padding: 15px 8px;
+  padding: 20px 10px;
   overflow: hidden;
 
   &:hover,
@@ -18,7 +18,7 @@
   }
 }
 
-.menu_home {
+.nav_home {
   display: flex;
   align-items: center;
   padding: 5px 0;
@@ -39,7 +39,7 @@
   }
 }
 
-.menu_heading {
+.nav_heading {
   display: flex;
   align-items: center;
   padding: 20px 0 0;
@@ -47,7 +47,7 @@
   font-weight: 600;
 }
 
-.heading-account::before {
+.heading_account::before {
   display: block;
   width: 24px;
   height: 24px;

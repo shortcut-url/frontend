@@ -1,0 +1,22 @@
+.notification {
+  display: grid;
+  grid-template-columns: 210px 30px;
+  margin-top: 20px;
+  overflow: hidden;
+  font-weight: 600;
+}
+
+.notification_content {
+  padding: 12px 12px 12px 20px;
+  font-size: var(--base-h6);
+}
+
+.notification_button {
+  --border-radius: 0;
+
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-left: 0.1px solid var(--base-ui-black);
+  outline: none;
+}

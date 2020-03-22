@@ -44,7 +44,7 @@
   background-image: url(/icons/mail.svg);
 }
 
-.button_create-account {
+.link_create-account {
   display: block;
   font-size: var(--base-h6);
   color: var(--base-text);

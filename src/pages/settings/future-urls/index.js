@@ -8,9 +8,9 @@ import { MainLayout } from 'components/layouts';
 import { Checkbox } from 'components/form';
 import { useStore } from 'effector-react';
 import {
-  $settingsFutureLinks,
-  changeSettingsFutureLink
-} from 'models/page/settings/future-links';
+  $settingsFutureURLs,
+  changeParameterFutureURLs
+} from 'models/page/settings/future-urls';
 import { userAPI } from 'api/user';
 import { addNotification } from 'models/notifications';
 
@@ -24,7 +24,7 @@ export default () => {
   return (
     <>
       <Head>
-        <title>Settings for future links</title>
+        <title>Settings for future URLs</title>
       </Head>
       <MainLayout>
         <Settings />
@@ -34,13 +34,13 @@ export default () => {
 };
 
 let Settings = () => {
-  let settingsFutureLinks = useStore($settingsFutureLinks);
+  let settingsFutureURLs = useStore($settingsFutureURLs);
 
   return (
-    <ul className={styles['settings']} aria-label="Settings list">
+    <ul className={styles['settings_list']} aria-label="Settings list">
       <li>
         <Checkbox
-          checked={settingsFutureLinks.statistics}
+          checked={settingsFutureURLs.statistics}
           onChange={event =>
             changeSetting({
               name: 'statistics',
@@ -48,7 +48,7 @@ let Settings = () => {
             })
           }
         >
-          Keep statistics on future links
+          Include statistics (Count of transitions, etc.) for future URLs
         </Checkbox>
       </li>
     </ul>
@@ -56,16 +56,16 @@ let Settings = () => {
 };
 
 let changeSetting = async ({ name, value }) => {
-  changeSettingsFutureLink({ name, value });
+  changeParameterFutureURLs({ name, value });
 
-  let changeSettingsResponse = await userAPI.changeSettingsFutureLinks({
+  let changeParameterResponse = await userAPI.changeParameterFutureURLs({
     name,
     value
   });
 
-  if (changeSettingsResponse.ok) return;
+  if (changeParameterResponse.ok) return;
 
-  changeSettingsFutureLink({ name, value: !value });
+  changeParameterFutureURLs({ name, value: !value });
 
-  addNotification({ content: changeSettingsResponse.data });
+  addNotification({ content: changeParameterResponse.data });
 };
