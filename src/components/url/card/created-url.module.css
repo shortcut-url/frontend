@@ -1,23 +1,23 @@
 .created-url-card {
-  position: relative;
   display: grid;
   grid-gap: 10px;
   width: 100%;
-  padding: 20px;
-  overflow: hidden;
+  padding: 20px 25px;
   color: var(--base-text);
   text-align: left;
-  border: none;
+}
 
-  &:hover,
-  &:focus {
-    cursor: pointer;
-  }
+.created-url-card_button {
+  cursor: pointer;
+  border: none;
+}
+
+.created-url-card_heading {
+  font-size: calc(var(--base-h3) / 1.2);
 }
 
 .created-url-card_original-url {
   overflow: hidden;
-  font-size: var(--base-h6);
   text-overflow: ellipsis;
   white-space: nowrap;
 }
