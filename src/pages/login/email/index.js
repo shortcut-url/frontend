@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { useStore } from 'effector-react';
 
-import { MainLayout } from 'components/layouts';
+import { MainLayout } from 'components/layout';
 import { StandardInput } from 'components/input';
 import { Button } from 'components/button';
 import { Error } from 'components/error';

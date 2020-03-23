@@ -4,7 +4,7 @@ import Router from 'next/router';
 
 import { $session } from 'models/session';
 import styles from './index.module.css';
-import { MainLayout } from 'components/layouts';
+import { MainLayout } from 'components/layout';
 import { Checkbox } from 'components/form';
 import { useStore } from 'effector-react';
 import {
@@ -13,7 +13,7 @@ import {
   changeAllSettingsFutureURLs
 } from 'models/page/settings/future-urls';
 import { userAPI } from 'api/user';
-import { addNotification } from 'models/notifications';
+import { addNotification } from 'models/notification';
 
 export default ({ settingsFutureURLsCurrentUser }) => {
   changeAllSettingsFutureURLs(settingsFutureURLsCurrentUser);

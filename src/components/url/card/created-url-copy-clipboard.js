@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './created-url.module.css';
-import { addNotification } from 'models/notifications';
+import { addNotification } from 'models/notification';
 
 export const CreatedURLCopyClipboard = ({
   id,

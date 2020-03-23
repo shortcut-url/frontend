@@ -4,7 +4,7 @@ import Router from 'next/router';
 import { useStore } from 'effector-react';
 
 import { $session } from 'models/session';
-import { MainLayout } from 'components/layouts';
+import { MainLayout } from 'components/layout';
 import { ProfileAvatar } from 'components/profile/avatar';
 import { CreatedURLsTable, CreatedURLWithLinkCard } from 'components/url';
 import {

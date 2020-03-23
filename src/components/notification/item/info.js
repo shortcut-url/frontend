@@ -1,5 +1,5 @@
 import React, { createRef, useEffect } from 'react';
-import { removeNotification } from 'models/notifications';
+import { removeNotification } from 'models/notification';
 
 import styles from './info.module.css';
 

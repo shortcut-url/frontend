@@ -4,7 +4,7 @@ import { useStore, useList } from 'effector-react';
 
 import Link from 'next/link';
 
-import { MainLayout } from 'components/layouts';
+import { MainLayout } from 'components/layout';
 import { StandardInput } from 'components/input';
 import { Button } from 'components/button';
 import {

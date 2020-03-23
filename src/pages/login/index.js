@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Router from 'next/router';
 
 import { $session } from 'models/session';
-import { MainLayout } from 'components/layouts';
+import { MainLayout } from 'components/layout';
 import { Button } from 'components/button';
 import styles from './index.module.css';
 

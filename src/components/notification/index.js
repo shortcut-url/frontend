@@ -1,7 +1,7 @@
 import React from 'react';
 import { useList } from 'effector-react';
 
-import { $notifications } from 'models/notifications';
+import { $notifications } from 'models/notification';
 import { InfoNotificationItem } from './item';
 import styles from './index.module.css';
 

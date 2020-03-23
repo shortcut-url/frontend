@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './main.module.css';
 import { MainNavigation } from 'components/navigation/main';
-import { NotificationList } from 'components/notifications';
+import { NotificationList } from 'components/notification';
 
 export const MainLayout = ({ children }) => {
   return (
