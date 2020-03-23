@@ -3,7 +3,7 @@ import { removeNotification } from 'models/notification';
 
 import styles from './info.module.css';
 
-export const InfoNotificationItem = ({ id, content, duration = 4000 }) => {
+export let InfoNotificationItem = ({ id, content, duration = 4000 }) => {
   let notificationElement = createRef();
 
   let removeNotificationHandler = () => removeNotification(id);

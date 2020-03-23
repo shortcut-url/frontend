@@ -2,7 +2,7 @@ import nodeFetch, { Headers, Request } from 'node-fetch';
 
 const baseUri = 'http://localhost:8080';
 
-export let requestAPI = async (method, url, options = {}) => {
+export async function requestAPI(method, url, options = {}) {
   let uri = `${options.baseUri || baseUri}/${url}`;
 
   let headers = new Headers({
@@ -37,23 +37,23 @@ export let requestAPI = async (method, url, options = {}) => {
   } catch (err) {
     return { data: textResponse, ...resInfo };
   }
-};
+}
 
-let createContentType = options => {
+function createContentType(options) {
   let header = contentTypeFromOptions(options);
 
   return header ? { 'Content-Type': header } : {};
-};
+}
 
-let contentTypeFromOptions = options => {
+function contentTypeFromOptions(options) {
   if (options && options.headers && options.headers['Content-Type']) {
     return options.headers['Content-Type'];
   }
 
   return typeof options.body === 'object' ? 'application/json' : '';
-};
+}
 
-let createBody = (options, headers) => {
+function createBody(options, headers) {
   let contentType = headers.get('content-type');
 
   if (options.body && contentType && contentType.includes('json')) {
@@ -61,4 +61,4 @@ let createBody = (options, headers) => {
   }
 
   return undefined;
-};
+}

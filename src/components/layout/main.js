@@ -4,7 +4,7 @@ import styles from './main.module.css';
 import { MainNavigation } from 'components/navigation/main';
 import { NotificationList } from 'components/notification';
 
-export const MainLayout = ({ children }) => {
+export let MainLayout = ({ children }) => {
   return (
     <div className={styles.layout}>
       <MainNavigation />

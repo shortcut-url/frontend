@@ -1,1 +1,3 @@
-export let trimEvent = event => event.currentTarget.value.trim();
+export function trimEvent(event) {
+  return event.currentTarget.value.trim();
+}

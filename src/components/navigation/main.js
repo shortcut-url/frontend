@@ -7,7 +7,7 @@ import styles from './main.module.css';
 import buttonsStyles from 'components/button/index.module.css';
 import { ProfileAvatar } from 'components/profile/avatar';
 
-export const MainNavigation = () => {
+export let MainNavigation = () => {
   let currentUser = useStore($session).user;
 
   return (

@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 
 import styles from './index.module.css';
 
-export const Button = forwardRef(
+export let Button = forwardRef(
   (
     {
       tag: Tag = 'button',

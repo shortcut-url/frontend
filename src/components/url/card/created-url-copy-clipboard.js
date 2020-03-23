@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './created-url.module.css';
 import { addNotification } from 'models/notification';
 
-export const CreatedURLCopyClipboard = ({
+export let CreatedURLCopyClipboard = ({
   id,
   addNotificationWhenCopying = true,
   originalURL

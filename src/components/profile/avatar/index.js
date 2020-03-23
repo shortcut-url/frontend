@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './index.module.css';
 
-export const ProfileAvatar = ({ user }) => {
+export let ProfileAvatar = ({ user }) => {
   let Avatar = () => {
     let avatar = user.avatar;
 

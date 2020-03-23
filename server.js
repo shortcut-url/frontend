@@ -10,12 +10,12 @@ const handle = app.getRequestHandler();
 
 app.prepare().then(() => {
   createServer((req, res) => {
-    const parsedUrl = parse(req.url, true);
-    const { pathname } = parsedUrl;
+    let parsedUrl = parse(req.url, true);
+    let { pathname } = parsedUrl;
 
     // handle GET request to /service-worker.js
     if (pathname === '/service-worker.js') {
-      const filePath = join(__dirname, '.next', pathname);
+      let filePath = join(__dirname, '.next', pathname);
 
       app.serveStatic(req, res, filePath);
     }
