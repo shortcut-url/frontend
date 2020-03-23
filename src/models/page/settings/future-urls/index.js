@@ -1,1 +1,5 @@
-export { $settingsFutureURLs, changeParameterFutureURLs } from './settings';
+export {
+  $settingsFutureURLs,
+  changeAllSettingsFutureURLs,
+  changeParameterFutureURLs
+} from './settings';

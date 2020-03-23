@@ -9,12 +9,15 @@ import { Checkbox } from 'components/form';
 import { useStore } from 'effector-react';
 import {
   $settingsFutureURLs,
-  changeParameterFutureURLs
+  changeParameterFutureURLs,
+  changeAllSettingsFutureURLs
 } from 'models/page/settings/future-urls';
 import { userAPI } from 'api/user';
 import { addNotification } from 'models/notifications';
 
-export default () => {
+export default ({ settingsFutureURLsCurrentUser }) => {
+  changeAllSettingsFutureURLs(settingsFutureURLsCurrentUser);
+
   useEffect(() => {
     let user = $session.getState().user;
 
@@ -31,6 +34,19 @@ export default () => {
       </MainLayout>
     </>
   );
+};
+
+export let getServerSideProps = async () => {
+  let settingsFutureURLsResponse = await userAPI.getSettingsFutureURLs({
+    startIndex: 0,
+    stopIndex: 20
+  });
+
+  return {
+    props: {
+      settingsFutureURLsCurrentUser: settingsFutureURLsResponse.data
+    }
+  };
 };
 
 let Settings = () => {
