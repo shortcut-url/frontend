@@ -1,0 +1,23 @@
+.container {
+  width: 100%;
+  max-width: 700px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.main_header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 20px;
+  align-items: center;
+  padding: 20px;
+}
+
+.created-urls_heading {
+  margin-bottom: 20px;
+  font-size: var(--base-h3);
+}
+
+.created-urls_empty {
+  text-align: center;
+}

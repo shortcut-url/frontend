@@ -31,7 +31,7 @@ createUrlProcessing.use(urlAPI.createShortUrl);
 createUrlProcessing.done.watch(({ result }) => {
   if (!result.ok) return;
 
-  addUrlCreated({ id: result.data, originalUrl: $urlField.getState() });
+  addUrlCreated({ id: result.data, originalURL: $urlField.getState() });
 
   urlFieldClear();
 });
@@ -43,9 +43,9 @@ createUrlProcessing.done.watch(({ result }) => {
 export let formSubmitted = createEvent();
 
 formSubmitted.watch(() => {
-  let originalUrl = $urlField.getState();
+  let originalURL = $urlField.getState();
 
-  createUrlProcessing(originalUrl);
+  createUrlProcessing(originalURL);
 });
 
 export let $isFormLoading = createUrlFetching.isLoading;

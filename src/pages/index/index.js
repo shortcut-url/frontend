@@ -19,7 +19,7 @@ import {
 } from 'models/page/home';
 import styles from './index.module.css';
 import { $session } from 'models/session';
-import { CreatedURLCard } from 'components/url';
+import { CreatedURLCopyClipboard } from 'components/url';
 
 export default () => {
   useEffect(() => {
@@ -72,7 +72,7 @@ let Form = () => {
 };
 
 let ListCreatedURLs = () => {
-  let listCreatedURLs = useList($listCreatedURLs, CreatedURLCard);
+  let listCreatedURLs = useList($listCreatedURLs, CreatedURLCopyClipboard);
 
   if (!listCreatedURLs.length) return null;
 
