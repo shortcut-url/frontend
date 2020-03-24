@@ -56,15 +56,15 @@ let Settings = () => {
     <ul className={styles['settings_list']} aria-label="Settings list">
       <li>
         <Checkbox
-          checked={settingsFutureURLs.statistics}
+          checked={settingsFutureURLs.trackingNumberTransitions}
           onChange={event =>
             changeSetting({
-              name: 'statistics',
+              name: 'trackingNumberTransitions',
               value: event.target.checked
             })
           }
         >
-          Include statistics (Count of transitions, etc.) for future URLs
+          Tracking the number of transitions on URLs
         </Checkbox>
       </li>
     </ul>
