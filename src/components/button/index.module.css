@@ -1,5 +1,4 @@
-.button,
-.button_accent {
+.reset_button {
   display: inline-block;
   padding: 10px 20px;
   font-weight: 600;
@@ -8,26 +7,33 @@
   border: none;
 }
 
-.button:disabled,
-.button.disabled {
+.reset_button:disabled,
+.reset_button.disabled {
   cursor: not-allowed;
 }
 
-.button_accent {
-  --background-color: var(--base-accent);
-
-  font-size: var(--base-h5);
-  color: var(--base-ui-white);
-  background-color: var(--background-color);
+.color_button {
+  color: var(--color-text);
+  background-color: var(--color);
   border-radius: calc(var(--base-border-r) / 2);
-  box-shadow: 0 0 10px -2px var(--background-color);
+  box-shadow: 0 0 10px -2px var(--color);
 
   &:hover,
   &:focus {
-    --background-color: var(--base-hover);
+    opacity: 0.8;
   }
 
   &:active {
     transform: translateY(1px);
   }
+}
+
+.button_accent {
+  --color: var(--base-accent);
+  --color-text: var(--base-ui-white);
+}
+
+.button_danger {
+  --color: var(--base-red);
+  --color-text: var(--base-ui-white);
 }

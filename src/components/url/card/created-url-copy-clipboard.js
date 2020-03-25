@@ -2,6 +2,7 @@ import React from 'react';
 
 import styles from './created-url.module.css';
 import { addNotification } from 'models/notification';
+import { Button } from 'components/button';
 
 export let CreatedURLCopyClipboard = ({
   id,
@@ -22,15 +23,9 @@ export let CreatedURLCopyClipboard = ({
 
   return (
     <article>
-      <button
+      <Button
         onClick={copyUrlClipboard}
-        className={`
-            ${styles['created-url-card']}
-            ${styles['created-url-card_button']}
-            flat
-            concave_hover
-            pressed_active
-          `}
+        className={styles['created-url-card']}
         title="Copy url to clipboard"
         type="button"
       >
@@ -44,7 +39,7 @@ export let CreatedURLCopyClipboard = ({
         >
           Original url: {originalURL}
         </div>
-      </button>
+      </Button>
     </article>
   );
 };

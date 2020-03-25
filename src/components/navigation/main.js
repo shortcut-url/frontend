@@ -4,8 +4,8 @@ import { useStore } from 'effector-react';
 
 import { $session } from 'models/session';
 import styles from './main.module.css';
-import buttonsStyles from 'components/button/index.module.css';
 import { ProfileAvatar } from 'components/profile/avatar';
+import { Button } from 'components/button';
 
 export let MainNavigation = () => {
   let currentUser = useStore($session).user;
@@ -69,8 +69,10 @@ let LinkToProfileCurrentUser = () => {
         {currentUser.username}
       </div>
 
-      <Link href="/profile">
-        <a className={buttonsStyles.button_accent}>Your profile</a>
+      <Link href="/profile" passHref>
+        <Button tag="a" variant="accent">
+          Your profile
+        </Button>
       </Link>
     </div>
   );
