@@ -3,13 +3,9 @@
   grid-gap: 10px;
   width: 100%;
   padding: 20px 25px;
+  font-weight: normal;
   color: var(--base-text);
   text-align: left;
-}
-
-.created-url-card_button {
-  cursor: pointer;
-  border: none;
 }
 
 .created-url-card_heading {

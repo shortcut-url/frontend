@@ -14,9 +14,7 @@
 .notification_button {
   --border-radius: 0;
 
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
+  padding: 0;
+  background: transparent;
   border-left: 0.1px solid var(--base-ui-black);
-  outline: none;
 }

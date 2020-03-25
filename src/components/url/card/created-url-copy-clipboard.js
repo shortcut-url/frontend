@@ -1,7 +1,8 @@
 import React from 'react';
 
 import styles from './created-url.module.css';
-import { addNotification } from 'models/notification';
+import { Button } from 'components/button';
+import { copyUrlClipboard } from '../utils';
 
 export let CreatedURLCopyClipboard = ({
   id,
@@ -10,27 +11,16 @@ export let CreatedURLCopyClipboard = ({
 }) => {
   let urlWithServerDomain = `${process.env.API_SERVER}/${id}`;
 
-  let copyUrlClipboard = () => {
-    navigator.clipboard.writeText(urlWithServerDomain).then(() => {
-      if (!addNotificationWhenCopying) return;
-
-      addNotification({
-        content: 'You have successfully copied the link to the clipboard'
-      });
-    });
-  };
-
   return (
     <article>
-      <button
-        onClick={copyUrlClipboard}
-        className={`
-            ${styles['created-url-card']}
-            ${styles['created-url-card_button']}
-            flat
-            concave_hover
-            pressed_active
-          `}
+      <Button
+        onClick={() =>
+          copyUrlClipboard({
+            url: urlWithServerDomain,
+            addNotificationWhenCopying
+          })
+        }
+        className={styles['created-url-card']}
         title="Copy url to clipboard"
         type="button"
       >
@@ -44,7 +34,7 @@ export let CreatedURLCopyClipboard = ({
         >
           Original url: {originalURL}
         </div>
-      </button>
+      </Button>
     </article>
   );
 };
