@@ -9,7 +9,7 @@ export let CreatedURLWithLinkCard = ({ url, originalURL }) => {
 
   return (
     <article>
-      <Link href={`link/${url}`}>
+      <Link href={`url/${url}`} prefetch={false} passHref>
         <Button tag="a" className={styles['created-url-card']}>
           <h3 className={`${styles['created-url-card_heading']}`}>
             {urlWithServerDomain}
