@@ -54,7 +54,7 @@ export let registerFetching = createFetching(registerProcessing);
 export let $form = createStoreObject({
   email: $emailField,
   password: $passwordField,
-  username: $usernameField
+  name: $usernameField
 });
 
 formSubmitted.watch(() => {

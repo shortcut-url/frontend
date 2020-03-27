@@ -91,7 +91,7 @@ export let Username = () => {
       autoComplete="username"
       autoCapitalize="off"
       spellCheck="false"
-      minLength="2"
+      minLength="3"
       maxLength="32"
       required
     />

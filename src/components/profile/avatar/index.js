@@ -31,7 +31,7 @@ export let ProfileAvatar = ({ user }) => {
         className={`${styles['avatar_no-image']} pressed`}
         aria-hidden="true"
       >
-        {user.username[0]}
+        {user.name[0]}
       </div>
     );
   };
