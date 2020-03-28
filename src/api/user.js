@@ -3,7 +3,8 @@ import { requestAPI } from 'lib/request';
 let getSettingsFutureURLs = () =>
   requestAPI('GET', 'user/settings/future-urls');
 
-let createUserWithEmail = () => requestAPI('POST', 'user');
+let createUserWithEmail = userData =>
+  requestAPI('POST', 'user', { body: userData });
 
 let changeParameterFutureURLs = body =>
   requestAPI('POST', 'user/settings/future-urls', { body });
