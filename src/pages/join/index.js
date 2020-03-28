@@ -33,7 +33,7 @@ export default () => {
 
 export let Form = () => {
   let isFormLoading = useStore(registerFetching.isLoading);
-  let formError = useStore(registerFetching.error);
+  let ListErrorsForm = useStore(registerFetching.error);
 
   let handleSubmit = event => {
     event.preventDefault();
@@ -42,7 +42,7 @@ export let Form = () => {
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
-      {formError && <Error>{formError}</Error>}
+      {ListErrorsForm && <Error>{ListErrorsForm}</Error>}
       <Email />
       <Username />
       <Password />
@@ -91,7 +91,7 @@ export let Username = () => {
       autoComplete="username"
       autoCapitalize="off"
       spellCheck="false"
-      minLength="2"
+      minLength="3"
       maxLength="32"
       required
     />

@@ -57,7 +57,7 @@ export let MainHeader = () => {
     <header className={`${styles.container} ${styles.main_header}`}>
       <ProfileAvatar user={currentUser} />
       <h1 className={styles['main_header_current-user-name']}>
-        {currentUser.username}
+        {currentUser.name}
       </h1>
     </header>
   );

@@ -40,7 +40,7 @@ describe('Main navigation', () => {
   describe('There is a user session', () => {
     it('No link to login page', () => {
       act(() => {
-        addUserSession({ username: 'Test' });
+        addUserSession({ name: 'Test' });
       });
 
       let { queryByText } = render(<MainNavigation />);
@@ -50,7 +50,7 @@ describe('Main navigation', () => {
 
     it('Profile link', () => {
       act(() => {
-        addUserSession({ username: 'Test' });
+        addUserSession({ name: 'Test' });
       });
 
       let { getByText } = render(<MainNavigation />);

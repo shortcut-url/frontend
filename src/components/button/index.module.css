@@ -15,7 +15,7 @@
 .color_button {
   color: var(--color-text);
   background-color: var(--color);
-  border-radius: var(--base-border-r);
+  border-radius: calc(var(--base-border-r) / 2);
   box-shadow: 0 0 10px -2px var(--color);
 
   &:hover,

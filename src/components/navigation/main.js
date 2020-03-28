@@ -65,8 +65,8 @@ let LinkToProfileCurrentUser = () => {
     <div className={styles.profile}>
       <ProfileAvatar user={currentUser} />
 
-      <div className={styles['profile_username']} title="Your username">
-        {currentUser.username}
+      <div className={styles['profile_name']} title="Your name">
+        {currentUser.name}
       </div>
 
       <Link href="/profile" passHref>

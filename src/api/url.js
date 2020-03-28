@@ -1,6 +1,7 @@
 import { requestAPI } from 'lib/request';
 
-let createShortUrl = () => requestAPI('POST', 'url');
+let createShortUrl = originalURL =>
+  requestAPI('POST', 'url', { body: { originalURL } });
 
 let getCreatedURLData = ({ url }) => requestAPI('GET', `url/${url}`);
 
