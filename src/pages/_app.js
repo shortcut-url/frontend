@@ -11,15 +11,15 @@ export default function MyApp({ Component, pageProps, user }) {
 }
 
 MyApp.getInitialProps = async ({ ctx }) => {
-  let res = await sessionAPI.getInitialSession({
+  let getInitialSession = await sessionAPI.getInitialSession({
     headers: {
       cookie: ctx.req ? ctx.req.headers.cookie : null
     }
   });
 
-  if (!res.ok) return {};
+  if (!getInitialSession.ok) return {};
 
-  let user = res.data;
+  let user = getInitialSession.data;
 
   return { user };
 };
