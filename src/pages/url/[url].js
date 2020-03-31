@@ -39,9 +39,14 @@ export default ({ createdURL }) => {
   );
 };
 
-export let getServerSideProps = async ({ params }) => {
+export let getServerSideProps = async ({ params, req }) => {
   let createdURLDataResponse = await urlAPI.getCreatedURLData({
-    url: params.url
+    url: params.url,
+    options: {
+      headers: {
+        cookie: req.headers.cookie
+      }
+    }
   });
 
   if (!createdURLDataResponse.ok) return { props: {} };

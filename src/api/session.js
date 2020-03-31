@@ -1,7 +1,8 @@
 import { requestAPI } from 'lib/request';
 
-let getInitialSession = options => requestAPI('GET', 'session', options);
+let getInitialSession = ({ options }) => requestAPI('GET', 'session', options);
 
-let createSession = data => requestAPI('POST', 'session', { body: data });
+let createSession = ({ email, password }) =>
+  requestAPI('POST', 'session', { body: { email, password } });
 
 export let sessionAPI = { getInitialSession, createSession };

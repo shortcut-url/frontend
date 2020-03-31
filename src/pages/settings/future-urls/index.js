@@ -13,7 +13,6 @@ import {
   changeAllSettingsFutureURLs
 } from 'models/page/settings/future-urls';
 import { userAPI } from 'api/user';
-import { addNotification } from 'models/notification';
 
 export default ({ settingsFutureURLsCurrentUser }) => {
   changeAllSettingsFutureURLs(settingsFutureURLsCurrentUser);
@@ -36,10 +35,13 @@ export default ({ settingsFutureURLsCurrentUser }) => {
   );
 };
 
-export let getServerSideProps = async () => {
+export let getServerSideProps = async ctx => {
   let settingsFutureURLsResponse = await userAPI.getSettingsFutureURLs({
-    startIndex: 0,
-    stopIndex: 20
+    options: {
+      headers: {
+        cookie: ctx.req ? ctx.req.headers.cookie : null
+      }
+    }
   });
 
   return {
@@ -58,7 +60,7 @@ let Settings = () => {
         <Checkbox
           checked={settingsFutureURLs.trackingNumberTransitions}
           onChange={event =>
-            changeSetting({
+            changeParameterFutureURLs({
               name: 'trackingNumberTransitions',
               value: event.target.checked
             })
@@ -69,19 +71,4 @@ let Settings = () => {
       </li>
     </ul>
   );
-};
-
-let changeSetting = async ({ name, value }) => {
-  changeParameterFutureURLs({ name, value });
-
-  let changeParameterResponse = await userAPI.changeParameterFutureURLs({
-    name,
-    value
-  });
-
-  if (changeParameterResponse.ok) return;
-
-  changeParameterFutureURLs({ name, value: !value });
-
-  addNotification({ content: changeParameterResponse.data });
 };

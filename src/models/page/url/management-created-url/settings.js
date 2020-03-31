@@ -1,6 +1,7 @@
 import { createStore, createEvent, createEffect } from 'effector';
 
 import { urlAPI } from 'api/url';
+import { $createdURL } from './index';
 
 export let changeAllSettingsCreatedURL = createEvent();
 export let changeParameterCreatedURL = createEvent();
@@ -15,6 +16,10 @@ $settingsCreatedURL
   })
   .on(changeAllSettingsCreatedURL, (_, settings) => settings);
 
-changeParameterCreatedURL.watch(changeParameterProcessing);
+changeParameterCreatedURL.watch(({ name, value }) => {
+  let { url } = $createdURL.getState();
+
+  changeParameterProcessing({ url, name, value });
+});
 
 changeParameterProcessing.use(urlAPI.changeParameterCreatedURL);
