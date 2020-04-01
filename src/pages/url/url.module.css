@@ -32,9 +32,20 @@
   font-size: var(--base-h3);
 }
 
-.created-url_original-url {
-  margin-top: 5px;
+.created-url_button-original-url {
+  width: 100%;
+  padding: 10px 0 0;
+  overflow: hidden;
   font-size: var(--base-h5);
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: transparent;
+
+  &:hover,
+  &:focus {
+    color: var(--base-accent);
+  }
 }
 
 .statistics-created-url_list,

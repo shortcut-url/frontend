@@ -13,8 +13,9 @@ import {
 } from 'models/page/url/management-created-url';
 import styles from './url.module.css';
 import { Checkbox } from 'components/form';
-import { Button } from 'components/button';
+import { Button, ButtonStyles } from 'components/button';
 import { copyUrlClipboard } from 'components/url';
+import { addNotification } from 'models/notification';
 
 export default ({ createdURL }) => {
   useEffect(() => {
@@ -59,6 +60,14 @@ export let MainDataCreatedURL = () => {
 
   let urlWithServerDomain = `${process.env.API_SERVER}/${createdURL.url}`;
 
+  function copyOriginalUrlToClipboard() {
+    navigator.clipboard.writeText(createdURL.originalURL).then(() => {
+      addNotification({
+        content: 'You copied the original url to the clipboard'
+      });
+    });
+  }
+
   return (
     <div className={`${styles['created-url_card']} flat`}>
       <button
@@ -70,9 +79,21 @@ export let MainDataCreatedURL = () => {
         <h1>{urlWithServerDomain}</h1>
       </button>
 
-      <div className={styles['created-url_original-url']}>
+      <button
+        onClick={copyOriginalUrlToClipboard}
+        className={`
+          ${ButtonStyles.reset_button} 
+          ${styles['created-url_button-original-url']}
+        `}
+        title={
+          'Click to copy the original URL to the clipboard.' +
+          '\n\n' +
+          createdURL.originalURL
+        }
+        type="button"
+      >
         Original URL: {createdURL.originalURL}
-      </div>
+      </button>
     </div>
   );
 };
