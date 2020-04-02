@@ -30,10 +30,10 @@
 
 .button_accent {
   --color: var(--base-accent);
-  --color-text: var(--base-ui-white);
+  --color-text: var(--base-white);
 }
 
 .button_danger {
   --color: var(--base-red);
-  --color-text: var(--base-ui-white);
+  --color-text: var(--base-white);
 }

@@ -19,6 +19,8 @@
 }
 
 .nav_home {
+  --border-radius: var(--base-border-r);
+
   display: flex;
   align-items: center;
   padding: 5px 0;
@@ -29,9 +31,7 @@
 
   &:hover,
   &:focus {
-    & > span {
-      background-color: var(--base-hover);
-    }
+    opacity: 0.7;
   }
 
   & > picture {
