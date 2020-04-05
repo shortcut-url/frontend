@@ -35,7 +35,7 @@ export default ({ settingsFutureURLsCurrentUser }) => {
   );
 };
 
-export let getServerSideProps = async ctx => {
+export let getServerSideProps = async (ctx) => {
   let settingsFutureURLsResponse = await userAPI.getSettingsFutureURLs({
     options: {
       headers: {
@@ -59,7 +59,7 @@ let Settings = () => {
       <li>
         <Checkbox
           checked={settingsFutureURLs.trackingNumberTransitions}
-          onChange={event =>
+          onChange={(event) =>
             changeParameterFutureURLs({
               name: 'trackingNumberTransitions',
               value: event.target.checked

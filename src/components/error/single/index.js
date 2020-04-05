@@ -2,7 +2,7 @@ import React, { useEffect, createRef } from 'react';
 
 import commonStyles from '../common.module.css';
 
-export let SingleError = props => {
+export let SingleError = (props) => {
   let containerElement = createRef();
 
   useEffect(() => {

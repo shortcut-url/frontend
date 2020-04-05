@@ -56,7 +56,7 @@ export let CreatedURLsTable = ({
       className={styles['created-links_list']}
       role="feed"
     >
-      {urlList.map(link => (
+      {urlList.map((link) => (
         <CreatedURLCard key={link.url} {...link} />
       ))}
     </div>

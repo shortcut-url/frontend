@@ -125,7 +125,7 @@ export let ManagementCreatedURL = () => {
         <li>
           <Checkbox
             checked={settings.trackingNumberTransitions}
-            onChange={event =>
+            onChange={(event) =>
               changeParameterCreatedURL({
                 name: 'trackingNumberTransitions',
                 value: event.target.checked

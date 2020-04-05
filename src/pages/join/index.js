@@ -35,7 +35,7 @@ export let Form = () => {
   let isFormLoading = useStore(registerFetching.isLoading);
   let ListErrorsForm = useStore(registerFetching.error);
 
-  let handleSubmit = event => {
+  let handleSubmit = (event) => {
     event.preventDefault();
     formSubmitted();
   };

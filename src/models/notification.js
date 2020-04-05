@@ -14,6 +14,6 @@ $notifications.on(addNotification, (notifications, newNotification) => {
 $notifications.on(
   removeNotification,
   (notifications, IdnotificationToDelete) => {
-    return notifications.filter(n => n.id !== IdnotificationToDelete);
+    return notifications.filter((n) => n.id !== IdnotificationToDelete);
   }
 );

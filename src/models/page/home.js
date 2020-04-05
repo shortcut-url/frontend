@@ -16,7 +16,7 @@ export let createUrlProcessing = createEffect();
 export let createUrlFetching = createFetching(createUrlProcessing);
 
 export let $urlField = createStore('');
-export let $urlFieldError = $urlField.map(url => {
+export let $urlFieldError = $urlField.map((url) => {
   if (urlValidator(url)) return false;
 
   return 'Url must be in the format: example.com, https://example.com';

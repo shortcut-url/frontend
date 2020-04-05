@@ -37,7 +37,7 @@ export default ({ listCreatedURLsCurrentUser }) => {
   );
 };
 
-export let getServerSideProps = async ctx => {
+export let getServerSideProps = async (ctx) => {
   let getCreatedURLsCurrentUserResponse = await userAPI.getCreatedURLs({
     startIndex: 0,
     stopIndex: 20,

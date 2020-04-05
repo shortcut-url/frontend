@@ -25,9 +25,9 @@ export function createFetching(effect, initialStatus = 'initial', params = {}) {
     .on(effect.fail, () => 'fail')
     .on(customReset, () => 'initial');
 
-  let isDone = status.map(state => state === 'done');
-  let isFailed = status.map(state => state === 'fail');
-  let isLoading = status.map(state => state === 'loading');
+  let isDone = status.map((state) => state === 'done');
+  let isFailed = status.map((state) => state === 'fail');
+  let isLoading = status.map((state) => state === 'loading');
 
   return { result, error, status, isDone, isFailed, isLoading };
 }

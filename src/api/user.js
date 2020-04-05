@@ -1,6 +1,6 @@
 import { requestAPI } from 'lib/request';
 
-let createUserWithEmail = userData =>
+let createUserWithEmail = (userData) =>
   requestAPI('POST', 'user', { body: userData });
 
 let getSettingsFutureURLs = ({ options }) =>

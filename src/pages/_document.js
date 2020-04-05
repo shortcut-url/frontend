@@ -11,7 +11,15 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <meta
+            name="description"
+            content="
+                Shortcut-URL is a convenient,fast contractor for your URLs
+                with the ability to track statistics and other data
+              "
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />

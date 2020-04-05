@@ -33,7 +33,7 @@ export let Form = () => {
   let isFormLoading = useStore(loginFetching.isLoading);
   let formError = useStore(loginFetching.error);
 
-  let handleSubmit = event => {
+  let handleSubmit = (event) => {
     event.preventDefault();
     formSubmitted();
   };
