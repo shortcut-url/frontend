@@ -1,0 +1,46 @@
+@media (--mobile) {
+  .nav_is-open {
+    display: block;
+  }
+
+  .nav_is-close {
+    display: none;
+  }
+}
+
+.nav_float {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  z-index: 100;
+  display: none;
+
+  @media (--mobile) {
+    display: block;
+  }
+}
+
+.nav_open,
+.nav_close {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  transition: 0.2s;
+
+  &::before {
+    display: block;
+    width: 25px;
+    height: 25px;
+    content: '';
+    background-color: var(--base-black);
+    background-size: 100%;
+  }
+}
+
+.nav_open::before {
+  mask-image: url(/icons/menu.svg);
+}
+
+.nav_close::before {
+  mask-image: url(/icons/x.svg);
+}

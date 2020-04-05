@@ -3,32 +3,35 @@ import Link from 'next/link';
 import { useStore } from 'effector-react';
 
 import { $session } from 'models/session';
-import styles from './main.module.css';
+import styles from './index.module.css';
 import { ProfileAvatar } from 'components/profile/avatar';
 import { Button } from 'components/button';
+import { NavigationFloat } from './float';
 
 export let MainNavigation = () => {
   let currentUser = useStore($session).user;
 
   return (
-    <nav className={`${styles.nav} flat`}>
-      <Link href="/">
-        <a className={styles.nav_home} title="Go to the home page.">
-          <picture>
-            <img
-              src="/icons/globe.svg"
-              width="23"
-              height="23"
-              alt="Logo Shortcut-URL"
-            />
-          </picture>
-          <span>Shortcut-URL.com</span>
-        </a>
-      </Link>
+    <NavigationFloat>
+      <nav className={`${styles.nav} flat `}>
+        <Link href="/">
+          <a className={styles.nav_home} title="Go to the home page.">
+            <picture>
+              <img
+                src="/icons/globe.svg"
+                width="23"
+                height="23"
+                alt="Logo Shortcut-URL"
+              />
+            </picture>
+            <span>Shortcut-URL.com</span>
+          </a>
+        </Link>
 
-      {!currentUser && <AuthNavigationList />}
-      {currentUser && <LinkToProfileCurrentUser />}
-    </nav>
+        {!currentUser && <AuthNavigationList />}
+        {currentUser && <LinkToProfileCurrentUser />}
+      </nav>
+    </NavigationFloat>
   );
 };
 

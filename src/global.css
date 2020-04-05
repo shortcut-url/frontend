@@ -60,6 +60,12 @@ body {
   background-color: var(--base-background);
 }
 
+body.is-locked {
+  position: fixed;
+  right: 0;
+  left: 0;
+}
+
 /*  fonts ----------------------------- */
 @font-face {
   font-family: 'Open Sans';

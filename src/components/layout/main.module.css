@@ -1,9 +1,22 @@
 .layout {
   padding-left: 300px;
+
+  @media (--mobile) {
+    padding-left: 0;
+  }
 }
 
 .layout_main-content {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.layout_footer {
+  @media (--mobile) {
+    /*
+      * In order not to overlap the menu button
+    */
+    padding-bottom: 70px;
+  }
 }
