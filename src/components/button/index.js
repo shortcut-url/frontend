@@ -38,8 +38,7 @@ let defineButtonVariant = ({ variant, extraClass, disabled }) => {
   switch (variant) {
     case 'default':
       classes += `
-        flat 
-        ${disabled ? 'concave' : 'convex_hover pressed_active'}
+        ${disabled ? 'concave' : 'flat convex_hover pressed_active'}
       `;
       break;
 
