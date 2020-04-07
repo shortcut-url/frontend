@@ -8,12 +8,9 @@
   text-align: left;
 }
 
-.created-url-card_heading {
-  font-size: calc(var(--base-h3) / 1.2);
-}
-
 .created-url-card_original-url {
   overflow: hidden;
+  font-size: var(--base-unit);
   text-overflow: ellipsis;
   white-space: nowrap;
 }

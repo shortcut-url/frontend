@@ -55,7 +55,7 @@
   display: flex;
   align-items: center;
   padding: 20px 0 0;
-  font-size: var(--base-h4);
+  font-size: 1rem;
   font-weight: 600;
 
   @media (--mobile) {
@@ -97,7 +97,6 @@
 
   display: block;
   padding: 8px 10px 8px 28px;
-  font-size: var(--base-h5);
   color: var(--base-text);
 
   @media (--mobile) {
@@ -127,17 +126,6 @@
 
 .profile_avatar {
   border-radius: 50%;
-}
-
-.profile_no-avatar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100px;
-  height: 100px;
-  font-size: var(--base-h3);
-  font-weight: 600;
-  text-transform: uppercase;
 }
 
 .profile_name {

@@ -46,7 +46,7 @@
 
 .link_create-account {
   display: block;
-  font-size: var(--base-h6);
+  font-size: var(--base-unit);
   color: var(--base-text);
   text-align: center;
 }

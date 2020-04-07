@@ -1,0 +1,24 @@
+html {
+  --base-unit: 0.8rem;
+  --base-h1: 30px;
+  --base-h2: 25px;
+  --base-h3: 20px;
+
+  @media (--mobile) {
+    --base-h1: 25px;
+    --base-h2: 20px;
+    --base-h3: 1rem;
+  }
+}
+
+h1 {
+  font-size: var(--base-h1);
+}
+
+h2 {
+  font-size: var(--base-h2);
+}
+
+h3 {
+  font-size: var(--base-h3);
+}
