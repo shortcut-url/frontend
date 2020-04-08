@@ -69,10 +69,16 @@ export let MainDataCreatedURL = () => {
   }
 
   return (
-    <div className={`${styles['created-url_card']} flat`}>
+    <div
+      className={`
+        ${styles['created-url_card']} 
+        ${styles['main-data-created-url']} 
+        flat
+      `}
+    >
       <button
         onClick={() => copyUrlClipboard({ url: urlWithServerDomain })}
-        className={styles['created-url_button-heading']}
+        className={styles['main-data-created-url_button-heading']}
         title="Click to copy url to clipboard"
         type="button"
       >
@@ -83,7 +89,7 @@ export let MainDataCreatedURL = () => {
         onClick={copyOriginalUrlToClipboard}
         className={`
           ${ButtonStyles.reset_button} 
-          ${styles['created-url_button-original-url']}
+          ${styles['main-data-created-url_button-original-url']}
         `}
         title={
           'Click to copy the original URL to the clipboard.' +

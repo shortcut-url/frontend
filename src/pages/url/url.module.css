@@ -13,9 +13,14 @@
   }
 }
 
-.created-url_button-heading {
-  padding: 0;
+.main-data-created-url {
+  display: grid;
+  grid-gap: 10px;
+}
+
+.main-data-created-url_button-heading {
   color: inherit;
+  word-break: break-all;
   cursor: pointer;
   background-color: transparent;
   border: none;
@@ -27,15 +32,9 @@
   }
 }
 
-.created-url_heading {
-  margin-bottom: 5px;
-}
-
-.created-url_button-original-url {
-  width: 100%;
-  padding: 10px 0 0;
+.main-data-created-url_button-original-url {
+  padding: 0;
   overflow: hidden;
-  text-align: left;
   text-overflow: ellipsis;
   white-space: nowrap;
   background-color: transparent;
@@ -44,6 +43,10 @@
   &:focus {
     color: var(--base-accent);
   }
+}
+
+.created-url_heading {
+  margin-bottom: 5px;
 }
 
 .statistics-created-url_list,
