@@ -3,6 +3,7 @@
   padding: 10px 20px;
   font-weight: 600;
   color: var(--base-text);
+  text-align: center;
   cursor: pointer;
   border: none;
 }

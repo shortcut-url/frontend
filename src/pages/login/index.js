@@ -5,7 +5,7 @@ import Router from 'next/router';
 
 import { $session } from 'models/session';
 import { MainLayout } from 'components/layout';
-import { Button } from 'components/button';
+import { Button, ButtonStyles } from 'components/button';
 import styles from './index.module.css';
 
 export default () => {
@@ -60,7 +60,12 @@ export let AuthorizationTypes = () => {
       <li>
         <hr className={styles.hr} />
         <Link href="/join">
-          <a className={styles['link_create-account']}>
+          <a
+            className={`
+              ${ButtonStyles.reset_button}
+              ${styles['link_create-account']}
+            `}
+          >
             Or, register using mail
           </a>
         </Link>
