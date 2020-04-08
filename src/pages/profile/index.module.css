@@ -7,10 +7,16 @@
 
 .main_header {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto minmax(150px, 1fr) min-content;
   grid-gap: 20px;
   align-items: center;
+  justify-content: center;
   padding: 20px;
+
+  @media (--mobile) {
+    grid-template-rows: repeat(3, auto);
+    grid-template-columns: auto;
+  }
 }
 
 .created-urls_heading {

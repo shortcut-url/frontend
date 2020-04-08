@@ -3,9 +3,8 @@ import React from 'react';
 import { sessionAPI } from 'api/session';
 import { addUserSession } from 'models/session';
 import 'components/styles/common.css';
-// import '../global.css';
 
-export default function MyApp({ Component, pageProps, user }) {
+export default function MyApp({ Component, pageProps, user = null }) {
   addUserSession(user);
 
   return <Component {...pageProps} />;

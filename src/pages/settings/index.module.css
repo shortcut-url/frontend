@@ -1,0 +1,12 @@
+.settings-list {
+  display: grid;
+  grid-gap: 20px;
+  padding: 20px;
+  margin: auto;
+  list-style: none;
+}
+
+.settings-list_button {
+  display: block;
+  width: 100%;
+}

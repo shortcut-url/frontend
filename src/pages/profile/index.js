@@ -14,6 +14,7 @@ import {
 } from 'models/page/profile';
 import styles from './index.module.css';
 import { userAPI } from 'api/user';
+import { Button } from 'components/button';
 
 export default ({ listCreatedURLsCurrentUser }) => {
   let currentUser = useStore($session).user;
@@ -64,6 +65,9 @@ export let MainHeader = () => {
       <h1 className={styles['main_header_current-user-name']}>
         {currentUser.name}
       </h1>
+      <Button tag="a" href="/settings">
+        Settings
+      </Button>
     </header>
   );
 };

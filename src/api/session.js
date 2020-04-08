@@ -5,4 +5,6 @@ let getInitialSession = ({ options }) => requestAPI('GET', 'session', options);
 let createSession = ({ email, password }) =>
   requestAPI('POST', 'session', { body: { email, password } });
 
-export let sessionAPI = { getInitialSession, createSession };
+let destroySession = () => requestAPI('DELETE', 'session');
+
+export let sessionAPI = { getInitialSession, createSession, destroySession };
