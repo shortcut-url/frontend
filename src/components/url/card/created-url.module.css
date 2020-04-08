@@ -8,6 +8,14 @@
   text-align: left;
 }
 
+.created-url-card_heading {
+  word-break: break-all;
+
+  @media (max-width: 500px) {
+    font-size: initial;
+  }
+}
+
 .created-url-card_original-url {
   overflow: hidden;
   font-size: var(--base-unit);
