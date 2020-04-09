@@ -1,0 +1,25 @@
+.delete-account_container {
+  display: grid;
+  grid-gap: 40px;
+  padding: 20px;
+  margin: auto;
+}
+
+.delete-account-card {
+  display: grid;
+  grid-gap: 15px;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px;
+}
+
+.delete-account_confirm-form {
+  display: block;
+  width: 100%;
+}
+
+.confirm-form_submit-button {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+}

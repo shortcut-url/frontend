@@ -16,9 +16,12 @@ let getCreatedURLs = ({ startIndex = 0, stopIndex = 20, options }) =>
     options
   );
 
+let deleteAccount = () => requestAPI('DELETE', 'user');
+
 export let userAPI = {
   createUserWithEmail,
   getSettingsFutureURLs,
   changeParameterFutureURLs,
-  getCreatedURLs
+  getCreatedURLs,
+  deleteAccount
 };
