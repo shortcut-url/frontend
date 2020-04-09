@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './index.module.css';
 
-export let ProfileAvatar = ({ user }) => {
+export let ProfileAvatar = ({ user, containerClass = '' }) => {
   let Avatar = () => {
     let avatar = user.avatar;
 
@@ -37,7 +37,7 @@ export let ProfileAvatar = ({ user }) => {
   };
 
   return (
-    <div className={`${styles.avatar_container} flat`}>
+    <div className={`flat ${styles.avatar_container} ${containerClass}`}>
       <Avatar />
     </div>
   );

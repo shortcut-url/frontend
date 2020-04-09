@@ -61,7 +61,10 @@ export let MainHeader = () => {
 
   return (
     <header className={`${styles.container} ${styles.main_header}`}>
-      <ProfileAvatar user={currentUser} />
+      <ProfileAvatar
+        user={currentUser}
+        containerClass={styles['main_header_avatar-container']}
+      />
       <h1 className={styles['main_header_current-user-name']}>
         {currentUser.name}
       </h1>
