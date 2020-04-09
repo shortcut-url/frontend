@@ -19,6 +19,10 @@
   }
 }
 
+.main_header_current-user-name {
+  word-break: break-all;
+}
+
 .main_header_avatar-container {
   margin: 0 auto;
 }
