@@ -19,11 +19,13 @@ import { Button } from 'components/button';
 export default ({ listCreatedURLsCurrentUser }) => {
   let currentUser = useStore($session).user;
 
-  addCreatedURLsCurrentUser(listCreatedURLsCurrentUser);
-
   useEffect(() => {
     if (!currentUser) Router.push('/login');
-  });
+  }, [currentUser]);
+
+  useEffect(() => {
+    addCreatedURLsCurrentUser(listCreatedURLsCurrentUser);
+  }, [listCreatedURLsCurrentUser]);
 
   return (
     <>
