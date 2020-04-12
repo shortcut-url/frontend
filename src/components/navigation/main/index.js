@@ -66,7 +66,7 @@ let LinkToProfileCurrentUser = () => {
 
   return (
     <div className={styles.profile}>
-      <ProfileAvatar user={currentUser} />
+      <ProfileAvatar />
 
       <div className={styles['profile_name']} title="Your name">
         {currentUser.name}
