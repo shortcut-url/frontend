@@ -1,4 +1,5 @@
 import nodeFetch, { Headers, Request } from 'node-fetch';
+import FormData from 'form-data';
 
 const dev = process.env.NODE_ENV !== 'production';
 
@@ -54,7 +55,13 @@ function contentTypeFromOptions(options) {
     return options.headers['Content-Type'];
   }
 
-  return typeof options.body === 'object' ? 'application/json' : '';
+  if (options && options.body && options.body instanceof FormData) {
+    return undefined;
+  }
+
+  return typeof options.body === 'object'
+    ? 'application/json'
+    : (options.headers && options.headers['Content-Type']) || '';
 }
 
 function createBody(options, headers) {
@@ -62,6 +69,10 @@ function createBody(options, headers) {
 
   if (options.body && contentType && contentType.includes('json')) {
     return JSON.stringify(options.body);
+  }
+
+  if (options.body instanceof FormData) {
+    return options.body;
   }
 
   return undefined;

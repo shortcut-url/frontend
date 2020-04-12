@@ -90,8 +90,8 @@
       "require-yield": "error",
       "arrow-spacing": "error",
       "arrow-parens": [
-        "error",
-        "as-needed"
+        2,
+        "always"
       ],
       "jsx-a11y/anchor-is-valid": [
         "error",
@@ -108,10 +108,6 @@
             "preferButton"
           ]
         }
-      ],
-      "arrow-parens": [
-        2,
-        "always"
       ]
     }
   },
@@ -124,6 +120,7 @@
     "@testing-library/user-event": "^7.2.1",
     "effector": "^20.13.4",
     "effector-react": "^20.6.3",
+    "form-data": "^3.0.0",
     "http-proxy-middleware": "^1.0.3",
     "next": "^9.3.4",
     "next-offline": "^5.0.0",
