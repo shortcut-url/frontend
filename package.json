@@ -46,7 +46,8 @@
     "moduleNameMapper": {
       "^components(.*)$": "<rootDir>/src/components$1",
       "^models(.*)$": "<rootDir>/src/models$1",
-      "^lib(.*)$": "<rootDir>/src/lib$1"
+      "^lib(.*)$": "<rootDir>/src/lib$1",
+      "^api(.*)$": "<rootDir>/src/api$1"
     }
   },
   "eslintConfig": {
