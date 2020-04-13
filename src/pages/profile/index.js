@@ -65,6 +65,7 @@ export let MainHeader = () => {
     <header className={`${styles.container} ${styles.main_header}`}>
       <ProfileAvatar
         containerClass={styles['main_header_avatar-container']}
+        withAvatarManagement={true}
       />
       <h1 className={styles['main_header_current-user-name']}>
         {currentUser.name}

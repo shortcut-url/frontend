@@ -18,10 +18,19 @@ let getCreatedURLs = ({ startIndex = 0, stopIndex = 20, options }) =>
 
 let deleteAccount = () => requestAPI('DELETE', 'user');
 
+let uploadAvatar = (newAvatar) =>
+  requestAPI('POST', 'user/avatar', {
+    body: newAvatar
+  });
+
+let deleteAvatar = () => requestAPI('DELETE', 'user/avatar');
+
 export let userAPI = {
   createUserWithEmail,
   getSettingsFutureURLs,
   changeParameterFutureURLs,
   getCreatedURLs,
-  deleteAccount
+  deleteAccount,
+  uploadAvatar,
+  deleteAvatar
 };

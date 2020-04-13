@@ -1,0 +1,66 @@
+.avatar-container_inner {
+  position: relative;
+}
+
+.avatar-control {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  border-radius: var(--border-radius);
+  opacity: 0;
+  transition: all 0.2s;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+}
+
+.avatar-control_new-avatar {
+  &::before {
+    mask-image: url(/icons/upload-cloud.svg);
+  }
+}
+
+.avatar-control_delete-avatar {
+  background: transparent;
+  border: none;
+
+  &::before {
+    mask-image: url(/icons/trash.svg);
+  }
+}
+
+.avatar-control_new-avatar,
+.avatar-control_delete-avatar {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+
+  &::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 19px;
+    height: 19px;
+    content: '';
+    background-color: var(--base-white);
+    background-size: 100%;
+    transform: translate(-50%, -50%);
+  }
+}
