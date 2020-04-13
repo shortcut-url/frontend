@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { useStore } from 'effector-react';
 
 import { MainLayout } from 'components/layout';
-import { StandardInput } from 'components/input';
+import { Input } from 'components/form';
 import { Button } from 'components/button';
 import { Error } from 'components/error';
 import {
@@ -58,7 +58,7 @@ export let Email = () => {
   let isFormLoading = useStore(registerFetching.isLoading);
 
   return (
-    <StandardInput
+    <Input
       value={emailField}
       onChange={emailFieldChange}
       containerClass={styles['form_group']}
@@ -79,7 +79,7 @@ export let Username = () => {
   let isFormLoading = useStore(registerFetching.isLoading);
 
   return (
-    <StandardInput
+    <Input
       value={usernameField}
       onChange={usernameFieldChange}
       containerClass={styles['form_group']}
@@ -103,7 +103,7 @@ export let Password = () => {
   let isFormLoading = useStore(registerFetching.isLoading);
 
   return (
-    <StandardInput
+    <Input
       value={passwordField}
       onChange={passwordFieldChange}
       containerClass={styles['form_group']}

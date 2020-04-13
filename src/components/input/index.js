@@ -1,1 +1,0 @@
-export { StandardInput } from './standard';

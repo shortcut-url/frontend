@@ -5,7 +5,7 @@ import { useStore, useList } from 'effector-react';
 import Link from 'next/link';
 
 import { MainLayout } from 'components/layout';
-import { StandardInput } from 'components/input';
+import { Input } from 'components/form';
 import { Button } from 'components/button';
 import {
   $urlField,
@@ -53,7 +53,7 @@ let Form = () => {
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
-      <StandardInput
+      <Input
         value={urlField}
         onChange={urlFieldChange}
         error={urlField && urlFieldError}
