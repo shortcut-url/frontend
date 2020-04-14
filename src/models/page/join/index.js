@@ -4,11 +4,11 @@ import {
   createEffect,
   createStoreObject
 } from 'effector';
-import Router from 'next/router';
 
 import { trimEvent } from 'lib/utils';
 import { createFetching } from 'lib/request';
 import { userAPI } from 'api/user';
+import { loginProcessing } from 'models/page/login/email';
 
 /*
  * Email
@@ -68,5 +68,8 @@ registerProcessing.use(userAPI.createUserWithEmail);
 registerProcessing.done.watch(({ result }) => {
   if (!result.ok) return;
 
-  Router.push('/');
+  loginProcessing({
+    email: $emailField.getState(),
+    password: $passwordField.getState()
+  });
 });
