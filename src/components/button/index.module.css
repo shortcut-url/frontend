@@ -19,13 +19,20 @@
   border-radius: var(--base-border-r);
   box-shadow: 0 0 10px -2px var(--color);
 
-  &:hover,
-  &:focus {
-    opacity: 0.8;
+  &:disabled,
+  &.disabled {
+    filter: grayscale(20%);
   }
 
-  &:active {
-    transform: translateY(1px);
+  &:not(:disabled):not(.disabled) {
+    &:hover,
+    &:focus {
+      opacity: 0.85;
+    }
+
+    &:active {
+      transform: translateY(1px);
+    }
   }
 }
 

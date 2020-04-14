@@ -9,16 +9,26 @@ export let Button = forwardRef(
       variant = 'default',
       color = 'default',
       className = '',
+      disabled = false,
       children,
       ...props
     },
     ref
   ) => {
+    let tagNotButton = Tag !== 'button';
+
     let classes = defineButtonVariant({
       variant,
-      extraClass: className,
-      disabled: props.disabled
+      disabled
     });
+
+    classes += ` ${className}`;
+
+    if (tagNotButton && disabled) {
+      classes += ` ${styles.disabled}`;
+    } else {
+      props.disabled = disabled;
+    }
 
     classes += defineButtonColor({
       color
@@ -32,8 +42,8 @@ export let Button = forwardRef(
   }
 );
 
-let defineButtonVariant = ({ variant, extraClass, disabled }) => {
-  let classes = `${styles.reset_button}`;
+let defineButtonVariant = ({ variant, disabled }) => {
+  let classes = styles.reset_button;
 
   switch (variant) {
     case 'default':
@@ -59,8 +69,6 @@ let defineButtonVariant = ({ variant, extraClass, disabled }) => {
     default:
       break;
   }
-
-  classes += extraClass;
 
   return classes;
 };
