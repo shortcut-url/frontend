@@ -20,7 +20,7 @@ export let Checkbox = ({
         disabled={disabled}
         {...props}
       />
-      <span>{children}</span>
+      {children}
     </label>
   );
 };
