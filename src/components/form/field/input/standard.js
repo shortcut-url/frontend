@@ -24,11 +24,7 @@ export let StandardInput = ({
         {...props}
       />
       {error && (
-        <label
-          htmlFor={id}
-          className={commonErrorStyle.error}
-          title={`Error: ${error}`}
-        >
+        <label htmlFor={id} className={commonErrorStyle.error}>
           {error}
         </label>
       )}
