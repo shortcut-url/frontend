@@ -1,23 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 import { Button } from 'components/button';
 import styles from './index.module.css';
 
 export let NavigationFloat = (props) => {
   let [isOpenMobileNavigation, setOpenMobileNavigation] = useState(false);
-
-  useEffect(() => {
-    if (isOpenMobileNavigation) {
-      document.body.classList.add('is-locked');
-    } else {
-      document.body.classList.remove('is-locked');
-    }
-  }, [isOpenMobileNavigation]);
+  let [prevScroll, setPrevScroll] = useState(0);
 
   function handleContainerClick(event) {
     if (event.target.tagName === 'A') {
       setOpenMobileNavigation(true);
     }
+  }
+
+  function handleButtonToggleClick() {
+    if (!isOpenMobileNavigation) {
+      setOpenMobileNavigation(true);
+      setPrevScroll(window.scrollY);
+
+      document.body.style.top = `-${window.scrollY}px`;
+      document.body.classList.add('is-locked');
+
+      return;
+    }
+
+    setOpenMobileNavigation(false);
+
+    document.body.style.top = '';
+    document.body.classList.remove('is-locked');
+    window.scrollTo(0, prevScroll);
   }
 
   return (
@@ -35,7 +46,7 @@ export let NavigationFloat = (props) => {
 
       <div className={styles.nav_float}>
         <Button
-          onClick={() => setOpenMobileNavigation(!isOpenMobileNavigation)}
+          onClick={() => handleButtonToggleClick()}
           className={`${
             isOpenMobileNavigation ? styles.nav_close : styles.nav_open
           }`}
