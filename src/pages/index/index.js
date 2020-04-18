@@ -55,15 +55,16 @@ let Form = () => {
     <form onSubmit={handleSubmit} className={styles.form}>
       <Input
         value={urlField}
+        disabled={isFormLoading}
         onChange={urlFieldChange}
         error={urlField && urlFieldError}
-        disabled={isFormLoading}
         id="url"
         inputMode="url"
         label="Enter your url which you want to reduce"
         placeholder="https://twitter.com"
-        required
         maxlegth="10000"
+        enterkeyhint="enter"
+        required
       />
 
       <FormButtons />
