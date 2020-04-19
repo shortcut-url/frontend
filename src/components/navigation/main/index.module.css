@@ -118,12 +118,6 @@
   }
 }
 
-.avatar_container {
-  --border-radius: 50%;
-
-  padding: 10px;
-}
-
 .profile_avatar {
   border-radius: 50%;
 }
