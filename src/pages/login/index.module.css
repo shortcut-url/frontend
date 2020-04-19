@@ -42,7 +42,8 @@
 }
 
 .button_email::before {
-  background-image: url(/icons/mail.svg);
+  background-color: var(--base-text);
+  mask-image: url(/icons/mail.svg);
 }
 
 .link_create-account {

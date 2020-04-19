@@ -25,10 +25,14 @@
   width: 0.8em;
   height: 0.8em;
   content: '';
-  border: 0.1em solid var(--base-ui-black);
+  border: 0.1em solid var(--dark);
   border-radius: 50%;
   transition: all 0.1s;
   transform: translate(-50%, -50%);
+
+  @media (prefers-color-scheme: dark) {
+    border-color: var(--base-white);
+  }
 }
 
 /*
@@ -36,7 +40,11 @@
  */
 
 .check_input:checked::before {
-  background-color: var(--base-ui-black);
+  background-color: var(--dark);
+
+  @media (prefers-color-scheme: dark) {
+    background-color: var(--base-white);
+  }
 }
 
 /*

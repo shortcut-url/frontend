@@ -32,8 +32,14 @@
     width: 25px;
     height: 25px;
     content: '';
-    background-color: var(--base-black);
+    background-color: var(--base-text);
     background-size: 100%;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    &::before {
+      background-color: var(--base-white);
+    }
   }
 }
 

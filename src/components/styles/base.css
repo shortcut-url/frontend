@@ -1,18 +1,21 @@
 :root {
-  --base-black: #4d6986;
   --base-white: #fdfdfd;
   --base-red: #bd143b;
-  --base-text: var(--base-black);
+  --base-text: #4d6986;
   --base-title: var(--base-text);
   --base-background: #e0e5ec;
   --base-border: #abb7c7;
+  --base-panel: var(--base-background);
   --base-accent: #2c98ef;
-  --base-ui-black: #bec3c9;
-  --base-ui-gradient-gray: #caced4;
-  --base-ui-gradient-light-gray: #f0f5fd;
   --base-border-w: 0.15rem;
   --base-border-r: 2rem;
   --width-nav: 200px;
+
+  @media (prefers-color-scheme: dark) {
+    --base-text: var(--base-white);
+    --base-background: #212121;
+    --base-panel: #232323;
+  }
 }
 
 @custom-media --mobile (max-width: 940px);

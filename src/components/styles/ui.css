@@ -27,6 +27,13 @@
   --light: var(--base-white);
   --gradient-one: #f0f5fd;
   --gradient-second: #caced4;
+
+  @media (prefers-color-scheme: dark) {
+    --dark: #121212;
+    --light: #303030;
+    --gradient-one: #232323;
+    --gradient-second: #1e1e1e;
+  }
 }
 
 :--flat {
