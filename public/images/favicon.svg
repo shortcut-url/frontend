@@ -1,0 +1,15 @@
+<svg viewBox="0 0 369 369" fill="none" xmlns="http://www.w3.org/2000/svg">
+<style>
+  .a {
+    stroke: #4d6986;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    stroke: #fff;
+  }
+</style>
+<line class="a" x1="185" y1="165" x2="12" y2="165" stroke-width="30"/>
+<line class="a" x1="190" y1="153" x2="190" y2="351" stroke-width="30"/>
+<line class="a" x1="56.3934" y1="298.393" x2="297.393" y2="57.3934" stroke-width="30"/>
+<circle class="a" cx="184.5" cy="184.5" r="169.5" stroke-width="30"/>
+</svg>
