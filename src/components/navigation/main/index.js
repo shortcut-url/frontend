@@ -18,13 +18,13 @@ export let MainNavigation = () => {
           <a className={styles.nav_home} title="Go to the home page.">
             <picture>
               <source
-                srcSet="/icons/globe-dark.svg"
+                srcSet="/images/logo/18x18-dark.svg"
                 media="(prefers-color-scheme: dark)"
               />
               <img
-                src="/icons/globe-light.svg"
-                width="23"
-                height="23"
+                src="/images/logo/18x18-light.svg"
+                width="18"
+                height="18"
                 alt="Logo Shortcut-URL"
               />
             </picture>
