@@ -27,7 +27,7 @@
   content: '';
   border: 0.1em solid var(--dark);
   border-radius: 50%;
-  transition: all 0.1s;
+  transition: background-color 0.1s;
   transform: translate(-50%, -50%);
 
   @media (prefers-color-scheme: dark) {

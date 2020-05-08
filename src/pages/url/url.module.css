@@ -24,7 +24,7 @@
   cursor: pointer;
   background-color: transparent;
   border: none;
-  transition: 0.1s;
+  transition: color 0.1s;
 
   &:hover,
   &:focus {
@@ -38,6 +38,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   background-color: transparent;
+  transition: color 0.1s;
 
   &:hover,
   &:focus {
