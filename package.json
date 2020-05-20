@@ -112,6 +112,11 @@
       ]
     }
   },
+  "prettier": {
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none"
+  },
   "stylelint": {
     "extends": "@logux/stylelint-config"
   },
