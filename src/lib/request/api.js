@@ -18,10 +18,10 @@ export async function requestAPI(method, url, options = {}) {
   let { body, ...restOptions } = options;
 
   let config = new Request(uri, {
+    ...restOptions,
     method,
     headers,
-    ...restOptions,
-    body: createBody(options, headers)
+    body: createBody(body, headers)
   });
 
   let res = await nodeFetch(config);
@@ -64,15 +64,15 @@ function contentTypeFromOptions(options) {
     : (options.headers && options.headers['Content-Type']) || '';
 }
 
-function createBody(options, headers) {
+function createBody(body, headers) {
   let contentType = headers.get('content-type');
 
-  if (options.body && contentType && contentType.includes('json')) {
-    return JSON.stringify(options.body);
+  if (body && contentType && contentType.includes('json')) {
+    return JSON.stringify(body);
   }
 
-  if (options.body instanceof FormData) {
-    return options.body;
+  if (body instanceof FormData) {
+    return body;
   }
 
   return undefined;
