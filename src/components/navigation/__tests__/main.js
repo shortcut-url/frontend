@@ -55,7 +55,7 @@ describe('Main navigation', () => {
 
       let { getByText } = render(<MainNavigation />);
 
-      getByText((text, el) => el.tagName === 'A' && text === 'Your profile');
+      getByText((text, el) => el.closest('a') && text === 'Your profile');
     });
   });
 });

@@ -1,8 +1,11 @@
 .created-url-card {
-  display: grid;
-  grid-gap: 10px;
   width: 100%;
   padding: 20px 25px;
+}
+
+.created-url-card > span {
+  display: grid;
+  grid-gap: 10px;
   font-weight: normal;
   color: var(--base-text);
   text-align: left;
