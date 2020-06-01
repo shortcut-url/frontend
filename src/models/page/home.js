@@ -1,9 +1,9 @@
 import { createStore, createEvent, createEffect, combine } from 'effector';
 
 import { urlAPI } from 'api/url';
-import { trimEvent } from 'lib/utils';
-import { urlValidator } from 'lib/validators';
-import { createFetching } from 'lib/request';
+import { trimEvent } from 'lib/utils/trim';
+import { urlValidator } from 'lib/validator/url';
+import { createFetching } from 'lib/request/fetching';
 
 /*
  * Create new url

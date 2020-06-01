@@ -1,8 +1,8 @@
-.avatar-container_inner {
+.root {
   position: relative;
 }
 
-.avatar-control {
+.control {
   position: absolute;
   display: flex;
   width: 100%;
@@ -20,13 +20,13 @@
   }
 }
 
-.avatar-control_new-avatar {
+.control_new-avatar {
   &::before {
     mask-image: url(/icons/upload-cloud.svg);
   }
 }
 
-.avatar-control_delete-avatar {
+.control_delete-avatar {
   background: transparent;
   border: none;
 
@@ -35,8 +35,8 @@
   }
 }
 
-.avatar-control_new-avatar,
-.avatar-control_delete-avatar {
+.control_new-avatar,
+.control_delete-avatar {
   position: relative;
   width: 100%;
   height: 100%;

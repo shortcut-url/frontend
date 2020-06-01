@@ -5,7 +5,7 @@ import { useStore, useList } from 'effector-react';
 import Link from 'next/link';
 
 import { MainLayout } from 'components/layout';
-import { Input } from 'components/form';
+import { InputText } from 'components/form';
 import { Button } from 'components/button';
 import {
   $urlField,
@@ -53,7 +53,7 @@ let Form = () => {
 
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
-      <Input
+      <InputText
         value={urlField}
         disabled={isFormLoading}
         onChange={urlFieldChange}

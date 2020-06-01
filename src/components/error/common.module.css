@@ -1,7 +1,0 @@
-.error {
-  display: block;
-  padding: 5px;
-  font-size: var(--base-unit);
-  font-weight: 600;
-  color: var(--base-red);
-}

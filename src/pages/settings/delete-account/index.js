@@ -6,7 +6,7 @@ import { useStore } from 'effector-react';
 import styles from './index.module.css';
 import { MainLayout } from 'components/layout';
 import { Button } from 'components/button';
-import { Input } from 'components/form';
+import { InputText } from 'components/form';
 import { $session } from 'models/session';
 import {
   $usernameField,
@@ -75,7 +75,7 @@ let AccountDeletionConfirmForm = () => {
       onSubmit={handleSubmit}
       className={styles['delete-account_confirm-form']}
     >
-      <Input
+      <InputText
         value={usernameField}
         onChange={usernameFieldChange}
         disabled={isFormLoading}

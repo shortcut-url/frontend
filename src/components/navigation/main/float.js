@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { Button } from 'components/button';
-import styles from './index.module.css';
+import styles from './float.module.css';
 
 export let NavigationFloat = (props) => {
   let [isOpenMobileNavigation, setOpenMobileNavigation] = useState(false);

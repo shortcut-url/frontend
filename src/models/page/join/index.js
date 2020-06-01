@@ -5,8 +5,8 @@ import {
   createStoreObject
 } from 'effector';
 
-import { trimEvent } from 'lib/utils';
-import { createFetching } from 'lib/request';
+import { trimEvent } from 'lib/utils/trim';
+import { createFetching } from 'lib/request/fetching';
 import { userAPI } from 'api/user';
 import { loginProcessing } from 'models/page/login/email';
 

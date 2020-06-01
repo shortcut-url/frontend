@@ -6,8 +6,8 @@ import {
 } from 'effector';
 import Router from 'next/router';
 
-import { trimEvent } from 'lib/utils';
-import { createFetching } from 'lib/request';
+import { trimEvent } from 'lib/utils/trim';
+import { createFetching } from 'lib/request/fetching';
 import { sessionAPI } from 'api/session';
 
 /*

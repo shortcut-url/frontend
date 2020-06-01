@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './index.module.css';
 import { commonErrorStyle } from 'components/error';
 
-export let StandardInput = ({
+export let InputText = ({
   label,
   error = undefined,
   id,

@@ -1,0 +1,23 @@
+.error {
+  display: block;
+  padding: 5px;
+  font-size: var(--base-unit);
+  font-weight: 600;
+  color: var(--base-red);
+}
+
+.error-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.error-list:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.error-list_item::before {
+  margin-right: 5px;
+  content: "-";
+}

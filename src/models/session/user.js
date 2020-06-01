@@ -1,7 +1,7 @@
 import { createStore, createEvent, createEffect } from 'effector';
 
 import { userAPI } from 'api/user';
-import { createFetching } from 'lib/request';
+import { createFetching } from 'lib/request/fetching';
 
 export let addUserSession = createEvent();
 export let removeUserSession = createEvent();

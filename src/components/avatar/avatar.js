@@ -1,10 +1,23 @@
 import React from 'react';
 import { useStore } from 'effector-react';
 
-import styles from './index.module.css';
+import { AvatarManagement } from './management';
 import { $session } from 'models/session';
+import styles from './avatar.module.css';
 
-export const Avatar = () => {
+export let Avatar = ({ containerClass, withAvatarManagement }) => (
+  <div className={`flat ${styles.root} ${containerClass}`}>
+    {withAvatarManagement && (
+      <AvatarManagement>
+        <AvatarContent />
+      </AvatarManagement>
+    )}
+
+    {!withAvatarManagement && <AvatarContent />}
+  </div>
+);
+
+let AvatarContent = () => {
   let { srcAvatar, name } = useStore($session).user;
 
   if (srcAvatar) {

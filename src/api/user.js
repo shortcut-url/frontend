@@ -1,4 +1,4 @@
-import { requestAPI } from 'lib/request';
+import { requestAPI } from 'lib/request/api';
 
 let createUserWithEmail = (userData) =>
   requestAPI('POST', 'user', { body: userData });

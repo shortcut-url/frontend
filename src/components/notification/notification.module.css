@@ -1,4 +1,4 @@
-.notification {
+.root {
   display: grid;
   grid-template-columns: 210px 30px;
   margin-top: 20px;
@@ -6,12 +6,12 @@
   font-weight: 600;
 }
 
-.notification_content {
+.content {
   padding: 12px 12px 12px 20px;
   font-size: 14px;
 }
 
-.notification_button {
+.button {
   --border-radius: 0;
 
   padding: 0;

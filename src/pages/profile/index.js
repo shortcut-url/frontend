@@ -5,7 +5,7 @@ import { useStore } from 'effector-react';
 
 import { $session } from 'models/session';
 import { MainLayout } from 'components/layout';
-import { ProfileAvatar } from 'components/profile/avatar';
+import { Avatar } from 'components/avatar';
 import { CreatedURLsTable, CreatedURLWithLinkCard } from 'components/url';
 import {
   $createdURLsCurrentUser,
@@ -63,7 +63,7 @@ export let MainHeader = () => {
 
   return (
     <header className={`${styles.container} ${styles.main_header}`}>
-      <ProfileAvatar
+      <Avatar
         containerClass={styles['main_header_avatar-container']}
         withAvatarManagement={true}
       />

@@ -4,7 +4,7 @@ import { useStore } from 'effector-react';
 
 import { $session } from 'models/session';
 import styles from './index.module.css';
-import { ProfileAvatar } from 'components/profile/avatar';
+import { Avatar } from 'components/avatar';
 import { Button } from 'components/button';
 import { NavigationFloat } from './float';
 
@@ -70,7 +70,7 @@ let LinkToProfileCurrentUser = () => {
 
   return (
     <div className={styles.profile}>
-      <ProfileAvatar />
+      <Avatar />
 
       <div className={styles['profile_name']} title="Your name">
         {currentUser.name}

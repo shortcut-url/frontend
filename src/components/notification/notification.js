@@ -1,10 +1,10 @@
 import React, { createRef, useEffect } from 'react';
 import { removeNotification } from 'models/notification';
 
-import styles from './info.module.css';
+import styles from './notification.module.css';
 import { ButtonStyles } from 'components/button';
 
-export let InfoNotificationItem = ({ id, content, duration = 4000 }) => {
+export let NotificationItem = ({ id, content, duration = 4000 }) => {
   let notificationElement = createRef();
 
   let removeNotificationHandler = () => removeNotification(id);
@@ -18,15 +18,15 @@ export let InfoNotificationItem = ({ id, content, duration = 4000 }) => {
   return (
     <div
       ref={notificationElement}
-      className={`${styles.notification} flat`}
+      className={`${styles.root} flat`}
       tabIndex="0"
     >
-      <div className={styles.notification_content}>{content}</div>
+      <div className={styles.content}>{content}</div>
       <button
         onClick={removeNotificationHandler}
         className={`
           ${ButtonStyles.reset_button}
-          ${styles.notification_button} 
+          ${styles.button} 
           pressed_active
         `}
         aria-label="Delete Notification"

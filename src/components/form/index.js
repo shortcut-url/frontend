@@ -1,1 +1,2 @@
-export * from './field';
+export { Checkbox } from './checkbox';
+export { InputText } from './input-text';
