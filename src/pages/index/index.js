@@ -33,8 +33,10 @@ export default () => {
       <Head>
         <title>Home</title>
       </Head>
+
       <MainLayout>
         <Form />
+
         <ListCreatedURLs />
       </MainLayout>
     </>
@@ -91,6 +93,7 @@ let FormButtons = () => {
   return (
     <div className={styles['form_buttons']}>
       <Button disabled={!isSubmitEnabled}>Create</Button>
+
       <Link href={user ? '/settings/future-urls' : '/login'} passHref>
         <Button
           tag="a"

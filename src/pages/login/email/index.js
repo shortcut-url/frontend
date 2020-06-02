@@ -22,6 +22,7 @@ export default () => {
       <Head>
         <title>Login</title>
       </Head>
+
       <MainLayout>
         <Form />
       </MainLayout>
@@ -43,7 +44,9 @@ export let Form = () => {
       {formError && <Error>{formError}</Error>}
 
       <Email />
+
       <Password />
+
       <Button disabled={isFormLoading} className={styles['form_button']}>
         Log in
       </Button>

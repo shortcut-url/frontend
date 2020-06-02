@@ -20,6 +20,7 @@ export default () => {
       <Head>
         <title>Login</title>
       </Head>
+
       <MainLayout>
         <AuthorizationTypes />
       </MainLayout>
@@ -39,6 +40,7 @@ export let AuthorizationTypes = () => {
           Log in with Google
         </Button>
       </li>
+
       <li>
         <Button
           tag="a"
@@ -48,6 +50,7 @@ export let AuthorizationTypes = () => {
           Log in with Twitter
         </Button>
       </li>
+
       <li>
         <Button
           tag="a"
@@ -57,6 +60,7 @@ export let AuthorizationTypes = () => {
           Log in with Email
         </Button>
       </li>
+
       <li>
         <hr className={styles.hr} />
         <Link href="/join">

@@ -32,8 +32,10 @@ export default ({ listCreatedURLsCurrentUser }) => {
       <Head>
         <title>Your profile</title>
       </Head>
+
       <MainLayout>
         <MainHeader />
+
         <CreatedURLs />
       </MainLayout>
     </>
@@ -67,9 +69,11 @@ export let MainHeader = () => {
         containerClass={styles['main_header_avatar-container']}
         withAvatarManagement={true}
       />
+
       <h1 className={styles['main_header_current-user-name']}>
         {currentUser.name}
       </h1>
+
       <Button tag="a" href="/settings">
         Settings
       </Button>

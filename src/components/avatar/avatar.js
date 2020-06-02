@@ -24,6 +24,7 @@ let AvatarContent = () => {
     return (
       <picture>
         <source srcSet={`${srcAvatar}?type=webp`} type="image/webp" />
+
         <img
           src={srcAvatar}
           className={styles.avatar_img}

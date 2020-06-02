@@ -24,6 +24,7 @@ export default () => {
       <Head>
         <title>Registration</title>
       </Head>
+
       <MainLayout>
         <Form />
       </MainLayout>
@@ -43,9 +44,13 @@ export let Form = () => {
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
       {ListErrorsForm && <Error>{ListErrorsForm}</Error>}
+
       <Email />
+
       <Username />
+
       <Password />
+
       <Button disabled={isFormLoading} className={styles['form_button']}>
         Sign up
       </Button>

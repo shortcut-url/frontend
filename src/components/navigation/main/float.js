@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Button } from 'components/button';
 import styles from './float.module.css';
 
-export let NavigationFloat = (props) => {
+export let NavigationFloat = ({ children }) => {
   let [isOpenMobileNavigation, setOpenMobileNavigation] = useState(false);
   let [prevScroll, setPrevScroll] = useState(0);
 
@@ -41,7 +41,7 @@ export let NavigationFloat = (props) => {
             : styles['nav_is-close']
         }`}
       >
-        {props.children}
+        {children}
       </div>
 
       <div className={styles.nav_float}>

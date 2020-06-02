@@ -21,6 +21,7 @@ export let MainNavigation = () => {
                 srcSet="/images/logo/18x18-dark.svg"
                 media="(prefers-color-scheme: dark)"
               />
+
               <img
                 src="/images/logo/18x18-light.svg"
                 width="18"
@@ -28,11 +29,13 @@ export let MainNavigation = () => {
                 alt="Logo Shortcut-URL"
               />
             </picture>
+
             <span>Shortcut-URL.com</span>
           </a>
         </Link>
 
         {!currentUser && <AuthNavigationList />}
+
         {currentUser && <LinkToProfileCurrentUser />}
       </nav>
     </NavigationFloat>
@@ -59,6 +62,7 @@ let AuthNavigationList = () => (
     <h2 className={`${styles.nav_heading} ${styles['heading_account']}`}>
       Account
     </h2>
+
     <ul className={styles.list}>
       <LinkItemList href="/login">Login</LinkItemList>
     </ul>

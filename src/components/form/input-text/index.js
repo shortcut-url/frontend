@@ -17,12 +17,14 @@ export let InputText = ({
           {label}
         </label>
       )}
+
       <input
         id={id}
         className={`${styles.input} pressed`}
         type="text"
         {...props}
       />
+
       {error && (
         <label htmlFor={id} className={commonErrorStyle.error}>
           {error}

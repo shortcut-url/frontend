@@ -28,6 +28,7 @@ export default ({ settingsFutureURLsCurrentUser }) => {
       <Head>
         <title>Settings for future URLs</title>
       </Head>
+
       <MainLayout>
         <Settings />
       </MainLayout>

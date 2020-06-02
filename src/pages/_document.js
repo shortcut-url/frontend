@@ -19,16 +19,21 @@ class MyDocument extends Document {
                 with the ability to track statistics and other data
               "
           />
+
           <link
             rel="shortcut icon"
             href="/images/favicon.svg"
             type="image/svg+xml"
           />
+
           <link rel="manifest" href="/manifest.json" />
+
           <meta name="theme-color" content="#e0e5ec" />
         </Head>
+
         <body>
           <Main />
+
           <NextScript />
         </body>
       </Html>

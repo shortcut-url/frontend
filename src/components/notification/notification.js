@@ -22,6 +22,7 @@ export let NotificationItem = ({ id, content, duration = 4000 }) => {
       tabIndex="0"
     >
       <div className={styles.content}>{content}</div>
+
       <button
         onClick={removeNotificationHandler}
         className={`

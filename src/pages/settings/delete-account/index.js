@@ -28,6 +28,7 @@ export default () => {
       <Head>
         <title>Delete account</title>
       </Head>
+
       <MainLayout>
         <DeleteAccountCard />
       </MainLayout>
@@ -42,6 +43,7 @@ let DeleteAccountCard = () => {
         <h1 className={styles['delete-account-card_heading']}>
           Delete account
         </h1>
+
         <p>
           When you delete your account, all previously created URLs and other
           data are also deleted.
