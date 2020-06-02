@@ -29,12 +29,13 @@ export default ({ createdURL }) => {
       <Head>
         <title>Management created by URL</title>
       </Head>
-      <MainLayout>
-        <div className={styles['created-url_container']}>
-          <MainDataCreatedURL />
-          <StatisticsCreatedURL />
-          <ManagementCreatedURL />
-        </div>
+
+      <MainLayout mainClassName={styles['created-url_container']}>
+        <MainDataCreatedURL />
+
+        <StatisticsCreatedURL />
+
+        <ManagementCreatedURL />
       </MainLayout>
     </>
   );
