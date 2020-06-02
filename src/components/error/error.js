@@ -3,11 +3,11 @@ import React, { useEffect, createRef } from 'react';
 import styles from './error.module.css';
 
 export let Error = ({ children }) => {
-  let typeofError = typeof children;
+  if (typeof children === 'object') {
+    return <ErrorList>{children}</ErrorList>;
+  }
 
-  if (typeofError === 'string') return <SingleError>{children}</SingleError>;
-
-  if (typeofError === 'object') return <ErrorList>{children}</ErrorList>;
+  return <SingleError>{children}</SingleError>;
 };
 
 let SingleError = ({ children }) => {
