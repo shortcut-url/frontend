@@ -6,9 +6,11 @@
     "build": "next build",
     "start": "npm run build && npm run start:prod",
     "start:prod": "set NODE_ENV=production && node server.js",
-    "lint": "eslint src/**/*.js && stylelint src/**/*.css",
-    "jest": "react-scripts test",
-    "test": "set CI=true && npm run jest && npm run lint"
+    "test": "set CI=true && npm run test:lint && npm run test:code --no-watch",
+    "test:lint": "eslint src/**/*.js && stylelint src/**/*.css",
+    "test:code": "react-scripts test",
+    "e2e:run": "cypress run",
+    "e2e:open": "cypress open"
   },
   "husky": {
     "hooks": {
@@ -51,7 +53,10 @@
     }
   },
   "eslintConfig": {
-    "extends": "react-app",
+    "extends": [
+      "react-app",
+      "plugin:cypress/recommended"
+    ],
     "plugins": [
       "prefer-let"
     ],
@@ -137,6 +142,8 @@
   },
   "devDependencies": {
     "@logux/stylelint-config": "^0.1.3",
+    "cypress": "^4.7.0",
+    "eslint-plugin-cypress": "^2.11.1",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-prefer-let": "^1.0.1",
     "eslint-plugin-prettier": "^3.1.3",
