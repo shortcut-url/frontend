@@ -1,22 +1,18 @@
 .created-url_container {
-  align-items: center;
+  display: grid;
+  row-gap: 40px;
+  grid-template-rows: repeat(3, min-content);
+  align-content: center;
   justify-content: center;
   padding: 20px;
 }
 
 .created-url_card {
+  display: grid;
+  row-gap: 15px;
   width: 100%;
   max-width: 700px;
   padding: 20px 25px;
-
-  &:not(:first-child) {
-    margin-top: 35px;
-  }
-}
-
-.main-data-created-url {
-  display: grid;
-  grid-gap: 10px;
 }
 
 .main-data-created-url_button-heading {
@@ -47,10 +43,6 @@
   }
 }
 
-.created-url_heading {
-  margin-bottom: 5px;
-}
-
 .statistics-created-url_list,
 .management-created-url_list {
   padding-left: 0;
@@ -59,12 +51,10 @@
 
 .management-created-url_list {
   display: grid;
-  grid-gap: 15px;
-  margin-top: 10px;
+  row-gap: 30px;
 }
 
 .management-created-url_group-buttons {
   display: grid;
-  grid-gap: 20px;
-  margin-top: 20px;
+  row-gap: 20px;
 }

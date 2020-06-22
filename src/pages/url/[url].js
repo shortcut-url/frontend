@@ -70,11 +70,10 @@ export let MainDataCreatedURL = () => {
   }
 
   return (
-    <div
+    <section
       className={`
-        ${styles['created-url_card']} 
-        ${styles['main-data-created-url']} 
         flat
+        ${styles['created-url_card']}
       `}
     >
       <button
@@ -101,7 +100,7 @@ export let MainDataCreatedURL = () => {
       >
         Original URL: {createdURL.originalURL}
       </button>
-    </div>
+    </section>
   );
 };
 
@@ -109,15 +108,15 @@ export let StatisticsCreatedURL = () => {
   let { statistics } = useStore($createdURL);
 
   return (
-    <div className={`${styles['created-url_card']} flat `}>
-      <h2 className={styles['created-url_heading']}>Statistics</h2>
+    <section className={`flat ${styles['created-url_card']}`}>
+      <h2>Statistics</h2>
 
       <ul className={styles['statistics-created-url_list']}>
         <li>
           Number of transitions on the URL: {statistics.numberTransitions}
         </li>
       </ul>
-    </div>
+    </section>
   );
 };
 
@@ -125,8 +124,8 @@ export let ManagementCreatedURL = () => {
   let { settings } = useStore($createdURL);
 
   return (
-    <div className={`${styles['created-url_card']} flat`}>
-      <h2 className={styles['created-url_heading']}>Management</h2>
+    <section className={`flat ${styles['created-url_card']}`}>
+      <h2>Management</h2>
 
       <ul className={styles['management-created-url_list']}>
         <li>
@@ -161,6 +160,6 @@ export let ManagementCreatedURL = () => {
           </Button>
         </li>
       </ul>
-    </div>
+    </section>
   );
 };
