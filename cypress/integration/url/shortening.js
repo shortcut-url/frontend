@@ -5,22 +5,7 @@ context('URL Shortening', () => {
     let url = 'https://twitter.com';
 
     it('Shorten URL', () => {
-      cy.visit('/');
-
-      cy.get('form')
-        .find('button:first')
-        .should('contain.text', 'Create')
-        .as('buttonSubmit');
-
-      cy.get('form').find('input').as('inputUrl');
-
-      cy.get('@buttonSubmit').should('be.disabled');
-
-      cy.get('@inputUrl').type(url).should('have.value', url);
-
-      cy.get('@buttonSubmit').click();
-
-      cy.get('@inputUrl').should('have.value', '');
+      cy.shortenUrl(url);
     });
 
     it('Search for a shortened URL', () => {
