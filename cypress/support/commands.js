@@ -36,3 +36,11 @@ Cypress.Commands.add('shortenUrl', (url) => {
 
   cy.get('@inputUrl').should('have.value', '');
 });
+
+Cypress.Commands.add('authCheck', (username) => {
+  cy.visit('/');
+
+  cy.get('nav').contains(username);
+
+  cy.getCookie('connect.sid').should('exist');
+});
