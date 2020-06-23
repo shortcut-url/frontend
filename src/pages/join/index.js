@@ -71,9 +71,8 @@ export let Email = () => {
       id="email"
       label="Email"
       type="email"
+      name="email"
       placeholder="example@example.com"
-      autoComplete="email"
-      spellCheck="false"
       required
     />
   );
@@ -92,6 +91,7 @@ export let Username = () => {
       id="username"
       label="Username"
       type="text"
+      name="username"
       placeholder="Example"
       autoComplete="username"
       autoCapitalize="off"
@@ -116,6 +116,7 @@ export let Password = () => {
       id="password"
       label="Password"
       type="password"
+      name="password"
       placeholder="Password"
       autoComplete="new-password"
       minLength="6"
