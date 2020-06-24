@@ -56,7 +56,7 @@ let Settings = () => {
   let settingsFutureURLs = useStore($settingsFutureURLs);
 
   return (
-    <ul className={styles['settings_list']} aria-label="Settings list">
+    <ul className={styles['settings_list']}>
       <li>
         <Checkbox
           checked={settingsFutureURLs.trackingNumberTransitions}

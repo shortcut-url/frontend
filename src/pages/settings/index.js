@@ -29,7 +29,7 @@ export default () => {
 
 let Settings = () => {
   return (
-    <ul className={styles['settings-list']} aria-label="Settings list">
+    <ul className={styles['settings-list']}>
       <li>
         <Button
           onClick={destroySession}
