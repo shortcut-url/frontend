@@ -16,6 +16,8 @@ Cypress.Commands.add('login', (email, password) => {
     .should('have.value', password);
 
   cy.get('@form').find('button').contains('Log in').click();
+
+  cy.location('pathname', { timeout: 1500 }).should('eq', '/');
 });
 
 Cypress.Commands.add('shortenUrl', (url) => {
@@ -42,5 +44,7 @@ Cypress.Commands.add('authCheck', (username) => {
 
   cy.get('nav').contains(username);
 
-  cy.getCookie('connect.sid').should('exist');
+  cy.get('nav').find('a').contains('Your profile').click();
+
+  cy.location('pathname', { timeout: 1500 }).should('eq', '/profile');
 });
