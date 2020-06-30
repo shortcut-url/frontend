@@ -2,10 +2,9 @@
   "name": "frontend",
   "private": true,
   "scripts": {
-    "dev": "node server.js",
+    "dev": "next dev",
     "build": "next build",
-    "start": "npm run build && npm run start:prod",
-    "start:prod": "set NODE_ENV=production && node server.js",
+    "start": "npm run build && next start",
     "test": "set CI=true && npm run test:lint && npm run test:code --no-watch",
     "test:lint": "eslint src/**/*.js && stylelint src/**/*.css",
     "test:code": "react-scripts test",
