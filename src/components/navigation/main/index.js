@@ -16,21 +16,7 @@ export let MainNavigation = () => {
       <nav className={`${styles.nav} flat `}>
         <Link href="/">
           <a className={styles.nav_home} title="Go to the home page.">
-            <picture>
-              <source
-                srcSet="/images/logo/18x18-dark.svg"
-                media="(prefers-color-scheme: dark)"
-              />
-
-              <img
-                src="/images/logo/18x18-light.svg"
-                width="18"
-                height="18"
-                alt="Logo Shortcut-URL"
-              />
-            </picture>
-
-            <span>Shortcut-URL.com</span>
+            Shortcut-URL.com
           </a>
         </Link>
 
@@ -57,17 +43,13 @@ let LinkItemList = ({ href, children, ...props }) => {
   );
 };
 
-let AuthNavigationList = () => (
-  <>
-    <h2 className={`${styles.nav_heading} ${styles['heading_account']}`}>
-      Account
-    </h2>
-
+let AuthNavigationList = () => {
+  return (
     <ul className={styles.list}>
       <LinkItemList href="/login">Login</LinkItemList>
     </ul>
-  </>
-);
+  );
+};
 
 let LinkToProfileCurrentUser = () => {
   let currentUser = useStore($session).user;
