@@ -13,7 +13,7 @@
   padding: 20px 15px;
   overflow: hidden;
   text-align: center;
-  background-color: var(--base-panel);
+  background: var(--base-panel);
 
   &:hover,
   &:focus {
@@ -23,8 +23,7 @@
   @media (--mobile) {
     width: 100%;
     padding-bottom: 80px;
-    background: transparent;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(22px);
   }
 }
 
