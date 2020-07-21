@@ -8,28 +8,36 @@ export let NavigationFloat = ({ children }) => {
   let [isOpenMobileNavigation, setOpenMobileNavigation] = useState(false);
   let [prevScroll, setPrevScroll] = useState(0);
 
-  function handleContainerClick(event) {
-    if (event.target.tagName === 'A') {
-      setOpenMobileNavigation(true);
-    }
+  function openMobileNavigation() {
+    setOpenMobileNavigation(true);
+
+    setPrevScroll(window.scrollY);
+
+    document.body.style.top = `-${window.scrollY}px`;
+    document.body.classList.add('is-locked');
   }
 
-  function handleButtonToggleClick() {
-    if (!isOpenMobileNavigation) {
-      setOpenMobileNavigation(true);
-      setPrevScroll(window.scrollY);
-
-      document.body.style.top = `-${window.scrollY}px`;
-      document.body.classList.add('is-locked');
-
-      return;
-    }
-
+  function closeMobileNavigation() {
     setOpenMobileNavigation(false);
 
     document.body.style.top = '';
     document.body.classList.remove('is-locked');
     window.scrollTo(0, prevScroll);
+  }
+
+  function handleContainerClick(event) {
+    if (event.target.closest('a')) {
+      closeMobileNavigation();
+    }
+  }
+
+  function handleClickButtonMobileNavigation() {
+    if (isOpenMobileNavigation) {
+      closeMobileNavigation();
+      return;
+    }
+
+    openMobileNavigation();
   }
 
   let containerClassName = classNames(
@@ -49,7 +57,7 @@ export let NavigationFloat = ({ children }) => {
 
       <div className={s.float}>
         <Button
-          onClick={handleButtonToggleClick}
+          onClick={handleClickButtonMobileNavigation}
           className={floatButtonClassName}
           title={`${isOpenMobileNavigation ? 'Close menu' : 'Open menu'}`}
         />
