@@ -33,10 +33,12 @@ export let NavigationFloat = ({ children }) => {
   }
 
   let containerClassName = classNames(
-    isOpenMobileNavigation ? s['container_is-open'] : s['container_is-close']
+    s.container,
+    isOpenMobileNavigation && s['--is-open']
   );
   let floatButtonClassName = classNames(
-    isOpenMobileNavigation ? s['float_close'] : s['float_open']
+    s.float_button,
+    isOpenMobileNavigation && s['--is-open']
   );
 
   return (

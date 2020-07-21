@@ -22,7 +22,9 @@
 
   @media (--mobile) {
     width: 100%;
-    padding-bottom: 80px;
+
+    /* Float padding + Float button + Gap */
+    padding-bottom: calc(55px + 30px + 20px);
     backdrop-filter: blur(22px);
   }
 }

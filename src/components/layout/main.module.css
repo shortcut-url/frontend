@@ -15,8 +15,9 @@
 .footer {
   @media (--mobile) {
     /*
-      * In order not to overlap the menu button
+      * In order not to overlap the menu button.
+      * Float padding + Float button + Gap.
     */
-    padding-bottom: 70px;
+    padding-bottom: calc(55px + 30px + 20px);
   }
 }
