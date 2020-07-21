@@ -2,7 +2,7 @@ import React from 'react';
 
 import { sessionAPI } from 'api/session';
 import { addUserSession } from 'models/session';
-import 'components/styles/common.css';
+import 'styles/common.css';
 
 export default function MyApp({ Component, pageProps, user = null }) {
   addUserSession(user);

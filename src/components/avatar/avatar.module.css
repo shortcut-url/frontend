@@ -5,11 +5,11 @@
   padding: 10px;
 }
 
-.avatar_img {
+.img {
   border-radius: 50%;
 }
 
-.avatar_no-image {
+.fallback {
   display: flex;
   align-items: center;
   justify-content: center;

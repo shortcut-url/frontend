@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 
-import styles from './button.module.css';
+import s from './button.module.css';
 import { classNames } from 'lib/utils/class-names';
 
 const ButtonBase = (
@@ -16,23 +16,23 @@ const ButtonBase = (
   ref
 ) => {
   let rootClassName = classNames(
-    styles.reset_button,
-    styles.root,
+    s.root,
+    s.reset_button,
     variant === 'default' &&
       (disabled ? 'concave' : 'flat convex_hover pressed_active'),
     (variant === 'accent' || variant === 'danger') &&
-      classNames(styles.color_button, styles[`button_${variant}`]),
-    Tag !== 'button' && disabled && styles.disabled,
+      classNames(s.color_button, s[`button_${variant}`]),
+    Tag !== 'button' && disabled && s.disabled,
     className
   );
 
   return (
     <Tag ref={ref} className={rootClassName} disabled={disabled} {...props}>
-      <span className={styles.text}>{children}</span>
+      <span className={s.text}>{children}</span>
     </Tag>
   );
 };
 
 const Button = forwardRef(ButtonBase);
 
-export { Button, styles as ButtonStyles };
+export { Button, s as ButtonStyles };

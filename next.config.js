@@ -2,6 +2,7 @@ const path = require('path');
 const withOffline = require('next-offline');
 
 module.exports = {
+  pageExtensions: ['page.js', 'api.js'],
   webpack: (config) => {
     config.resolve.alias['components'] = path.join(
       __dirname,
@@ -11,6 +12,7 @@ module.exports = {
     config.resolve.alias['models'] = path.join(__dirname, 'src', 'models');
     config.resolve.alias['lib'] = path.join(__dirname, 'src', 'lib');
     config.resolve.alias['api'] = path.join(__dirname, 'src', 'api');
+    config.resolve.alias['styles'] = path.join(__dirname, 'src', 'styles');
 
     return config;
   },

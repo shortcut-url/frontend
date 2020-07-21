@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
+import s from './float.module.css';
 import { Button } from 'components/button';
-import styles from './float.module.css';
+import { classNames } from 'lib/utils/class-names';
 
 export let NavigationFloat = ({ children }) => {
   let [isOpenMobileNavigation, setOpenMobileNavigation] = useState(false);
@@ -31,25 +32,23 @@ export let NavigationFloat = ({ children }) => {
     window.scrollTo(0, prevScroll);
   }
 
+  let containerClassName = classNames(
+    isOpenMobileNavigation ? s['container_is-open'] : s['container_is-close']
+  );
+  let floatButtonClassName = classNames(
+    isOpenMobileNavigation ? s['float_close'] : s['float_open']
+  );
+
   return (
     <>
-      <div
-        onClick={handleContainerClick}
-        className={`${
-          isOpenMobileNavigation
-            ? styles['nav_is-open']
-            : styles['nav_is-close']
-        }`}
-      >
+      <div onClick={handleContainerClick} className={containerClassName}>
         {children}
       </div>
 
-      <div className={styles.nav_float}>
+      <div className={s.float}>
         <Button
-          onClick={() => handleButtonToggleClick()}
-          className={`${
-            isOpenMobileNavigation ? styles.nav_close : styles.nav_open
-          }`}
+          onClick={handleButtonToggleClick}
+          className={floatButtonClassName}
           title={`${isOpenMobileNavigation ? 'Close menu' : 'Open menu'}`}
         />
       </div>

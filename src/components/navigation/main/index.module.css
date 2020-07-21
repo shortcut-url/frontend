@@ -1,4 +1,4 @@
-.nav {
+.root {
   --border-radius: 0;
   --distance: 8px;
 
@@ -28,7 +28,7 @@
   }
 }
 
-.nav_home {
+.logo {
   --border-radius: var(--base-border-r);
 
   padding-bottom: 10px;
@@ -48,21 +48,6 @@
 
   @media (--mobile) {
     justify-content: center;
-  }
-}
-
-.nav_heading {
-  display: flex;
-  align-items: center;
-  padding: 20px 0 0;
-  font-size: 1rem;
-  font-weight: 600;
-
-  @media (--mobile) {
-    justify-content: center;
-
-    /* Compensation of the width of the icon, so that it is in the middle */
-    margin-left: -24px;
   }
 }
 

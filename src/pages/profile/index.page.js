@@ -6,15 +6,11 @@ import { useStore } from 'effector-react';
 import { $session } from 'models/session';
 import { MainLayout } from 'components/layout';
 import { Avatar } from 'components/avatar';
-import { CreatedURLsTable, CreatedURLWithLinkCard } from 'components/url';
-import {
-  $createdURLsCurrentUser,
-  downloadCreatedURLsCurrentUser,
-  addCreatedURLsCurrentUser
-} from 'models/page/profile';
+import { addCreatedURLsCurrentUser } from 'models/page/profile';
 import styles from './index.module.css';
 import { userAPI } from 'api/user';
 import { Button } from 'components/button';
+import { ListCreatedURLs } from './list-created-urls';
 
 export default ({ listCreatedURLsCurrentUser }) => {
   let currentUser = useStore($session).user;
@@ -36,7 +32,7 @@ export default ({ listCreatedURLsCurrentUser }) => {
       <MainLayout>
         <MainHeader />
 
-        <CreatedURLs />
+        <ListCreatedURLs />
       </MainLayout>
     </>
   );
@@ -78,27 +74,5 @@ export let MainHeader = () => {
         Settings
       </Button>
     </header>
-  );
-};
-
-export let CreatedURLs = () => {
-  let createdURLsCurrentUser = useStore($createdURLsCurrentUser);
-
-  return (
-    <section className={`${styles.container} created-urls_section`}>
-      <h2 className={styles['created-urls_heading']}>Created URLs</h2>
-
-      {createdURLsCurrentUser.length ? (
-        <CreatedURLsTable
-          urlList={createdURLsCurrentUser}
-          createdURLCard={CreatedURLWithLinkCard}
-          loadMoreCreatedURLs={downloadCreatedURLsCurrentUser}
-        />
-      ) : (
-        <div className={styles['created-urls_empty']}>
-          You don't have created urls
-        </div>
-      )}
-    </section>
   );
 };

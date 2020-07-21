@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStore } from 'effector-react';
 
-import styles from './management.module.css';
+import s from './management.module.css';
 import { $session } from 'models/session';
 import { deleteAvatar, uploadAvatar } from 'models/session/user';
 
@@ -19,11 +19,11 @@ export const AvatarManagement = (props) => {
   }
 
   return (
-    <div className={styles.root}>
-      <div className={styles['control']}>
+    <div className={s.root}>
+      <div className={s.control}>
         <input
           onChange={handleAvatarUpload}
-          className={styles['control_new-avatar']}
+          className={s['control_input']}
           title="Upload new avatar"
           type="file"
           accept="image/*"
@@ -32,7 +32,7 @@ export const AvatarManagement = (props) => {
         {!!srcAvatar && (
           <button
             onClick={deleteAvatar}
-            className={styles['control_delete-avatar']}
+            className={s['control_delete-button']}
             title="Delete current avatar"
             type="button"
           />

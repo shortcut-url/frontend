@@ -1,6 +1,7 @@
 import React from 'react';
 
-import styles from './index.module.css';
+import s from './index.module.css';
+import { classNames } from 'lib/utils/class-names';
 
 export let Checkbox = ({
   children,
@@ -8,16 +9,19 @@ export let Checkbox = ({
   disabled = false,
   ...props
 }) => {
+  let rootClassName = classNames(s.root, containerClass);
+  let inputClassName = classNames(
+    s.input,
+    disabled ? 'convex' : undefined,
+    !disabled ? 'flat concave_hover pressed_active' : undefined
+  );
+
   return (
-    <label className={`${styles.check} ${containerClass}`}>
+    <label className={rootClassName}>
       <input
-        className={`
-          ${styles['check_input']}
-          ${disabled ? 'convex' : undefined}
-          ${!disabled ? 'flat concave_hover pressed_active' : undefined}
-        `}
-        type="checkbox"
+        className={inputClassName}
         disabled={disabled}
+        type="checkbox"
         {...props}
       />
 

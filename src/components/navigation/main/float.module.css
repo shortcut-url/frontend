@@ -1,14 +1,14 @@
 @media (--mobile) {
-  .nav_is-open {
+  .container_is-open {
     display: block;
   }
 
-  .nav_is-close {
+  .container_is-close {
     display: none;
   }
 }
 
-.nav_float {
+.float {
   position: fixed;
   right: 15px;
   bottom: 15px;
@@ -20,8 +20,8 @@
   }
 }
 
-.nav_open,
-.nav_close {
+.float_open,
+.float_close {
   display: flex;
   align-items: center;
   padding: 15px;
@@ -42,10 +42,10 @@
   }
 }
 
-.nav_open::before {
+.float_open::before {
   mask-image: url(/icons/menu.svg);
 }
 
-.nav_close::before {
+.float_close::before {
   mask-image: url(/icons/x.svg);
 }

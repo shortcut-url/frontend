@@ -1,6 +1,7 @@
 import React, { useEffect, createRef } from 'react';
 
-import styles from './error.module.css';
+import s from './error.module.css';
+import { classNames } from 'lib/utils/class-names';
 
 export let Error = ({ children }) => {
   if (typeof children === 'object') {
@@ -18,12 +19,7 @@ let SingleError = ({ children }) => {
   });
 
   return (
-    <div
-      ref={containerElement}
-      className={styles.error}
-      role="alert"
-      tabIndex="0"
-    >
+    <div ref={containerElement} className={s.error} role="alert" tabIndex="0">
       {children}
     </div>
   );
@@ -36,8 +32,10 @@ export let ErrorList = ({ children }) => {
     containerElement.current.focus();
   });
 
+  let itemClassName = classNames(s.error, s['list_item']);
+
   let item = (error, index) => (
-    <li key={index} className={`${styles.error} ${styles['error-list_item']}`}>
+    <li key={index} className={itemClassName}>
       {error}
     </li>
   );
@@ -47,12 +45,7 @@ export let ErrorList = ({ children }) => {
     : Object.values(children).map(item);
 
   return (
-    <ul
-      ref={containerElement}
-      className={styles['error-list']}
-      role="alert"
-      tabIndex="0"
-    >
+    <ul ref={containerElement} className={s.list} role="alert" tabIndex="0">
       {errors}
     </ul>
   );

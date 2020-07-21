@@ -1,4 +1,4 @@
-.check {
+.root {
   position: relative;
   display: grid;
   grid-template-columns: auto 1fr;
@@ -8,7 +8,7 @@
   cursor: pointer;
 }
 
-.check_input {
+.input {
   --border-radius: 50%;
 
   position: relative;
@@ -18,7 +18,7 @@
   cursor: pointer;
 }
 
-.check_input::before {
+.input::before {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -39,7 +39,7 @@
   * Checked
  */
 
-.check_input:checked::before {
+.input:checked::before {
   background-color: var(--dark);
 
   @media (prefers-color-scheme: dark) {
@@ -51,10 +51,10 @@
   * Disabled
  */
 
-.check_input:disabled::before {
+.input:disabled::before {
   opacity: 0.5;
 }
 
-.check_input:disabled {
+.input:disabled {
   cursor: not-allowed;
 }

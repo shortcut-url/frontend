@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Head from 'next/head';
-import { useStore, useList } from 'effector-react';
+import { useStore } from 'effector-react';
 
 import Link from 'next/link';
 
@@ -12,14 +12,13 @@ import {
   urlFieldChange,
   $urlFieldError,
   $isSubmitEnabled,
-  $listCreatedURLs,
   formSubmitted,
   $isFormLoading,
   clearListCreatedURLs
 } from 'models/page/home';
 import styles from './index.module.css';
 import { $session } from 'models/session';
-import { CreatedURLCopyClipboard } from 'components/url';
+import { ListCreatedURLs } from './list-created-urls';
 
 export default () => {
   useEffect(() => {
@@ -71,18 +70,6 @@ let Form = () => {
 
       <FormButtons />
     </form>
-  );
-};
-
-let ListCreatedURLs = () => {
-  let listCreatedURLs = useList($listCreatedURLs, CreatedURLCopyClipboard);
-
-  if (!listCreatedURLs.length) return null;
-
-  return (
-    <div role="feed" className={styles['created-urls_list']}>
-      {listCreatedURLs}
-    </div>
   );
 };
 

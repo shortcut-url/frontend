@@ -3,23 +3,29 @@ import { useStore } from 'effector-react';
 
 import { AvatarManagement } from './management';
 import { $session } from 'models/session';
-import styles from './avatar.module.css';
+import s from './avatar.module.css';
+import { classNames } from 'lib/utils/class-names';
 
-export let Avatar = ({ containerClass, withAvatarManagement }) => (
-  <div className={`flat ${styles.root} ${containerClass}`}>
-    {withAvatarManagement && (
-      <AvatarManagement>
-        <AvatarContent />
-      </AvatarManagement>
-    )}
+export let Avatar = ({ containerClass, withAvatarManagement }) => {
+  let rootClassName = classNames(s.root, containerClass, 'flat');
 
-    {!withAvatarManagement && <AvatarContent />}
-  </div>
-);
+  return (
+    <div className={rootClassName}>
+      {withAvatarManagement && (
+        <AvatarManagement>
+          <AvatarContent />
+        </AvatarManagement>
+      )}
+
+      {!withAvatarManagement && <AvatarContent />}
+    </div>
+  );
+};
 
 let AvatarContent = () => {
   let { srcAvatar, name } = useStore($session).user;
 
+  /* Display the avatar if it's there, or the fallback */
   if (srcAvatar) {
     return (
       <picture>
@@ -27,7 +33,7 @@ let AvatarContent = () => {
 
         <img
           src={srcAvatar}
-          className={styles.avatar_img}
+          className={s.img}
           width="100"
           height="100"
           alt="Your avatar"
@@ -36,8 +42,10 @@ let AvatarContent = () => {
     );
   }
 
+  let fallbackClassName = classNames(s['fallback'], 'pressed');
+
   return (
-    <div className={`${styles['avatar_no-image']} pressed`} aria-hidden="true">
+    <div className={fallbackClassName} aria-hidden="true">
       {name[0]}
     </div>
   );

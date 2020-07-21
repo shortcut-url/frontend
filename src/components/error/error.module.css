@@ -6,18 +6,18 @@
   color: var(--base-red);
 }
 
-.error-list {
+.list {
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-.error-list:focus {
+.list:focus {
   outline: none;
   box-shadow: none;
 }
 
-.error-list_item::before {
+.list_item::before {
   margin-right: 5px;
   content: "-";
 }

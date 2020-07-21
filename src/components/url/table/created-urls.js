@@ -1,10 +1,10 @@
 import React, { useEffect, useState, createRef } from 'react';
 
-import styles from './created-urls.module.css';
+import s from './created-urls.module.css';
 
 export let CreatedURLsTable = ({
   urlList,
-  createdURLCard: CreatedURLCard,
+  card: Card,
   loadMoreCreatedURLs
 }) => {
   let CreatedURLsListElement = createRef();
@@ -51,9 +51,9 @@ export let CreatedURLsTable = ({
   }
 
   return (
-    <div ref={CreatedURLsListElement} className={styles.root} role="feed">
+    <div ref={CreatedURLsListElement} className={s.root} role="feed">
       {urlList.map((link) => (
-        <CreatedURLCard key={link.url} {...link} />
+        <Card key={link.url} {...link} />
       ))}
     </div>
   );
