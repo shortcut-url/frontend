@@ -8,12 +8,11 @@ export let downloadCreatedURLsCurrentUser = createEffect();
 
 export let $createdURLsCurrentUser = createStore([]);
 
-$createdURLsCurrentUser.on(
-  addCreatedURLsCurrentUser,
-  (createdURLs, newCreatedURLs) => {
+$createdURLsCurrentUser
+  .on(addCreatedURLsCurrentUser, (createdURLs, newCreatedURLs) => {
     return [...createdURLs, ...newCreatedURLs];
-  }
-);
+  })
+  .reset(resetCreatedURLsCurrentUser);
 
 downloadCreatedURLsCurrentUser.use(userAPI.getCreatedURLs);
 

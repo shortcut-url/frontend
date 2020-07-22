@@ -1,4 +1,4 @@
-.form {
+.root {
   display: grid;
   gap: 20px;
   width: 100%;
@@ -7,7 +7,7 @@
   margin: 0 auto;
 }
 
-.form_buttons {
+.group_buttons {
   display: inline-grid;
   grid-template-columns: repeat(2, auto);
   grid-gap: 20px;
@@ -15,12 +15,12 @@
   width: 100%;
 }
 
-.link-opening-settings {
+.button_opening-settings {
   display: flex;
   align-items: center;
 }
 
-.link-opening-settings::before {
+.button_opening-settings::before {
   display: block;
   width: 20px;
   height: 20px;

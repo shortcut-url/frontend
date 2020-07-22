@@ -1,0 +1,27 @@
+.url-heading-button {
+  color: inherit;
+  word-break: break-all;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  transition: color 0.1s;
+
+  &:hover,
+  &:focus {
+    color: var(--base-accent);
+  }
+}
+
+.original-url-button {
+  padding: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background-color: transparent;
+  transition: color 0.1s;
+
+  &:hover,
+  &:focus {
+    color: var(--base-accent);
+  }
+}

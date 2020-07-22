@@ -3,16 +3,10 @@ import Head from 'next/head';
 import Router from 'next/router';
 
 import { $session } from 'models/session';
-import styles from './index.module.css';
 import { MainLayout } from 'components/layout';
-import { Checkbox } from 'components/form';
-import { useStore } from 'effector-react';
-import {
-  $settingsFutureURLs,
-  changeParameterFutureURLs,
-  changeAllSettingsFutureURLs
-} from 'models/page/settings/future-urls';
+import { changeAllSettingsFutureURLs } from './store';
 import { userAPI } from 'api/user';
+import { SettingsFutureURLs } from './_settings';
 
 export default ({ settingsFutureURLsCurrentUser }) => {
   changeAllSettingsFutureURLs(settingsFutureURLsCurrentUser);
@@ -30,7 +24,7 @@ export default ({ settingsFutureURLsCurrentUser }) => {
       </Head>
 
       <MainLayout>
-        <Settings />
+        <SettingsFutureURLs />
       </MainLayout>
     </>
   );
@@ -50,26 +44,4 @@ export let getServerSideProps = async (ctx) => {
       settingsFutureURLsCurrentUser: settingsFutureURLsResponse.data
     }
   };
-};
-
-let Settings = () => {
-  let settingsFutureURLs = useStore($settingsFutureURLs);
-
-  return (
-    <ul className={styles['settings_list']}>
-      <li>
-        <Checkbox
-          checked={settingsFutureURLs.trackingNumberTransitions}
-          onChange={(event) =>
-            changeParameterFutureURLs({
-              name: 'trackingNumberTransitions',
-              value: event.target.checked
-            })
-          }
-        >
-          Tracking the number of transitions on URLs
-        </Checkbox>
-      </li>
-    </ul>
-  );
 };

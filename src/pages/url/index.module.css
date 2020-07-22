@@ -1,0 +1,16 @@
+.layout_main {
+  display: grid;
+  row-gap: 40px;
+  grid-template-rows: repeat(3, min-content);
+  align-content: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  display: grid;
+  row-gap: 15px;
+  width: 100%;
+  max-width: 700px;
+  padding: 20px 25px;
+}

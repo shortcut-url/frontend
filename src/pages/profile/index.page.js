@@ -5,12 +5,13 @@ import { useStore } from 'effector-react';
 
 import { $session } from 'models/session';
 import { MainLayout } from 'components/layout';
-import { Avatar } from 'components/avatar';
-import { addCreatedURLsCurrentUser } from 'models/page/profile';
-import styles from './index.module.css';
+import {
+  addCreatedURLsCurrentUser,
+  resetCreatedURLsCurrentUser
+} from './store';
 import { userAPI } from 'api/user';
-import { Button } from 'components/button';
-import { ListCreatedURLs } from './list-created-urls';
+import { ListCreatedURLs } from './_list-created-urls';
+import { Header } from './_header';
 
 export default ({ listCreatedURLsCurrentUser }) => {
   let currentUser = useStore($session).user;
@@ -21,6 +22,10 @@ export default ({ listCreatedURLsCurrentUser }) => {
 
   useEffect(() => {
     addCreatedURLsCurrentUser(listCreatedURLsCurrentUser);
+
+    return () => {
+      resetCreatedURLsCurrentUser();
+    };
   }, [listCreatedURLsCurrentUser]);
 
   return (
@@ -30,7 +35,7 @@ export default ({ listCreatedURLsCurrentUser }) => {
       </Head>
 
       <MainLayout>
-        <MainHeader />
+        <Header />
 
         <ListCreatedURLs />
       </MainLayout>
@@ -54,25 +59,4 @@ export let getServerSideProps = async (ctx) => {
       listCreatedURLsCurrentUser: getCreatedURLsCurrentUserResponse.data
     }
   };
-};
-
-export let MainHeader = () => {
-  let currentUser = useStore($session).user;
-
-  return (
-    <header className={`${styles.container} ${styles.main_header}`}>
-      <Avatar
-        containerClass={styles['main_header_avatar-container']}
-        withAvatarManagement={true}
-      />
-
-      <h1 className={styles['main_header_current-user-name']}>
-        {currentUser.name}
-      </h1>
-
-      <Button tag="a" href="/settings">
-        Settings
-      </Button>
-    </header>
-  );
 };

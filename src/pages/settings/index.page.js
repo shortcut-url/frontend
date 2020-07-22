@@ -6,7 +6,7 @@ import { $session } from 'models/session';
 import styles from './index.module.css';
 import { MainLayout } from 'components/layout';
 import { Button } from 'components/button';
-import { destroySession } from 'models/page/settings';
+import { destroySession } from './store';
 
 export default () => {
   useEffect(() => {

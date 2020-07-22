@@ -1,12 +1,11 @@
 import { createStore, combine, createEvent, createEffect } from 'effector';
 import Router from 'next/router';
 
-import {
-  $settingsCreatedURL,
-  changeAllSettingsCreatedURL,
-  changeParameterCreatedURL
-} from './settings';
 import { urlAPI } from 'api/url';
+import {
+  changeAllSettingsCreatedURL,
+  $settingsCreatedURL
+} from './settings.store';
 
 export let addCreatedURLData = createEvent();
 
@@ -49,5 +48,3 @@ export let $createdURL = combine(
     return { ...data, settings };
   }
 );
-
-export { changeParameterCreatedURL };

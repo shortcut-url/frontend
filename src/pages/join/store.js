@@ -8,7 +8,7 @@ import {
 import { trimEvent } from 'lib/utils/trim';
 import { createFetching } from 'lib/request/fetching';
 import { userAPI } from 'api/user';
-import { loginProcessing } from 'models/page/login/email';
+import { loginProcessing } from 'pages/login/email/store';
 
 /*
  * Email

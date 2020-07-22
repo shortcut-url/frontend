@@ -2,13 +2,13 @@ import React from 'react';
 import { useStore } from 'effector-react';
 import Link from 'next/link';
 
+import mainStyle from '../index.module.css';
+import s from './index.module.css';
 import {
   $createdURLsCurrentUser,
   downloadCreatedURLsCurrentUser
-} from 'models/page/profile';
+} from '../store';
 import { CreatedUrlCard, CreatedURLsTable } from 'components/url';
-import mainStyle from './index.module.css';
-import s from './list-created-urls.module.css';
 import { classNames } from 'lib/utils/class-names';
 
 let ListCreatedURLs = () => {

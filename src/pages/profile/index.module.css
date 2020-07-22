@@ -4,25 +4,3 @@
   padding: 20px;
   margin: 0 auto;
 }
-
-.main_header {
-  display: grid;
-  grid-template-columns: auto minmax(150px, 1fr) min-content;
-  grid-gap: 20px;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-
-  @media (--mobile) {
-    grid-template-rows: repeat(3, auto);
-    grid-template-columns: auto;
-  }
-}
-
-.main_header_current-user-name {
-  word-break: break-all;
-}
-
-.main_header_avatar-container {
-  margin: 0 auto;
-}

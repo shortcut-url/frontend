@@ -1,4 +1,5 @@
 import { createEvent, createStore, createEffect } from 'effector';
+
 import { userAPI } from 'api/user';
 
 export let changeAllSettingsFutureURLs = createEvent();
