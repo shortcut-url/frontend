@@ -16,7 +16,7 @@ export let MainNavigation = () => {
 
   return (
     <NavigationFloat>
-      <nav className={rootClassName}>
+      <nav className={rootClassName} id="navigation_menu">
         <Link href="/">
           <a className={s.logo} title="Go to the home page.">
             Shortcut-URL.com

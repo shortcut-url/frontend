@@ -60,6 +60,9 @@ export let NavigationFloat = ({ children }) => {
           onClick={handleClickButtonMobileNavigation}
           className={floatButtonClassName}
           title={`${isOpenMobileNavigation ? 'Close menu' : 'Open menu'}`}
+          aria-expanded={isOpenMobileNavigation}
+          aria-controls="navigation_menu"
+          type="button"
         />
       </div>
     </>
