@@ -12,7 +12,10 @@ import { classNames } from 'lib/utils/class-names';
 function MainDataCreatedURL() {
   let createdURL = useStore($createdURL);
 
-  let urlWithServerDomain = `${process.env.API_SERVER}/${createdURL.url}`;
+  let urlWithServerDomain = new URL(
+    createdURL.url,
+    process.env.NEXT_PUBLIC_SHORTCUT_SERVER
+  );
 
   function copyOriginalUrlToClipboard() {
     navigator.clipboard.writeText(createdURL.originalURL).then(() => {
@@ -36,7 +39,7 @@ function MainDataCreatedURL() {
         title="Click to copy url to clipboard"
         type="button"
       >
-        <h1>{urlWithServerDomain}</h1>
+        <h1>{urlWithServerDomain.toString()}</h1>
       </button>
 
       <button

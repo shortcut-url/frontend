@@ -1,11 +1,7 @@
 import nodeFetch, { Headers, Request } from 'node-fetch';
 import FormData from 'form-data';
 
-const dev = process.env.NODE_ENV !== 'production';
-
-const baseUri = dev
-  ? 'http://localhost:3000/api'
-  : `${process.env.DEPLOYMENT_SERVER}/api`;
+const baseUri = `${process.env.NEXT_PUBLIC_DEPLOYMENT_SERVER}/api`;
 
 export async function requestAPI(method, url, options = {}) {
   let uri = `${options.baseUri || baseUri}/${url}`;

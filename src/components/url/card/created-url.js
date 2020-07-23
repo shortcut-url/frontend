@@ -15,7 +15,10 @@ export const CardBase = (
   },
   ref
 ) => {
-  let urlWithServerDomain = `${process.env.API_SERVER}/${url}`;
+  let urlWithServerDomain = new URL(
+    url,
+    process.env.NEXT_PUBLIC_SHORTCUT_SERVER
+  );
 
   let rootClassName = classNames(
     ButtonStyles.reset_button,
@@ -36,7 +39,7 @@ export const CardBase = (
       ref={ref}
       {...props}
     >
-      <h3 className={s['card_heading']}>{urlWithServerDomain}</h3>
+      <h3 className={s['card_heading']}>{urlWithServerDomain.toString()}</h3>
 
       <div className={s['card_original-url']} title={originalURL}>
         Original url: {originalURL}

@@ -11,7 +11,7 @@ function AuthTypes() {
         <Button
           tag="a"
           className={`${s.button} ${s['button_google']}`}
-          href={`${process.env.API_SERVER}/auth/google`}
+          href={`${process.env.NEXT_PUBLIC_DEPLOYMENT_SERVER}/auth/google`}
         >
           Log in with Google
         </Button>
@@ -21,7 +21,7 @@ function AuthTypes() {
         <Button
           tag="a"
           className={`${s.button} ${s['button_twitter']}`}
-          href={`${process.env.API_SERVER}/auth/twitter`}
+          href={`${process.env.NEXT_PUBLIC_DEPLOYMENT_SERVER}/auth/twitter`}
         >
           Log in with Twitter
         </Button>
