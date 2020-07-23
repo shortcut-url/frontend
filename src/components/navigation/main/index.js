@@ -17,33 +17,33 @@ export let MainNavigation = () => {
   return (
     <NavigationFloat>
       <nav className={rootClassName} id="navigation_menu">
-        <Link href="/">
-          <a className={s.logo} title="Go to the home page.">
-            Shortcut-URL.com
-          </a>
-        </Link>
+        <ul className={s.menu}>
+          <li>
+            <Link href="/">
+              <a className={s.menu_home} rel="home">
+                Shortcut-URL.com
+              </a>
+            </Link>
+          </li>
 
-        {!currentUser && <AuthNavigationList />}
+          {!currentUser && <AuthNavigationList />}
 
-        {currentUser && <LinkToProfileCurrentUser />}
+          {currentUser && <LinkToProfileCurrentUser />}
+        </ul>
       </nav>
     </NavigationFloat>
   );
 };
 
 let AuthNavigationList = () => {
-  return (
-    <ul className={s.list}>
-      <LinkItemList href="/login">Login</LinkItemList>
-    </ul>
-  );
+  return <LinkItemList href="/login">Login</LinkItemList>;
 };
 
 let LinkItemList = ({ href, children, ...props }) => {
   let linkClassName = classNames(
-    s['list_link'],
     'concave_hover',
-    'pressed_active'
+    'pressed_active',
+    s.menu_link
   );
 
   return (
@@ -61,10 +61,10 @@ let LinkToProfileCurrentUser = () => {
   let currentUser = useStore($session).user;
 
   return (
-    <div className={s.profile}>
+    <li className={s.profile}>
       <Avatar />
 
-      <div className={s['profile_name']} title="Your name">
+      <div className={s.profile_name} title="Your name">
         {currentUser.name}
       </div>
 
@@ -73,6 +73,6 @@ let LinkToProfileCurrentUser = () => {
           Your profile
         </Button>
       </Link>
-    </div>
+    </li>
   );
 };

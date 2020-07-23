@@ -11,11 +11,14 @@ jest.mock('next/link', () => {
 });
 
 describe('Main navigation', () => {
-  it('Link to the main page', () => {
-    let { getByTitle } = render(<MainNavigation />);
+  it('Link to the home page', () => {
+    let { getByText } = render(<MainNavigation />);
 
-    getByTitle(
-      (text, el) => el.tagName === 'A' && text === 'Go to the home page.'
+    getByText(
+      (text, el) =>
+        el.tagName === 'A' &&
+        text.toLowerCase() === 'shortcut-url.com' &&
+        el.getAttribute('rel') === 'home'
     );
   });
 

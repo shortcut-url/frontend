@@ -7,13 +7,24 @@
   bottom: 0;
   left: 0;
   z-index: 100;
+  width: 250px;
+  background: var(--base-panel);
+
+  @media (--mobile) {
+    width: 100%;
+    backdrop-filter: blur(22px);
+  }
+}
+
+.menu {
   display: flex;
   flex-direction: column;
-  width: 250px;
+  height: 100%;
   padding: 20px 15px;
+  margin: 0;
   overflow: hidden;
   text-align: center;
-  background: var(--base-panel);
+  list-style: none;
 
   &:hover,
   &:focus {
@@ -21,18 +32,20 @@
   }
 
   @media (--mobile) {
-    width: 100%;
-
     /* Float padding + Float button + Gap */
     padding-bottom: calc(55px + 30px + 20px);
-    backdrop-filter: blur(22px);
+  }
+
+  & > li:not(:first-child) {
+    margin-top: 5px;
   }
 }
 
-.logo {
+.menu_home {
   --border-radius: var(--base-border-r);
 
-  padding-bottom: 10px;
+  display: block;
+  margin-bottom: 10px;
   font-weight: 600;
   color: var(--base-text);
   text-transform: uppercase;
@@ -40,43 +53,17 @@
 
   &:hover,
   &:focus {
-    opacity: 0.7;
-  }
-
-  & > picture {
-    margin-right: 5px;
-  }
-
-  @media (--mobile) {
-    justify-content: center;
+    color: var(--base-accent);
   }
 }
 
-.list {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-
-  & > li {
-    margin-top: 5px;
-  }
-
-  @media (--mobile) {
-    text-align: center;
-  }
-}
-
-.list_link {
+.menu_link {
   --distance: 4px;
   --border-radius: calc(var(--base-border-r) / 2);
 
   display: block;
   padding: 8px 10px 8px;
   color: var(--base-text);
-
-  @media (--mobile) {
-    padding-left: 10px;
-  }
 }
 
 .profile {
@@ -91,10 +78,6 @@
   & > *:not(:first-child) {
     margin-top: 10px;
   }
-}
-
-.profile_avatar {
-  border-radius: 50%;
 }
 
 .profile_name {
