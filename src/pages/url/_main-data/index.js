@@ -5,9 +5,9 @@ import commonStyle from '../index.module.css';
 import s from './index.module.css';
 import { $createdURL } from '../store';
 import { addNotification } from 'models/notification';
-import { copyUrlClipboard } from 'components/url';
 import { ButtonStyles } from 'components/button';
 import { classNames } from 'lib/utils/class-names';
+import { copyToClipboard } from 'lib/utils/clipboard';
 
 function MainDataCreatedURL() {
   let createdURL = useStore($createdURL);
@@ -17,11 +17,23 @@ function MainDataCreatedURL() {
     process.env.NEXT_PUBLIC_SHORTCUT_SERVER
   );
 
-  function copyOriginalUrlToClipboard() {
-    navigator.clipboard.writeText(createdURL.originalURL).then(() => {
-      addNotification({
-        content: 'You copied the original url to the clipboard'
-      });
+  function copyOriginalUrlToClipboard(event) {
+    copyToClipboard(createdURL.originalURL);
+
+    addNotification({
+      content: 'Original URL is copied 🎉',
+      coords: { top: event.pageY, left: event.pageX },
+      element: event.target
+    });
+  }
+
+  function copyShortUrlToClipboard(event) {
+    copyToClipboard(urlWithServerDomain);
+
+    addNotification({
+      content: 'Short URL is copied 🎉',
+      coords: { top: event.pageY, left: event.pageX },
+      element: event.target
     });
   }
 
@@ -34,7 +46,7 @@ function MainDataCreatedURL() {
   return (
     <section className={rootClassName}>
       <button
-        onClick={() => copyUrlClipboard({ url: urlWithServerDomain })}
+        onClick={copyShortUrlToClipboard}
         className={s['url-heading-button']}
         title="Click to copy url to clipboard"
         type="button"

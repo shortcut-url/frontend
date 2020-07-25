@@ -1,14 +1,21 @@
 import React from 'react';
-import { useList } from 'effector-react';
+import { useStore } from 'effector-react';
 
 import { $notifications } from 'models/notification';
-import { NotificationItem } from './notification';
-import styles from './list.module.css';
+import { FlyingNotificationItem } from './flying-notification';
 
 export let NotificationList = () => {
-  let notifications = useList($notifications, NotificationItem);
+  let notifications = useStore($notifications);
 
   if (!notifications.length) return null;
 
-  return <div className={styles.root}>{notifications}</div>;
+  return (
+    <>
+      {notifications.map((notification) => {
+        return (
+          <FlyingNotificationItem key={notification.id} {...notification} />
+        );
+      })}
+    </>
+  );
 };

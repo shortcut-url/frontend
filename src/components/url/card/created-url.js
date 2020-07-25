@@ -3,14 +3,15 @@ import React, { forwardRef } from 'react';
 import s from './created-url-card.module.css';
 import { classNames } from 'lib/utils/class-names';
 import { ButtonStyles } from 'components/button';
+import { addNotification } from 'models/notification';
+import { copyToClipboard } from 'lib/utils/clipboard';
 
 export const CardBase = (
   {
     tag: Tag = 'button',
     url,
     originalURL,
-    addNotificationWhenCopying = true,
-    onClick,
+    WithCopyShortUrlToClipboard = false,
     ...props
   },
   ref
@@ -28,14 +29,20 @@ export const CardBase = (
     s.card
   );
 
-  function handleClick() {
-    onClick({ url: urlWithServerDomain });
+  function copyShortUrlToClipboard(event) {
+    copyToClipboard(urlWithServerDomain);
+
+    addNotification({
+      content: 'Short URL is copied 🎉',
+      coords: { top: event.pageY, left: event.pageX },
+      element: event.target
+    });
   }
 
   return (
     <Tag
       className={rootClassName}
-      onClick={Tag === 'button' ? handleClick : undefined}
+      onClick={WithCopyShortUrlToClipboard && copyShortUrlToClipboard}
       ref={ref}
       {...props}
     >

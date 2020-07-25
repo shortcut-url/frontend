@@ -1,20 +1,22 @@
 .root {
-  display: grid;
-  grid-template-columns: 210px 30px;
-  margin-top: 20px;
-  overflow: hidden;
-  font-weight: 600;
+  position: absolute;
+  padding: 5px 10px;
+  font-size: calc(var(--base-h3) / 1.5);
+  color: var(--color);
+  text-align: center;
+  user-select: none;
+  transform: translate(-50%, -50%) rotate(3deg);
+
+  /*
+    * In chromium, the element manages to finish the animation
+    * and return to its original position.
+  */
+  animation: flyNotification calc(var(--duration) + 10ms) cubic-bezier(0.42, 0, 1, 1);
 }
 
-.content {
-  padding: 12px 12px 12px 20px;
-  font-size: 14px;
-}
-
-.button {
-  --border-radius: 0;
-
-  padding: 0;
-  background: transparent;
-  border-left: 0.1px solid var(--base-ui-black);
+@keyframes flyNotification {
+  100% {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% + -20px))
+  }
 }

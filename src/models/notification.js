@@ -6,6 +6,8 @@ export const removeNotification = createEvent();
 export const $notifications = createStore([]);
 
 $notifications.on(addNotification, (notifications, newNotification) => {
+  if (notifications.length >= 10) return;
+
   let notification = { id: new Date().getTime(), ...newNotification };
 
   return [...notifications, notification];

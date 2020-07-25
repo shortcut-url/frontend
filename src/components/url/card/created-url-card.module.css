@@ -9,6 +9,7 @@
 }
 
 .card_heading {
+  display: inline-block;
   word-break: break-all;
 
   @media (max-width: 500px) {
