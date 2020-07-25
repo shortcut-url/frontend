@@ -21,7 +21,5 @@ MyApp.getInitialProps = async ({ ctx }) => {
 
   if (!getInitialSession.ok) return {};
 
-  let user = getInitialSession.data;
-
-  return { user };
+  return { user: getInitialSession.data };
 };

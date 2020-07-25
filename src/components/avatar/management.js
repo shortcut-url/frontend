@@ -6,7 +6,7 @@ import { $session } from 'models/session';
 import { deleteAvatar, uploadAvatar } from 'models/session/user';
 
 export const AvatarManagement = (props) => {
-  let { srcAvatar } = useStore($session).user;
+  let userSession = useStore($session).user;
 
   function handleAvatarUpload(event) {
     let formData = new FormData();
@@ -29,7 +29,7 @@ export const AvatarManagement = (props) => {
           accept="image/*"
         />
 
-        {!!srcAvatar && (
+        {!!userSession.srcAvatar && (
           <button
             onClick={deleteAvatar}
             className={s['control_delete-button']}

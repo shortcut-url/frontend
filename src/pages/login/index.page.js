@@ -1,17 +1,22 @@
 import React, { useEffect } from 'react';
 import Head from 'next/head';
 import Router from 'next/router';
+import { useStore } from 'effector-react';
 
 import { $session } from 'models/session';
 import { MainLayout } from 'components/layout';
 import { AuthTypes } from './_auth-types';
 
 export default () => {
-  useEffect(() => {
-    let user = $session.getState().user;
+  let userSession = useStore($session).user;
 
-    if (user) Router.push('/');
-  });
+  useEffect(() => {
+    if (!userSession) return;
+
+    Router.push('/');
+  }, [userSession]);
+
+  if (userSession) return null;
 
   return (
     <>

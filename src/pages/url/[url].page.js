@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Head from 'next/head';
-import Router from 'next/router';
 
 import { MainLayout } from 'components/layout';
 import { urlAPI } from 'api/url';
@@ -11,10 +10,6 @@ import { StatisticsCreatedURL } from './_statistics';
 import { ManagementCreatedURL } from './_management';
 
 export default ({ createdURL }) => {
-  useEffect(() => {
-    if (!createdURL) Router.push('/404');
-  });
-
   addCreatedURLData(createdURL);
 
   return (
@@ -34,7 +29,7 @@ export default ({ createdURL }) => {
   );
 };
 
-export let getServerSideProps = async ({ params, req }) => {
+export let getServerSideProps = async ({ params, req, res }) => {
   let createdURLDataResponse = await urlAPI.getCreatedURLData({
     url: params.url,
     options: {
@@ -44,7 +39,17 @@ export let getServerSideProps = async ({ params, req }) => {
     }
   });
 
-  if (!createdURLDataResponse.ok) return { props: {} };
+  if (!createdURLDataResponse.ok) {
+    let queryParams = new URLSearchParams();
+    queryParams.set('callbackLinkHref', '/profile');
+    queryParams.set('callbackLinkText', 'Go to profile page');
+
+    res.setHeader('location', `/404?${queryParams}`);
+    res.statusCode = 301;
+    res.end();
+
+    return { props: {} };
+  }
 
   return { props: { createdURL: createdURLDataResponse.data } };
 };

@@ -14,11 +14,15 @@ import { ListCreatedURLs } from './_list-created-urls';
 import { Header } from './_header';
 
 export default ({ listCreatedURLsCurrentUser }) => {
-  let currentUser = useStore($session).user;
+  let userSession = useStore($session).user;
 
   useEffect(() => {
-    if (!currentUser) Router.push('/login');
-  }, [currentUser]);
+    if (userSession) return;
+
+    Router.push('/login');
+  }, [userSession]);
+
+  if (!userSession) return null;
 
   useEffect(() => {
     addCreatedURLsCurrentUser(listCreatedURLsCurrentUser);
@@ -43,13 +47,13 @@ export default ({ listCreatedURLsCurrentUser }) => {
   );
 };
 
-export let getServerSideProps = async (ctx) => {
+export let getServerSideProps = async ({ req }) => {
   let getCreatedURLsCurrentUserResponse = await userAPI.getCreatedURLs({
     startIndex: 0,
     stopIndex: 20,
     options: {
       headers: {
-        cookie: ctx.req ? ctx.req.headers.cookie : null
+        cookie: req ? req.headers.cookie : null
       }
     }
   });

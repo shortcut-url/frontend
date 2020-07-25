@@ -1,8 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Head from 'next/head';
-import Router from 'next/router';
 
-import { $session } from 'models/session';
 import { MainLayout } from 'components/layout';
 import { changeAllSettingsFutureURLs } from './store';
 import { userAPI } from 'api/user';
@@ -10,12 +8,6 @@ import { SettingsFutureURLs } from './_settings';
 
 export default ({ settingsFutureURLsCurrentUser }) => {
   changeAllSettingsFutureURLs(settingsFutureURLsCurrentUser);
-
-  useEffect(() => {
-    let user = $session.getState().user;
-
-    if (!user) Router.push('/login');
-  });
 
   return (
     <>
@@ -30,14 +22,22 @@ export default ({ settingsFutureURLsCurrentUser }) => {
   );
 };
 
-export let getServerSideProps = async (ctx) => {
+export let getServerSideProps = async ({ req, res }) => {
   let settingsFutureURLsResponse = await userAPI.getSettingsFutureURLs({
     options: {
       headers: {
-        cookie: ctx.req ? ctx.req.headers.cookie : null
+        cookie: req ? req.headers.cookie : null
       }
     }
   });
+
+  if (!settingsFutureURLsResponse.ok) {
+    res.setHeader('location', '/login');
+    res.statusCode = 302;
+    res.end();
+
+    return { props: {} };
+  }
 
   return {
     props: {
