@@ -1,0 +1,16 @@
+.layout_main {
+  padding: 20px;
+}
+
+.root {
+  display: grid;
+  gap: 20px;
+  max-width: 600px;
+  padding: 20px 30px;
+  margin: auto;
+  text-align: center;
+}
+
+.title {
+  font-size: var(--base-h2);
+}
