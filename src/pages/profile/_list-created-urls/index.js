@@ -18,7 +18,7 @@ export const ListCreatedURLs = () => {
 
   return (
     <section className={rootClassName}>
-      <h2 className={s.heading}>Created URLs</h2>
+      <h2>Created URLs</h2>
 
       {listCreatedURLs.length ? (
         <CreatedURLsTable

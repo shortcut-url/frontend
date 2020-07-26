@@ -50,7 +50,6 @@ export const Email = () => {
     <InputText
       value={emailField}
       onChange={emailFieldChange}
-      containerClass={s.group}
       disabled={isFormLoading}
       id="email"
       label="Email"
@@ -70,7 +69,6 @@ export const Username = () => {
     <InputText
       value={usernameField}
       onChange={usernameFieldChange}
-      containerClass={s.group}
       disabled={isFormLoading}
       id="username"
       label="Username"
@@ -95,7 +93,6 @@ export const Password = () => {
     <InputText
       value={passwordField}
       onChange={passwordFieldChange}
-      containerClass={s.group}
       disabled={isFormLoading}
       id="password"
       label="Password"

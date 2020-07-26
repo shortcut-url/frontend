@@ -1,10 +1,6 @@
 .root {
   display: grid;
-  row-gap: 20px;
-}
-
-.heading {
-  margin-bottom: 20px;
+  row-gap: var(--unit-x6);
 }
 
 .list-empty {

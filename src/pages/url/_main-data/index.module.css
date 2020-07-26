@@ -15,6 +15,7 @@
 .original-url-button {
   padding: 0;
   overflow: hidden;
+  font-weight: normal;
   text-overflow: ellipsis;
   white-space: nowrap;
   background-color: transparent;

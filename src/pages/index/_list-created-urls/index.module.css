@@ -1,8 +1,8 @@
 .root {
   display: grid;
-  grid-gap: 20px;
+  row-gap: var(--unit-x6);
   max-width: 500px;
-  padding: 20px;
+  padding: var(--unit-x5);
   margin: 0 auto;
 
   @media (--mobile) {

@@ -67,11 +67,7 @@ const AccountDeletionForm = () => {
         required
       />
 
-      <Button
-        className={s['confirm-form_submit-button']}
-        disabled={!usernameFieldError}
-        variant="danger"
-      >
+      <Button disabled={!usernameFieldError} variant="danger">
         I'm sure I want to delete my account
       </Button>
     </form>

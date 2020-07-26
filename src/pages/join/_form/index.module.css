@@ -1,15 +1,12 @@
 .root {
+  display: grid;
+  row-gap: var(--unit-x5);
   width: 100%;
   max-width: 500px;
-  padding: 20px;
+  padding: var(--unit-x5);
   margin: auto;
 }
 
-.group {
-  margin-bottom: 20px;
-}
-
 .button {
-  display: block;
   margin: 0 auto;
 }

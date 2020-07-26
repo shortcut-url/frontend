@@ -1,6 +1,6 @@
 .reset_button {
   display: inline-block;
-  padding: 10px 20px;
+  padding: var(--unit-x3) var(--unit-x5);
   font-weight: 600;
   color: var(--base-text);
   text-align: center;

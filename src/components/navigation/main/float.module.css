@@ -10,8 +10,8 @@
 
 .float {
   position: fixed;
-  right: 30px;
-  bottom: 30px;
+  right: var(--unit-x7);
+  bottom: var(--unit-x7);
   z-index: 100;
   display: none;
 
@@ -23,7 +23,7 @@
 .float_button {
   display: flex;
   align-items: center;
-  padding: 15px;
+  padding: var(--unit-x4);
   background: var(--base-panel);
   backdrop-filter: blur(5px);
 

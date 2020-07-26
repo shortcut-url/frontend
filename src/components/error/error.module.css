@@ -1,7 +1,7 @@
 .error {
   display: block;
-  padding: 5px;
-  font-size: var(--base-unit);
+  padding: var(--unit-1);
+  font-size: 14px;
   font-weight: 600;
   color: var(--base-red);
 }
@@ -18,6 +18,6 @@
 }
 
 .list_item::before {
-  margin-right: 5px;
+  margin-right: var(--unit-x1);
   content: "-";
 }

@@ -1,25 +1,22 @@
 .delete-account_container {
-  display: grid;
-  grid-gap: 40px;
-  padding: 20px;
+  padding: var(--unit-x5);
   margin: auto;
 }
 
 .delete-account-card {
   display: grid;
-  grid-gap: 15px;
+  grid-gap: var(--unit-x3);
   width: 100%;
   max-width: 500px;
-  padding: 20px;
+  padding: var(--base-card-padding);
+}
+
+.delete-account-card_heading {
+  line-height: normal;
 }
 
 .delete-account_confirm-form {
-  display: block;
-  width: 100%;
-}
-
-.confirm-form_submit-button {
-  display: block;
-  width: 100%;
-  margin-top: 20px;
+  display: grid;
+  row-gap: var(--unit-x6);
+  margin-top: var(--unit-x2);
 }

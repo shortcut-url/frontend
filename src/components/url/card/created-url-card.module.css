@@ -1,8 +1,8 @@
 .card {
   display: grid;
-  row-gap: 10px;
+  row-gap: var(--unit-x3);
   width: 100%;
-  padding: 20px 25px;
+  padding: var(--base-card-padding);
   font-size: var(--base-h3);
   font-weight: normal;
   color: var(--base-text);
@@ -10,6 +10,7 @@
 
 .card_heading {
   display: inline-block;
+  line-height: normal;
   word-break: break-all;
 
   @media (max-width: 500px) {
@@ -19,7 +20,7 @@
 
 .card_original-url {
   overflow: hidden;
-  font-size: var(--base-unit);
+  font-size: 14px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }

@@ -1,6 +1,6 @@
 .root {
   position: absolute;
-  padding: 5px 10px;
+  padding: var(--unit-x1) var(--unit-x3);
   font-size: calc(var(--base-h3) / 1.5);
   color: var(--color);
   text-align: center;

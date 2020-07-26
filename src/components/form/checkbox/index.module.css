@@ -2,7 +2,7 @@
   position: relative;
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-gap: 0.5em;
+  column-gap: var(--unit-x3);
   align-items: center;
   font-weight: 600;
   cursor: pointer;

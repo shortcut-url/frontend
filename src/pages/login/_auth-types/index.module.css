@@ -1,9 +1,9 @@
 .list-auth-types {
   display: grid;
-  grid-gap: 20px;
+  row-gap: var(--unit-x6);
   max-width: 400px;
   height: 100%;
-  padding: 20px;
+  padding: var(--unit-x5);
   margin: auto;
   list-style: none;
 }
@@ -16,7 +16,7 @@
 .button {
   display: grid;
   grid-template-columns: 23px auto;
-  grid-gap: 10px;
+  column-gap: var(--unit-x3);
   align-items: center;
   justify-content: start;
 }
@@ -48,7 +48,7 @@
 
 .link_create-account {
   display: block;
-  font-size: var(--base-unit);
+  font-size: 14px;
 
   &:hover,
   &:focus {

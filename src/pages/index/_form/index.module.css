@@ -1,16 +1,16 @@
 .root {
   display: grid;
-  gap: 20px;
+  row-gap: var(--unit-x6);
   width: 100%;
   max-width: 500px;
-  padding: 50vh 20px 20px;
+  padding: 50vh var(--base-card-padding);
   margin: 0 auto;
 }
 
 .group_buttons {
   display: inline-grid;
   grid-template-columns: repeat(2, auto);
-  grid-gap: 20px;
+  column-gap: var(--unit-x5);
   justify-content: center;
   width: 100%;
 }
@@ -22,8 +22,8 @@
 
 .button_opening-settings::before {
   display: block;
-  width: 20px;
-  height: 20px;
+  width: var(--unit-x5);
+  height: var(--unit-x5);
   content: '';
   background-color: var(--base-text);
   background-size: 100%;

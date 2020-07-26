@@ -1,11 +1,12 @@
 .list {
   display: grid;
-  row-gap: 30px;
+  row-gap: var(--unit-x6);
   padding-left: 0;
+  margin-top: var(--unit-x3);
   list-style: none;
 }
 
 .group-buttons {
   display: grid;
-  row-gap: 20px;
+  row-gap: var(--unit-x6);
 }

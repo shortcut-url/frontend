@@ -1,12 +1,12 @@
 .root {
   display: grid;
   grid-template-columns: auto minmax(150px, 1fr) min-content;
-  grid-gap: 20px;
+  column-gap: var(--unit-x6);
   align-items: center;
   justify-content: center;
-  padding: 20px;
 
   @media (--mobile) {
+    row-gap: var(--unit-x4);
     grid-template-rows: repeat(3, auto);
     grid-template-columns: auto;
   }

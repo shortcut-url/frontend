@@ -46,7 +46,6 @@ const Email = () => {
     <InputText
       value={emailField}
       onChange={emailFieldChange}
-      containerClass={s.group}
       disabled={isFormLoading}
       id="email"
       label="Email"
@@ -65,7 +64,6 @@ const Password = () => {
     <InputText
       value={passwordField}
       onChange={passwordFieldChange}
-      containerClass={s.group}
       disabled={isFormLoading}
       id="password"
       label="Password"
