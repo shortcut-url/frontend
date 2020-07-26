@@ -3,7 +3,7 @@ import React from 'react';
 import s from './index.module.css';
 import { classNames } from 'lib/utils/class-names';
 
-export let Checkbox = ({
+export const Checkbox = ({
   children,
   containerClass = '',
   disabled = false,

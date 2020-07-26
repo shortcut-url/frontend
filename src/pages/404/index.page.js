@@ -8,7 +8,7 @@ import { MainLayout } from 'components/layout';
 import { classNames } from 'lib/utils/class-names';
 import { Button } from 'components/button';
 
-export default function ErrorPage404() {
+const ErrorPage404 = () => {
   let { errorText: error } = useRouter().query;
 
   let errorText = error || '404 - Page Not Found';
@@ -24,9 +24,9 @@ export default function ErrorPage404() {
       </MainLayout>
     </>
   );
-}
+};
 
-function InformationCard({ errorText }) {
+const InformationCard = ({ errorText }) => {
   let { callbackLinkHref, callbackLinkText } = useRouter().query;
 
   let rootClassName = classNames('flat', s.root);
@@ -42,4 +42,6 @@ function InformationCard({ errorText }) {
       </Link>
     </div>
   );
-}
+};
+
+export default ErrorPage404;

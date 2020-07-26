@@ -6,7 +6,7 @@ import s from './index.module.css';
 import { $createdURL } from '../store';
 import { classNames } from 'lib/utils/class-names';
 
-function StatisticsCreatedURL() {
+export const StatisticsCreatedURL = () => {
   let { statistics } = useStore($createdURL);
 
   let rootClassName = classNames('flat', commonStyle.card);
@@ -22,6 +22,4 @@ function StatisticsCreatedURL() {
       </ul>
     </section>
   );
-}
-
-export { StatisticsCreatedURL };
+};

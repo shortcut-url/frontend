@@ -9,7 +9,7 @@ import { ButtonStyles } from 'components/button';
 import { classNames } from 'lib/utils/class-names';
 import { copyToClipboard } from 'lib/utils/clipboard';
 
-function MainDataCreatedURL() {
+export const MainDataCreatedURL = () => {
   let createdURL = useStore($createdURL);
 
   let urlWithServerDomain = new URL(
@@ -68,6 +68,4 @@ function MainDataCreatedURL() {
       </button>
     </section>
   );
-}
-
-export { MainDataCreatedURL };
+};

@@ -6,7 +6,7 @@ import { $session } from 'models/session';
 import s from './avatar.module.css';
 import { classNames } from 'lib/utils/class-names';
 
-export let Avatar = ({ containerClass, withAvatarManagement }) => {
+export const Avatar = ({ containerClass, withAvatarManagement }) => {
   let rootClassName = classNames(s.root, containerClass, 'flat');
 
   return (
@@ -22,7 +22,7 @@ export let Avatar = ({ containerClass, withAvatarManagement }) => {
   );
 };
 
-let AvatarContent = () => {
+const AvatarContent = () => {
   let { srcAvatar, name } = useStore($session).user;
 
   /* Display the avatar if it's there, or the fallback */

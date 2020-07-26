@@ -9,7 +9,7 @@ import { MainDataCreatedURL } from './_main-data';
 import { StatisticsCreatedURL } from './_statistics';
 import { ManagementCreatedURL } from './_management';
 
-export default ({ createdURL }) => {
+const UrlPage = ({ createdURL }) => {
   addCreatedURLData(createdURL);
 
   return (
@@ -29,7 +29,7 @@ export default ({ createdURL }) => {
   );
 };
 
-export let getServerSideProps = async ({ params, req, res }) => {
+export const getServerSideProps = async ({ params, req, res }) => {
   let createdURLDataResponse = await urlAPI.getCreatedURLData({
     url: params.url,
     options: {
@@ -53,3 +53,5 @@ export let getServerSideProps = async ({ params, req, res }) => {
 
   return { props: { createdURL: createdURLDataResponse.data } };
 };
+
+export default UrlPage;

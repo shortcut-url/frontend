@@ -9,7 +9,7 @@ import { MainLayout } from 'components/layout';
 import { Button } from 'components/button';
 import { destroySession } from './store';
 
-export default () => {
+const SettingsPage = () => {
   let userSession = useStore($session).user;
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export default () => {
   );
 };
 
-let Settings = () => {
+const Settings = () => {
   return (
     <ul className={styles['settings-list']}>
       <li>
@@ -57,3 +57,5 @@ let Settings = () => {
     </ul>
   );
 };
+
+export default SettingsPage;

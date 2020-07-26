@@ -4,7 +4,7 @@ import { removeNotification } from 'models/notification';
 import s from './notification.module.css';
 import { classNames } from 'lib/utils/class-names';
 
-export let FlyingNotificationItem = ({
+export const FlyingNotificationItem = ({
   duration = 2000,
   id,
   content,

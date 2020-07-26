@@ -5,7 +5,7 @@ import s from './index.module.css';
 import { $listCreatedURLs } from '../store';
 import { CreatedUrlCard } from 'components/url';
 
-let ListCreatedURLs = () => {
+export const ListCreatedURLs = () => {
   let listCreatedURLs = useList($listCreatedURLs, CreatedURLCopyClipboard);
 
   if (!listCreatedURLs.length) return null;
@@ -17,7 +17,7 @@ let ListCreatedURLs = () => {
   );
 };
 
-let CreatedURLCopyClipboard = ({ id, originalURL }) => {
+const CreatedURLCopyClipboard = ({ id, originalURL }) => {
   return (
     <article>
       <CreatedUrlCard
@@ -30,5 +30,3 @@ let CreatedURLCopyClipboard = ({ id, originalURL }) => {
     </article>
   );
 };
-
-export { ListCreatedURLs };

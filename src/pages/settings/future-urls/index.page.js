@@ -6,7 +6,7 @@ import { changeAllSettingsFutureURLs } from './store';
 import { userAPI } from 'api/user';
 import { SettingsFutureURLs } from './_settings';
 
-export default ({ settingsFutureURLsCurrentUser }) => {
+const SettingsFutureUrlsPage = ({ settingsFutureURLsCurrentUser }) => {
   changeAllSettingsFutureURLs(settingsFutureURLsCurrentUser);
 
   return (
@@ -22,7 +22,7 @@ export default ({ settingsFutureURLsCurrentUser }) => {
   );
 };
 
-export let getServerSideProps = async ({ req, res }) => {
+export const getServerSideProps = async ({ req, res }) => {
   let settingsFutureURLsResponse = await userAPI.getSettingsFutureURLs({
     options: {
       headers: {
@@ -45,3 +45,5 @@ export let getServerSideProps = async ({ req, res }) => {
     }
   };
 };
+
+export default SettingsFutureUrlsPage;

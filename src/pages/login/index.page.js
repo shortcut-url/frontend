@@ -7,7 +7,7 @@ import { $session } from 'models/session';
 import { MainLayout } from 'components/layout';
 import { AuthTypes } from './_auth-types';
 
-export default () => {
+const LoginPage = () => {
   let userSession = useStore($session).user;
 
   useEffect(() => {
@@ -30,3 +30,5 @@ export default () => {
     </>
   );
 };
+
+export default LoginPage;

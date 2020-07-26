@@ -13,7 +13,7 @@ import { userAPI } from 'api/user';
 import { ListCreatedURLs } from './_list-created-urls';
 import { Header } from './_header';
 
-export default ({ listCreatedURLsCurrentUser }) => {
+const ProfilePage = ({ listCreatedURLsCurrentUser }) => {
   let userSession = useStore($session).user;
 
   useEffect(() => {
@@ -22,8 +22,6 @@ export default ({ listCreatedURLsCurrentUser }) => {
     Router.push('/login');
   }, [userSession]);
 
-  if (!userSession) return null;
-
   useEffect(() => {
     addCreatedURLsCurrentUser(listCreatedURLsCurrentUser);
 
@@ -31,6 +29,8 @@ export default ({ listCreatedURLsCurrentUser }) => {
       resetCreatedURLsCurrentUser();
     };
   }, [listCreatedURLsCurrentUser]);
+
+  if (!userSession) return null;
 
   return (
     <>
@@ -47,7 +47,7 @@ export default ({ listCreatedURLsCurrentUser }) => {
   );
 };
 
-export let getServerSideProps = async ({ req }) => {
+export const getServerSideProps = async ({ req }) => {
   let getCreatedURLsCurrentUserResponse = await userAPI.getCreatedURLs({
     startIndex: 0,
     stopIndex: 20,
@@ -64,3 +64,5 @@ export let getServerSideProps = async ({ req }) => {
     }
   };
 };
+
+export default ProfilePage;

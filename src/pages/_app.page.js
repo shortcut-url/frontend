@@ -4,11 +4,11 @@ import { sessionAPI } from 'api/session';
 import { addUserSession } from 'models/session';
 import 'styles/common.css';
 
-export default function MyApp({ Component, pageProps, user = null }) {
+const MyApp = ({ Component, pageProps, user = null }) => {
   addUserSession(user);
 
   return <Component {...pageProps} />;
-}
+};
 
 MyApp.getInitialProps = async ({ ctx }) => {
   let getInitialSession = await sessionAPI.getInitialSession({
@@ -23,3 +23,5 @@ MyApp.getInitialProps = async ({ ctx }) => {
 
   return { user: getInitialSession.data };
 };
+
+export default MyApp;

@@ -11,7 +11,7 @@ import {
 import { CreatedUrlCard, CreatedURLsTable } from 'components/url';
 import { classNames } from 'lib/utils/class-names';
 
-let ListCreatedURLs = () => {
+export const ListCreatedURLs = () => {
   let listCreatedURLs = useStore($createdURLsCurrentUser);
 
   let rootClassName = classNames(mainStyle.container, s.root);
@@ -33,7 +33,7 @@ let ListCreatedURLs = () => {
   );
 };
 
-let CreatedUrl = ({ url, originalURL }) => {
+const CreatedUrl = ({ url, originalURL }) => {
   return (
     <article>
       <Link href={`url/${url}`} prefetch={false} passHref>
@@ -42,5 +42,3 @@ let CreatedUrl = ({ url, originalURL }) => {
     </article>
   );
 };
-
-export { ListCreatedURLs };

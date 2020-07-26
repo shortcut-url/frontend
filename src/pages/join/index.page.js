@@ -7,7 +7,7 @@ import { MainLayout } from 'components/layout';
 import { JoinForm } from './_form';
 import { $session } from 'models/session';
 
-export default () => {
+const JoinPage = () => {
   let userSession = useStore($session).user;
 
   useEffect(() => {
@@ -30,3 +30,5 @@ export default () => {
     </>
   );
 };
+
+export default JoinPage;

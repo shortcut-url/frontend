@@ -7,7 +7,7 @@ import { LoginEmailForm } from './_form';
 import { useStore } from 'effector-react';
 import { $session } from 'models/session';
 
-export default () => {
+const LoginWithEmailPage = () => {
   let userSession = useStore($session).user;
 
   useEffect(() => {
@@ -30,3 +30,5 @@ export default () => {
     </>
   );
 };
+
+export default LoginWithEmailPage;

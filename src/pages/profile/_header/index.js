@@ -8,7 +8,7 @@ import { Button } from 'components/button';
 import { classNames } from 'lib/utils/class-names';
 import { Avatar } from 'components/avatar';
 
-function Header() {
+export const Header = () => {
   let currentUser = useStore($session).user;
 
   let rootClassName = classNames(commonStyle.container, s.root);
@@ -27,6 +27,4 @@ function Header() {
       </Button>
     </header>
   );
-}
-
-export { Header };
+};

@@ -4,7 +4,7 @@ import s from './index.module.css';
 import { commonErrorStyle } from 'components/error';
 import { classNames } from 'lib/utils/class-names';
 
-export let InputText = ({
+export const InputText = ({
   label,
   error = undefined,
   id,

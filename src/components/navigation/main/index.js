@@ -9,7 +9,7 @@ import { Button } from 'components/button';
 import { NavigationFloat } from './float';
 import { classNames } from 'lib/utils/class-names';
 
-export let MainNavigation = () => {
+export const MainNavigation = () => {
   let currentUser = useStore($session).user;
 
   let rootClassName = classNames(s.root, 'flat');
@@ -35,7 +35,7 @@ export let MainNavigation = () => {
   );
 };
 
-let AuthNavigationList = () => {
+const AuthNavigationList = () => {
   return <LinkItemList href="/login">Login</LinkItemList>;
 };
 
@@ -57,7 +57,7 @@ let LinkItemList = ({ href, children, ...props }) => {
   );
 };
 
-let LinkToProfileCurrentUser = () => {
+const LinkToProfileCurrentUser = () => {
   let currentUser = useStore($session).user;
 
   return (

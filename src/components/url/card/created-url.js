@@ -55,6 +55,6 @@ export const CardBase = (
   );
 };
 
-let CreatedUrlCard = forwardRef(CardBase);
+const CreatedUrlCard = forwardRef(CardBase);
 
 export { CreatedUrlCard };

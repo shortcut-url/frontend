@@ -4,7 +4,7 @@ import { useStore } from 'effector-react';
 import { $notifications } from 'models/notification';
 import { FlyingNotificationItem } from './flying-notification';
 
-export let NotificationList = () => {
+export const NotificationList = () => {
   let notifications = useStore($notifications);
 
   if (!notifications.length) return null;

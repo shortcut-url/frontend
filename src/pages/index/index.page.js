@@ -6,7 +6,7 @@ import { clearListCreatedURLs } from './store';
 import { ListCreatedURLs } from './_list-created-urls';
 import { Form } from './_form';
 
-export default () => {
+const HomePage = () => {
   useEffect(() => {
     return () => {
       clearListCreatedURLs();
@@ -27,3 +27,5 @@ export default () => {
     </>
   );
 };
+
+export default HomePage;

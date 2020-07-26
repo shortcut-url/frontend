@@ -4,7 +4,7 @@ import Link from 'next/link';
 import s from './index.module.css';
 import { ButtonStyles, Button } from 'components/button';
 
-function AuthTypes() {
+export const AuthTypes = () => {
   return (
     <ul className={s['list-auth-types']}>
       <li>
@@ -52,6 +52,4 @@ function AuthTypes() {
       </li>
     </ul>
   );
-}
-
-export { AuthTypes };
+};

@@ -5,7 +5,7 @@ import s from './index.module.css';
 import { $settingsFutureURLs, changeParameterFutureURLs } from '../store';
 import { Checkbox } from 'components/form';
 
-function SettingsFutureURLs() {
+export const SettingsFutureURLs = () => {
   let settingsFutureURLs = useStore($settingsFutureURLs);
 
   return (
@@ -25,6 +25,4 @@ function SettingsFutureURLs() {
       </li>
     </ul>
   );
-}
-
-export { SettingsFutureURLs };
+};

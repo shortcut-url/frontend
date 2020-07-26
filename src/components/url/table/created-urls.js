@@ -2,7 +2,7 @@ import React, { useEffect, useState, createRef } from 'react';
 
 import s from './created-urls.module.css';
 
-export let CreatedURLsTable = ({
+export const CreatedURLsTable = ({
   urlList,
   card: Card,
   loadMoreCreatedURLs

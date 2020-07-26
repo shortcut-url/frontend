@@ -7,7 +7,7 @@ import { MainLayout } from 'components/layout';
 import { $session } from 'models/session';
 import { DeleteAccountCard } from './_card';
 
-export default () => {
+const DeleteAccountPage = () => {
   let userSession = useStore($session).user;
 
   useEffect(() => {
@@ -30,3 +30,5 @@ export default () => {
     </>
   );
 };
+
+export default DeleteAccountPage;

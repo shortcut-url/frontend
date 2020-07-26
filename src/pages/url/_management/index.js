@@ -9,7 +9,7 @@ import { changeParameterCreatedURL } from '../settings.store';
 import { Button } from 'components/button';
 import { classNames } from 'lib/utils/class-names';
 
-function ManagementCreatedURL() {
+export const ManagementCreatedURL = () => {
   let { settings } = useStore($createdURL);
 
   let rootClassName = classNames('flat', commonStyle.card);
@@ -53,6 +53,4 @@ function ManagementCreatedURL() {
       </ul>
     </section>
   );
-}
-
-export { ManagementCreatedURL };
+};

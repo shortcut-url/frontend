@@ -14,7 +14,7 @@ import { Error } from 'components/error';
 import { Button } from 'components/button';
 import { InputText } from 'components/form';
 
-function LoginEmailForm() {
+export const LoginEmailForm = () => {
   let isFormLoading = useStore(loginFetching.isLoading);
   let formError = useStore(loginFetching.error);
 
@@ -36,9 +36,9 @@ function LoginEmailForm() {
       </Button>
     </form>
   );
-}
+};
 
-function Email() {
+const Email = () => {
   let emailField = useStore($emailField);
   let isFormLoading = useStore(loginFetching.isLoading);
 
@@ -55,9 +55,9 @@ function Email() {
       required
     />
   );
-}
+};
 
-function Password() {
+const Password = () => {
   let passwordField = useStore($passwordField);
   let isFormLoading = useStore(loginFetching.isLoading);
 
@@ -76,6 +76,4 @@ function Password() {
       required
     />
   );
-}
-
-export { LoginEmailForm };
+};

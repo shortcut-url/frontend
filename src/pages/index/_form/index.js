@@ -15,7 +15,7 @@ import { Button } from 'components/button';
 import { InputText } from 'components/form';
 import { $session } from 'models/session';
 
-function Form() {
+export const Form = () => {
   let urlField = useStore($urlField);
   let urlFieldError = useStore($urlFieldError);
   let isFormLoading = useStore($isFormLoading);
@@ -44,9 +44,9 @@ function Form() {
       <Buttons />
     </form>
   );
-}
+};
 
-function Buttons() {
+let Buttons = () => {
   let isSubmitEnabled = useStore($isSubmitEnabled);
   let user = useStore($session).user;
 
@@ -67,6 +67,4 @@ function Buttons() {
       </Link>
     </div>
   );
-}
-
-export { Form };
+};

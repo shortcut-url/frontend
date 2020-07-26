@@ -5,7 +5,7 @@ import { MainNavigation } from 'components/navigation';
 import { NotificationList } from 'components/notification';
 import { classNames } from 'lib/utils/class-names';
 
-export let MainLayout = ({ children, mainClassName = '' }) => {
+export const MainLayout = ({ children, mainClassName = '' }) => {
   mainClassName = classNames(s.main, mainClassName);
 
   return (

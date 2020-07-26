@@ -16,7 +16,7 @@ import { Error } from 'components/error';
 import { Button } from 'components/button';
 import { InputText } from 'components/form';
 
-function JoinForm() {
+export const JoinForm = () => {
   let isFormLoading = useStore(registerFetching.isLoading);
   let ListErrorsForm = useStore(registerFetching.error);
 
@@ -40,9 +40,9 @@ function JoinForm() {
       </Button>
     </form>
   );
-}
+};
 
-function Email() {
+export const Email = () => {
   let emailField = useStore($emailField);
   let isFormLoading = useStore(registerFetching.isLoading);
 
@@ -60,8 +60,9 @@ function Email() {
       required
     />
   );
-}
-function Username() {
+};
+
+export const Username = () => {
   let usernameField = useStore($usernameField);
   let isFormLoading = useStore(registerFetching.isLoading);
 
@@ -84,8 +85,9 @@ function Username() {
       required
     />
   );
-}
-function Password() {
+};
+
+export const Password = () => {
   let passwordField = useStore($passwordField);
   let isFormLoading = useStore(registerFetching.isLoading);
 
@@ -106,6 +108,4 @@ function Password() {
       required
     />
   );
-}
-
-export { JoinForm };
+};

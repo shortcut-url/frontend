@@ -4,7 +4,7 @@ import s from './float.module.css';
 import { Button } from 'components/button';
 import { classNames } from 'lib/utils/class-names';
 
-export let NavigationFloat = ({ children }) => {
+export const NavigationFloat = ({ children }) => {
   let [isOpenMobileNavigation, setOpenMobileNavigation] = useState(false);
   let [prevScroll, setPrevScroll] = useState(0);
 

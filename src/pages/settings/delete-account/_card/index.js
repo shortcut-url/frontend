@@ -13,7 +13,7 @@ import {
 } from './store';
 import { $session } from 'models/session';
 
-function DeleteAccountCard() {
+export const DeleteAccountCard = () => {
   return (
     <div className={s['delete-account_container']}>
       <div className={`${s['delete-account-card']} flat`}>
@@ -33,9 +33,9 @@ function DeleteAccountCard() {
       </div>
     </div>
   );
-}
+};
 
-function AccountDeletionForm() {
+const AccountDeletionForm = () => {
   let userSession = useStore($session).user;
 
   let usernameField = useStore($usernameField);
@@ -76,6 +76,4 @@ function AccountDeletionForm() {
       </Button>
     </form>
   );
-}
-
-export { DeleteAccountCard };
+};
