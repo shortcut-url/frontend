@@ -2,9 +2,9 @@ import React, { useEffect } from 'react';
 import Head from 'next/head';
 
 import { MainLayout } from 'components/layout';
-import { clearListCreatedURLs } from './store';
-import { ListCreatedURLs } from './_list-created-urls';
-import { Form } from './_form';
+import { clearListCreatedURLs } from './index/store';
+import { ListCreatedURLs } from './index/_list-created-urls';
+import { Form } from './index/_form';
 
 const HomePage = () => {
   useEffect(() => {
