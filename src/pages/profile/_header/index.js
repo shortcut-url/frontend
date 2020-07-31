@@ -1,5 +1,6 @@
 import React from 'react';
 import { useStore } from 'effector-react';
+import Link from 'next/link';
 
 import commonStyle from '../index.module.css';
 import s from './index.module.css';
@@ -22,9 +23,9 @@ export const Header = () => {
 
       <h1 className={s['current-user-name']}>{currentUser.name}</h1>
 
-      <Button tag="a" href="/settings">
-        Settings
-      </Button>
+      <Link href="/settings" passHref>
+        <Button tag="a">Settings</Button>
+      </Link>
     </header>
   );
 };

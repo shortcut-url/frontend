@@ -28,13 +28,11 @@ export const AuthTypes = () => {
       </li>
 
       <li>
-        <Button
-          tag="a"
-          className={`${s.button} ${s['button_email']}`}
-          href="/login/email"
-        >
-          Log in with Email
-        </Button>
+        <Link href="/login/email" passHref>
+          <Button tag="a" className={`${s.button} ${s['button_email']}`}>
+            Log in with Email
+          </Button>
+        </Link>
       </li>
 
       <li>

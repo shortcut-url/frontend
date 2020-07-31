@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Head from 'next/head';
 import { useStore } from 'effector-react';
 import Router from 'next/router';
+import Link from 'next/link';
 
 import { $session } from 'models/session';
 import styles from './index.module.css';
@@ -39,20 +40,22 @@ const Settings = () => {
         <Button
           onClick={destroySession}
           className={styles['settings-list_button']}
+          type="button"
         >
           Sign out
         </Button>
       </li>
 
       <li>
-        <Button
-          className={styles['settings-list_button']}
-          variant="danger"
-          tag="a"
-          href="/settings/delete-account"
-        >
-          Delete account
-        </Button>
+        <Link href="/settings/delete-account" passHref>
+          <Button
+            className={styles['settings-list_button']}
+            variant="danger"
+            tag="a"
+          >
+            Delete account
+          </Button>
+        </Link>
       </li>
     </ul>
   );
