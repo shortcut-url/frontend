@@ -1,9 +1,11 @@
 import React from 'react';
 import { useStore } from 'effector-react';
 
-import s from './index.module.css';
 import { Button } from 'components/button';
 import { InputText } from 'components/form';
+import { $session } from 'models/session';
+
+import s from './index.module.css';
 import {
   deleteAccountProcessing,
   $usernameField,
@@ -11,7 +13,6 @@ import {
   $isFormLoading,
   usernameFieldChange
 } from './store';
-import { $session } from 'models/session';
 
 export const DeleteAccountCard = () => {
   return (

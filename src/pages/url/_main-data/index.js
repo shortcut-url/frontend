@@ -1,13 +1,14 @@
 import React from 'react';
 import { useStore } from 'effector-react';
 
-import commonStyle from '../index.module.css';
-import s from './index.module.css';
-import { $createdURL } from '../store';
 import { addNotification } from 'models/notification';
 import { ButtonStyles } from 'components/button';
 import { classNames } from 'lib/utils/class-names';
 import { copyToClipboard } from 'lib/utils/clipboard';
+
+import commonStyle from '../index.module.css';
+import s from './index.module.css';
+import { $createdURL } from '../store';
 
 export const MainDataCreatedURL = () => {
   let createdURL = useStore($createdURL);

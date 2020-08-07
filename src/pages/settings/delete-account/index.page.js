@@ -5,6 +5,7 @@ import { useStore } from 'effector-react';
 
 import { MainLayout } from 'components/layout';
 import { $session } from 'models/session';
+
 import { DeleteAccountCard } from './_card';
 
 const DeleteAccountPage = () => {

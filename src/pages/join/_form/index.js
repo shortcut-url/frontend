@@ -1,6 +1,10 @@
 import React from 'react';
 import { useStore } from 'effector-react';
 
+import { Error } from 'components/error';
+import { Button } from 'components/button';
+import { InputText } from 'components/form';
+
 import s from './index.module.css';
 import {
   registerFetching,
@@ -12,9 +16,6 @@ import {
   $emailField,
   emailFieldChange
 } from '../store';
-import { Error } from 'components/error';
-import { Button } from 'components/button';
-import { InputText } from 'components/form';
 
 export const JoinForm = () => {
   let isFormLoading = useStore(registerFetching.isLoading);

@@ -3,10 +3,11 @@ import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
 
-import s from './index.module.css';
 import { MainLayout } from 'components/layout';
 import { classNames } from 'lib/utils/class-names';
 import { Button } from 'components/button';
+
+import s from './index.module.css';
 
 const ErrorPage404 = () => {
   let { errorText: error } = useRouter().query;

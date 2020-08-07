@@ -1,10 +1,11 @@
 import React from 'react';
 import { useStore } from 'effector-react';
 
-import { AvatarManagement } from './management';
 import { $session } from 'models/session';
-import s from './avatar.module.css';
 import { classNames } from 'lib/utils/class-names';
+
+import s from './avatar.module.css';
+import { AvatarManagement } from './management';
 
 export const Avatar = ({ containerClass, withAvatarManagement }) => {
   let rootClassName = classNames(s.root, containerClass, 'flat');

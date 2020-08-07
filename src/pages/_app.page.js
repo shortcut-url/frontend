@@ -2,6 +2,7 @@ import React from 'react';
 
 import { sessionAPI } from 'api/session';
 import { addUserSession } from 'models/session';
+
 import 'styles/common.css';
 
 const MyApp = ({ Component, pageProps, user = null }) => {

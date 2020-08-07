@@ -1,9 +1,10 @@
 import React from 'react';
 import { useList } from 'effector-react';
 
+import { CreatedUrlCard } from 'components/url';
+
 import s from './index.module.css';
 import { $listCreatedURLs } from '../store';
-import { CreatedUrlCard } from 'components/url';
 
 export const ListCreatedURLs = () => {
   let listCreatedURLs = useList($listCreatedURLs, CreatedURLCopyClipboard);

@@ -2,6 +2,10 @@ import React from 'react';
 import { useStore } from 'effector-react';
 import Link from 'next/link';
 
+import { Button } from 'components/button';
+import { InputText } from 'components/form';
+import { $session } from 'models/session';
+
 import s from './index.module.css';
 import {
   $urlField,
@@ -11,9 +15,6 @@ import {
   urlFieldChange,
   $isSubmitEnabled
 } from '../store';
-import { Button } from 'components/button';
-import { InputText } from 'components/form';
-import { $session } from 'models/session';
 
 export const Form = () => {
   let urlField = useStore($urlField);

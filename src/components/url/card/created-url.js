@@ -1,10 +1,11 @@
 import React, { forwardRef } from 'react';
 
-import s from './created-url-card.module.css';
 import { classNames } from 'lib/utils/class-names';
 import { ButtonStyles } from 'components/button';
 import { addNotification } from 'models/notification';
 import { copyToClipboard } from 'lib/utils/clipboard';
+
+import s from './created-url-card.module.css';
 
 export const CardBase = (
   {

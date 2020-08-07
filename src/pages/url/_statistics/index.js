@@ -1,10 +1,11 @@
 import React from 'react';
 import { useStore } from 'effector-react';
 
+import { classNames } from 'lib/utils/class-names';
+
 import commonStyle from '../index.module.css';
 import s from './index.module.css';
 import { $createdURL } from '../store';
-import { classNames } from 'lib/utils/class-names';
 
 export const StatisticsCreatedURL = () => {
   let { statistics } = useStore($createdURL);

@@ -1,8 +1,9 @@
 import React from 'react';
 
-import s from './index.module.css';
 import { commonErrorStyle } from 'components/error';
 import { classNames } from 'lib/utils/class-names';
+
+import s from './index.module.css';
 
 export const InputText = ({
   label,

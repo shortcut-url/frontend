@@ -1,9 +1,10 @@
 import React from 'react';
 
-import s from './main.module.css';
 import { MainNavigation } from 'components/navigation';
 import { NotificationList } from 'components/notification';
 import { classNames } from 'lib/utils/class-names';
+
+import s from './main.module.css';
 
 export const MainLayout = ({ children, mainClassName = '' }) => {
   mainClassName = classNames(s.main, mainClassName);

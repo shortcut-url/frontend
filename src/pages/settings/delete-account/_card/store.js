@@ -1,9 +1,9 @@
 import { createStore, createEvent, createEffect } from 'effector';
+import Router from 'next/router';
 
 import { $session } from 'models/session';
 import { createFetching } from 'lib/request/fetching';
 import { userAPI } from 'api/user';
-import Router from 'next/router';
 
 export let usernameFieldChange = createEvent();
 

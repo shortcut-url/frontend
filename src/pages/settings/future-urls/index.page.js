@@ -2,8 +2,9 @@ import React from 'react';
 import Head from 'next/head';
 
 import { MainLayout } from 'components/layout';
-import { changeAllSettingsFutureURLs } from './store';
 import { userAPI } from 'api/user';
+
+import { changeAllSettingsFutureURLs } from './store';
 import { SettingsFutureURLs } from './_settings';
 
 const SettingsFutureUrlsPage = ({ settingsFutureURLsCurrentUser }) => {

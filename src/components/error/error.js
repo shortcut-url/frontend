@@ -1,7 +1,8 @@
 import React, { useEffect, createRef } from 'react';
 
-import s from './error.module.css';
 import { classNames } from 'lib/utils/class-names';
+
+import s from './error.module.css';
 
 export const Error = ({ children }) => {
   if (typeof children === 'object') {

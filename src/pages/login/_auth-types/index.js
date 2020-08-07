@@ -1,8 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 
-import s from './index.module.css';
 import { ButtonStyles, Button } from 'components/button';
+
+import s from './index.module.css';
 
 export const AuthTypes = () => {
   return (

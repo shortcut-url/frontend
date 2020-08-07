@@ -1,7 +1,7 @@
 import { createEffect } from 'effector';
+import Router from 'next/router';
 
 import { sessionAPI } from 'api/session';
-import Router from 'next/router';
 
 export let destroySession = createEffect();
 

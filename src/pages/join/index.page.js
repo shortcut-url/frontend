@@ -4,8 +4,9 @@ import Router from 'next/router';
 import { useStore } from 'effector-react';
 
 import { MainLayout } from 'components/layout';
-import { JoinForm } from './_form';
 import { $session } from 'models/session';
+
+import { JoinForm } from './_form';
 
 const JoinPage = () => {
   let userSession = useStore($session).user;

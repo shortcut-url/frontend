@@ -1,13 +1,14 @@
 import React from 'react';
 import { useStore } from 'effector-react';
 
+import { Checkbox } from 'components/form';
+import { Button } from 'components/button';
+import { classNames } from 'lib/utils/class-names';
+
 import commonStyle from '../index.module.css';
 import s from './index.module.css';
 import { $createdURL, deleteCreatedURL } from '../store';
-import { Checkbox } from 'components/form';
 import { changeParameterCreatedURL } from '../settings.store';
-import { Button } from 'components/button';
-import { classNames } from 'lib/utils/class-names';
 
 export const ManagementCreatedURL = () => {
   let { settings } = useStore($createdURL);

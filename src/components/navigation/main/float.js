@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
-import s from './float.module.css';
 import { Button } from 'components/button';
 import { classNames } from 'lib/utils/class-names';
+
+import s from './float.module.css';
 
 export const NavigationFloat = ({ children }) => {
   let [isOpenMobileNavigation, setOpenMobileNavigation] = useState(false);

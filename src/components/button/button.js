@@ -1,7 +1,8 @@
 import React, { forwardRef } from 'react';
 
-import s from './button.module.css';
 import { classNames } from 'lib/utils/class-names';
+
+import s from './button.module.css';
 
 const ButtonBase = (
   {

@@ -1,6 +1,7 @@
 import { createStore, createEvent, createEffect } from 'effector';
 
 import { urlAPI } from 'api/url';
+
 import { $createdURL } from './store';
 
 export let changeAllSettingsCreatedURL = createEvent();

@@ -2,6 +2,7 @@ import { createStore, combine, createEvent, createEffect } from 'effector';
 import Router from 'next/router';
 
 import { urlAPI } from 'api/url';
+
 import {
   changeAllSettingsCreatedURL,
   $settingsCreatedURL

@@ -1,9 +1,10 @@
 import React from 'react';
 import { useStore } from 'effector-react';
 
-import s from './management.module.css';
 import { $session } from 'models/session';
 import { deleteAvatar, uploadAvatar } from 'models/session/user';
+
+import s from './management.module.css';
 
 export const AvatarManagement = (props) => {
   let userSession = useStore($session).user;

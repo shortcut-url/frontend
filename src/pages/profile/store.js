@@ -1,4 +1,5 @@
 import { createStore, createEvent, createEffect } from 'effector';
+
 import { userAPI } from 'api/user';
 
 export let addCreatedURLsCurrentUser = createEvent();

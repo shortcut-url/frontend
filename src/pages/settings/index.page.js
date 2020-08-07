@@ -5,9 +5,10 @@ import Router from 'next/router';
 import Link from 'next/link';
 
 import { $session } from 'models/session';
-import styles from './index.module.css';
 import { MainLayout } from 'components/layout';
 import { Button } from 'components/button';
+
+import s from './index.module.css';
 import { destroySession } from './store';
 
 const SettingsPage = () => {
@@ -35,11 +36,11 @@ const SettingsPage = () => {
 
 const Settings = () => {
   return (
-    <ul className={styles['settings-list']}>
+    <ul className={s['settings-list']}>
       <li>
         <Button
           onClick={destroySession}
-          className={styles['settings-list_button']}
+          className={s['settings-list_button']}
           type="button"
         >
           Sign out
@@ -49,7 +50,7 @@ const Settings = () => {
       <li>
         <Link href="/settings/delete-account" passHref>
           <Button
-            className={styles['settings-list_button']}
+            className={s['settings-list_button']}
             variant="danger"
             tag="a"
           >

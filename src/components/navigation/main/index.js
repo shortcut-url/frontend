@@ -3,11 +3,12 @@ import Link from 'next/link';
 import { useStore } from 'effector-react';
 
 import { $session } from 'models/session';
-import s from './index.module.css';
 import { Avatar } from 'components/avatar';
 import { Button } from 'components/button';
-import { NavigationFloat } from './float';
 import { classNames } from 'lib/utils/class-names';
+
+import s from './index.module.css';
+import { NavigationFloat } from './float';
 
 export const MainNavigation = () => {
   let currentUser = useStore($session).user;

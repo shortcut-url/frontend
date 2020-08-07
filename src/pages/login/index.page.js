@@ -5,6 +5,7 @@ import { useStore } from 'effector-react';
 
 import { $session } from 'models/session';
 import { MainLayout } from 'components/layout';
+
 import { AuthTypes } from './_auth-types';
 
 const LoginPage = () => {

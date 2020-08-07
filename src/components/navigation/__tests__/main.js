@@ -3,8 +3,9 @@ import * as jest from 'jest';
 import { act } from 'react-dom/test-utils';
 import { render } from '@testing-library/react';
 
-import { MainNavigation } from '../index';
 import { addUserSession } from 'models/session';
+
+import { MainNavigation } from '../index';
 
 jest.mock('next/link', () => {
   return ({ children }) => children;

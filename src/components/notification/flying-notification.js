@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
+
 import { removeNotification } from 'models/notification';
+import { classNames } from 'lib/utils/class-names';
 
 import s from './notification.module.css';
-import { classNames } from 'lib/utils/class-names';
 
 export const FlyingNotificationItem = ({
   duration = 2000,

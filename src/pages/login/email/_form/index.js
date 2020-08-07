@@ -1,6 +1,10 @@
 import React from 'react';
 import { useStore } from 'effector-react';
 
+import { Error } from 'components/error';
+import { Button } from 'components/button';
+import { InputText } from 'components/form';
+
 import s from './index.module.css';
 import {
   loginFetching,
@@ -10,9 +14,6 @@ import {
   $passwordField,
   passwordFieldChange
 } from '../store';
-import { Error } from 'components/error';
-import { Button } from 'components/button';
-import { InputText } from 'components/form';
 
 export const LoginEmailForm = () => {
   let isFormLoading = useStore(loginFetching.isLoading);

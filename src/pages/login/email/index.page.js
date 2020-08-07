@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import Head from 'next/head';
 import Router from 'next/router';
+import { useStore } from 'effector-react';
 
 import { MainLayout } from 'components/layout';
-import { LoginEmailForm } from './_form';
-import { useStore } from 'effector-react';
 import { $session } from 'models/session';
+
+import { LoginEmailForm } from './_form';
 
 const LoginWithEmailPage = () => {
   let userSession = useStore($session).user;

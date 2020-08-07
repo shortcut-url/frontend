@@ -5,13 +5,14 @@ import { useStore } from 'effector-react';
 
 import { $session } from 'models/session';
 import { MainLayout } from 'components/layout';
+import { userAPI } from 'api/user';
+
+import { ListCreatedURLs } from './_list-created-urls';
+import { Header } from './_header';
 import {
   addCreatedURLsCurrentUser,
   resetCreatedURLsCurrentUser
 } from './store';
-import { userAPI } from 'api/user';
-import { ListCreatedURLs } from './_list-created-urls';
-import { Header } from './_header';
 
 const ProfilePage = ({ listCreatedURLsCurrentUser }) => {
   let userSession = useStore($session).user;

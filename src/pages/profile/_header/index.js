@@ -2,12 +2,13 @@ import React from 'react';
 import { useStore } from 'effector-react';
 import Link from 'next/link';
 
-import commonStyle from '../index.module.css';
-import s from './index.module.css';
 import { $session } from 'models/session';
 import { Button } from 'components/button';
 import { classNames } from 'lib/utils/class-names';
 import { Avatar } from 'components/avatar';
+
+import s from './index.module.css';
+import commonStyle from '../index.module.css';
 
 export const Header = () => {
   let currentUser = useStore($session).user;

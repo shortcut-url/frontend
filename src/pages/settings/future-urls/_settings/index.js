@@ -1,9 +1,10 @@
 import React from 'react';
 import { useStore } from 'effector-react';
 
+import { Checkbox } from 'components/form';
+
 import s from './index.module.css';
 import { $settingsFutureURLs, changeParameterFutureURLs } from '../store';
-import { Checkbox } from 'components/form';
 
 export const SettingsFutureURLs = () => {
   let settingsFutureURLs = useStore($settingsFutureURLs);
