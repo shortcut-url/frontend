@@ -1,7 +1,7 @@
 .layout_main {
   display: grid;
-  row-gap: var(--unit-x6);
   grid-template-rows: repeat(3, min-content);
+  row-gap: var(--unit-x6);
   align-content: center;
   justify-content: center;
   padding: var(--unit-x5);

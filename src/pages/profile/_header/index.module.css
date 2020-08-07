@@ -6,9 +6,9 @@
   justify-content: center;
 
   @media (--mobile) {
-    row-gap: var(--unit-x4);
     grid-template-rows: repeat(3, auto);
     grid-template-columns: auto;
+    row-gap: var(--unit-x4);
   }
 }
 
