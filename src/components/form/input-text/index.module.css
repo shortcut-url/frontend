@@ -1,6 +1,7 @@
 .input {
   width: 100%;
   padding: var(--unit-x3) var(--unit-x5);
+  appearance: none;
   font-weight: 600;
   color: var(--base-text);
   border: none;
